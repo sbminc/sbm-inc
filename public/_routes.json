@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "include": ["/*"],
+  "exclude": [],
+  "rules": [
+    {
+      "type": "redirect",
+      "from": "http://*",
+      "to": "https://$1",
+      "code": 301
+    }
+  ]
+} 

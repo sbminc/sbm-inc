@@ -10,10 +10,12 @@
 
 # next.js
 /.next/
-/out/
 
-# production
-/build
+# production build output
+/out
+!/out/_headers
+!/out/_routes.json
+!/out/_redirects
 
 # misc
 .DS_Store
