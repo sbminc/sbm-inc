@@ -35,12 +35,10 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           npm install -g wrangler
-          # Create project if it doesn't exist
-          wrangler pages project create sbm-clean --production-branch=main || true
           # Deploy the site with specific branch and commit info
           wrangler pages deploy out \
             --project-name=sbm-clean \
-            --branch=main \
+            --branch=${{ github.ref_name }} \
             --commit-hash=${{ github.sha }} \
             --commit-message="${{ github.event.head_commit.message }}" \
             --commit-dirty=true 
