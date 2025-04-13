@@ -1,0 +1,5 @@
+name = "sbm-clean"
+compatibility_date = "2025-04-13"
+
+[site]
+bucket = "./out" 
