@@ -54,6 +54,9 @@ export default function Home() {
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight max-w-3xl">
               SACRIFICING, BELIEVING, MANIFESTING
             </h1>
+            <p className="text-xl md:text-2xl mt-4 max-w-2xl">
+              Empowering BIPOC Girls in Volusia County
+            </p>
             <div className="w-24 h-1 bg-rose-400 mt-8"></div>
           </div>
         </section>
