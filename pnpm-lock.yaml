@@ -1,5 +1,7 @@
+# This project uses npm with legacy-peer-deps, but this file exists to prevent Cloudflare from regenerating it
 lockfileVersion: '9.0'
 
 settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
+  legacyPeerDeps: true
