@@ -37,7 +37,7 @@ jobs:
           npm install -g wrangler
           # Deploy the site with specific branch and commit info
           wrangler pages deploy out \
-            --project-name=sbm-clean \
+            --project-name=sbm-inc \
             --branch=${{ github.ref_name }} \
             --commit-hash=${{ github.sha }} \
             --commit-message="${{ github.event.head_commit.message }}" \
