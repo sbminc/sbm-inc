@@ -35,4 +35,7 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           npm install -g wrangler
-          wrangler pages deploy out --project-name=sbm-clean 
+          # Create project if it doesn't exist (this may fail if project exists, which is fine)
+          wrangler pages project create sbm-clean --production-branch=main || true
+          # Deploy the site
+          wrangler pages deploy out --project-name=sbm-clean --commit-dirty=true 

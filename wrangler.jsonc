@@ -1,6 +1,7 @@
 {
   "name": "sbm-clean",
   "compatibility_date": "2025-04-13",
+  "pages_build_output_dir": "out",
   "assets": {
     "directory": "./out"
   },
