@@ -2,68 +2,57 @@ import Image from "next/image"
 import Link from "next/link"
 
 export default function HighlightsPage() {
+  const highlights = [
+    {
+      title: "2023 Msichana Conference",
+      date: "November 18, 2023",
+      description: "Our annual conference brought together BIPOC girls from across Volusia County for a day of empowerment and learning.",
+      image: "/highlight 1.jpg"
+    },
+    {
+      title: "Community Engagement Workshop",
+      date: "September 2023",
+      description: "Engaging with our community through interactive workshops and meaningful discussions.",
+      image: "/highlight 2.jpg"
+    },
+    {
+      title: "Leadership Development Session",
+      date: "July 2023",
+      description: "Building leadership skills and confidence through mentorship and practical exercises.",
+      image: "/highlight 3.jpg"
+    }
+  ]
+
   return (
     <div className="container mx-auto py-12 px-4">
       <h1 className="text-4xl font-bold text-center mb-12">Highlights</h1>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {/* Event 1 */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="relative h-60">
-            <Image src="/placeholder.svg?height=300&width=500" alt="Event highlight" fill className="object-cover" />
-          </div>
-          <div className="p-6">
-            <h3 className="text-xl font-semibold mb-2">Annual Leadership Conference</h3>
-            <p className="text-gray-600 mb-4">
-              Our annual leadership conference brought together inspiring speakers and mentors to connect with our
-              community.
-            </p>
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-500">March 15, 2023</span>
-              <Link href="#" className="text-rose-500 hover:text-rose-600 font-medium">
-                Read More
-              </Link>
+        {highlights.map((highlight, index) => (
+          <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div className="relative h-48">
+              <Image
+                src={highlight.image}
+                alt={highlight.title}
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold mb-2">{highlight.title}</h3>
+              <p className="text-gray-600 mb-4">{highlight.description}</p>
+              <div className="flex items-center justify-between">
+                <span className="text-gray-500">{highlight.date}</span>
+                <Link
+                  href="#"
+                  className="text-rose-500 hover:text-rose-600"
+                >
+                  Read More
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-
-        {/* Event 2 */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="relative h-60">
-            <Image src="/placeholder.svg?height=300&width=500" alt="Event highlight" fill className="object-cover" />
-          </div>
-          <div className="p-6">
-            <h3 className="text-xl font-semibold mb-2">Summer Empowerment Workshop</h3>
-            <p className="text-gray-600 mb-4">
-              Our summer workshop series focused on building confidence and developing essential life skills.
-            </p>
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-500">July 8, 2023</span>
-              <Link href="#" className="text-rose-500 hover:text-rose-600 font-medium">
-                Read More
-              </Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Event 3 */}
-        <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <div className="relative h-60">
-            <Image src="/placeholder.svg?height=300&width=500" alt="Event highlight" fill className="object-cover" />
-          </div>
-          <div className="p-6">
-            <h3 className="text-xl font-semibold mb-2">Community Outreach Day</h3>
-            <p className="text-gray-600 mb-4">
-              Our participants engaged with the local community through service projects and educational activities.
-            </p>
-            <div className="flex justify-between items-center">
-              <span className="text-sm text-gray-500">October 22, 2023</span>
-              <Link href="#" className="text-rose-500 hover:text-rose-600 font-medium">
-                Read More
-              </Link>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   )

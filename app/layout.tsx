@@ -1,27 +1,25 @@
-import type React from "react"
-import "@/app/globals.css"
+import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { ThemeProvider } from "@/components/theme-provider"
+import "./globals.css"
+import Navigation from "./components/Navigation"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export const metadata = {
-  title: "SBM Inc. - Sacrificing, Believing, Manifesting",
-  description: "Empowering BIPOC girls in Volusia County through education, leadership, and community.",
-    generator: 'v0.dev'
+export const metadata: Metadata = {
+  title: "SBM Inc.",
+  description: "Empowering BIPOC Girls in Volusia County",
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          {children}
-        </ThemeProvider>
+        <Navigation />
+        {children}
       </body>
     </html>
   )
