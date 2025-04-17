@@ -25,11 +25,10 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/highlights", label: "Highlights" },
-    { href: "/donations", label: "Donations" },
-    { href: "/our-leaders", label: "Our Leaders" },
-    { href: "/events", label: "Events" },
     { href: "/about", label: "About" },
+    { href: "/programs", label: "Programs" },
+    { href: "/events", label: "Events" },
+    { href: "/our-leaders", label: "Our Leaders" },
   ]
 
   return (
@@ -38,12 +37,18 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16">
           <Logo />
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link key={link.href} href={link.href} className={isActive(link.href)}>
+              <Link key={link.href} href={link.href} className={`${isActive(link.href)} text-sm font-medium`}>
                 {link.label}
               </Link>
             ))}
+            <Link 
+              href="/donations" 
+              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-sbm-orange hover:bg-sbm-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sbm-gold transition-colors duration-200"
+            >
+              Donate
+            </Link>
           </div>
 
           <div className="md:hidden">
@@ -73,6 +78,13 @@ export default function Navigation() {
                   {link.label}
                 </Link>
               ))}
+              <Link
+                href="/donations"
+                className="block px-3 py-2 text-white bg-sbm-orange hover:bg-sbm-gold rounded-md"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Donate
+              </Link>
             </div>
           </div>
         )}
