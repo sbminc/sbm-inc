@@ -7,7 +7,7 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   output: 'export',
-  distDir: 'dist',
+  distDir: 'out',
   images: {
     unoptimized: true,
   },
