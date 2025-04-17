@@ -22,11 +22,11 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="fixed w-full z-50 bg-sbm-navy">
+    <nav className="fixed w-full z-50">
       <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-14">
           <div className="flex-shrink-0">
-            <Logo />
+            <Logo showText={false} size="sm" />
           </div>
 
           <div className="hidden md:flex items-center space-x-6">
