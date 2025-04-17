@@ -9,9 +9,9 @@ import Link from "next/link"
 export default function DonationsPage() {
   return (
     <div className="container mx-auto py-12 px-4">
-      <h1 className="text-4xl font-bold text-center mb-4">Donations</h1>
+      <h1 className="text-4xl font-bold text-center mb-4 gradient-text">Donations</h1>
       <p className="text-center text-lg mb-12 max-w-3xl mx-auto">
-        WE NEED YOUR HELP. Please consider becoming a sponsor to support our mission of empowering BIPOC girls in Volusia County.
+        Your support helps us continue our mission of empowering BIPOC girls in Volusia County through education, mentorship, and community engagement.
       </p>
 
       <div className="max-w-4xl mx-auto mb-12">
@@ -19,44 +19,52 @@ export default function DonationsPage() {
           href="https://docs.google.com/document/d/1MV1aF_qLJSvZLlXbZKh8E5_-unYOtUNt_oey_DSCejA/edit?tab=t.0"
           target="_blank"
           rel="noopener noreferrer"
-          className="block bg-rose-50 p-8 rounded-lg text-center hover:bg-rose-100 transition-colors"
+          className="block glass-card-dark p-8 rounded-lg text-center hover:bg-deep-blue/80 transition-colors"
         >
-          <h2 className="text-2xl font-semibold mb-4">View Sponsor Levels</h2>
-          <p className="text-lg text-gray-600 mb-4">
-            Learn about our different sponsorship tiers and how you can make an impact.
+          <h2 className="text-2xl font-semibold mb-4 text-white">View Sponsor Levels</h2>
+          <p className="text-lg text-white/80 mb-4">
+            Learn about our different sponsorship tiers and how you can make an impact in our community.
           </p>
-          <span className="inline-block bg-rose-500 text-white px-6 py-3 rounded-md hover:bg-rose-600 transition-colors">
+          <span className="inline-block bg-gradient-to-r from-gold to-orange text-white px-6 py-3 rounded-md hover:shadow-lg hover:shadow-orange/20 transition-all">
             View Sponsorship Options
           </span>
         </Link>
       </div>
 
       <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-2xl font-semibold mb-4">Monetary Donations</h2>
-          <p className="text-gray-600 mb-6">
+        <div className="glass-card-dark p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4 text-white">Monetary Donations</h2>
+          <p className="text-white/80 mb-6">
             Your financial support helps us provide educational resources, organize events, and create meaningful programs for our participants.
           </p>
           <Link
-            href="#"
-            className="inline-block bg-rose-500 text-white px-6 py-3 rounded-md hover:bg-rose-600 transition-colors"
+            href="https://www.paypal.com/donate/?hosted_button_id=YOUR_PAYPAL_BUTTON_ID"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-gradient-to-r from-gold to-orange text-white px-6 py-3 rounded-md hover:shadow-lg hover:shadow-orange/20 transition-all"
           >
             Make a Donation
           </Link>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-8">
-          <h2 className="text-2xl font-semibold mb-4">In-Kind Donations</h2>
-          <p className="text-gray-600 mb-6">
+        <div className="glass-card-dark p-8 rounded-lg">
+          <h2 className="text-2xl font-semibold mb-4 text-white">In-Kind Donations</h2>
+          <p className="text-white/80 mb-6">
             We welcome donations of supplies, materials, and services that support our mission and help us create impactful programs.
           </p>
           <Link
-            href="#"
-            className="inline-block bg-gray-800 text-white px-6 py-3 rounded-md hover:bg-gray-900 transition-colors"
+            href="mailto:contact@sbminc.org"
+            className="inline-block bg-gradient-to-r from-gold to-orange text-white px-6 py-3 rounded-md hover:shadow-lg hover:shadow-orange/20 transition-all"
           >
-            Learn More
+            Contact Us
           </Link>
         </div>
+      </div>
+
+      <div className="mt-16 text-center">
+        <p className="text-lg text-white/80 max-w-2xl mx-auto">
+          All donations are tax-deductible. For more information about our programs and how your donation can make a difference, please contact us.
+        </p>
       </div>
     </div>
   )

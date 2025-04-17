@@ -15,12 +15,12 @@ export function Button({
   external,
   ...props
 }: ButtonProps) {
-  const baseStyles = "inline-block px-6 py-3 rounded-md font-semibold transition-colors"
+  const baseStyles = "inline-block px-6 py-3 rounded-sm font-light tracking-wide transition-all duration-200"
   
   const variants = {
-    primary: "bg-sbm-gold text-sbm-navy hover:bg-sbm-orange hover:text-white",
-    secondary: "bg-sbm-navy text-white hover:bg-sbm-orange",
-    outline: "border-2 border-sbm-navy text-sbm-navy hover:bg-sbm-navy hover:text-white"
+    primary: "bg-sbm-gold/90 text-sbm-navy hover:bg-sbm-gold",
+    secondary: "bg-sbm-navy/90 text-white hover:bg-sbm-navy",
+    outline: "border border-sbm-navy/20 text-sbm-navy hover:border-sbm-navy/40 hover:bg-sbm-navy/5"
   }
 
   const buttonClasses = `${baseStyles} ${variants[variant]} ${className}`

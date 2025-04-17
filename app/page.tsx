@@ -1,50 +1,20 @@
-import { Button } from "./components/Button"
-import Image from "next/image"
+import HeroSection from "./components/hero-section"
+import VisionSection from "./components/vision-section"
+import ProgramsSection from "./components/programs-section"
 import Link from "next/link"
 
 export default function Home() {
   return (
-    <main>
-      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Placeholder image with gradient overlay */}
-        <div className="absolute inset-0">
-          <Image
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3"
-            alt="Students collaborating"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-sbm-navy/90 to-sbm-navy/70" />
-        </div>
-        
-        {/* Content */}
-        <div className="relative container mx-auto px-4">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 leading-tight">
-              Empowering BIPOC Girls in Volusia County
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8 font-light leading-relaxed">
-              Through mentorship, education, and community engagement, we're building the next generation of leaders.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button href="/about" variant="primary">
-                Learn More
-              </Button>
-              <Button href="/donate" variant="outline" className="text-white border-white/30 hover:border-white/50 hover:bg-white/10">
-                Support Our Mission
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
-
+    <main className="overflow-hidden">
+      <HeroSection />
+      <VisionSection />
+      
       {/* Affirmation Section */}
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-rose-50 p-8 rounded-lg">
-            <h2 className="text-3xl font-bold mb-6 text-center">AFFIRMATION</h2>
-            <div className="text-lg space-y-4">
+          <div className="glass-card-dark p-8 rounded-lg">
+            <h2 className="text-3xl font-bold mb-6 text-center gradient-text">AFFIRMATION</h2>
+            <div className="text-lg space-y-4 text-white/90">
               <p>
                 I am a black, mahogany, pecan tan, cocoa bean, chestnut brown, chocolate chip, caramel, milk chocolate girl with so many ordained gifts.
               </p>
@@ -59,36 +29,60 @@ export default function Home() {
         </div>
       </section>
 
+      <ProgramsSection />
+
       {/* Mission Section */}
-      <section className="py-16 px-4 bg-gray-50">
+      <section className="py-16 px-4 bg-deep-blue/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+          <h2 className="text-3xl font-bold mb-6 gradient-text">Our Mission</h2>
           <p className="text-lg mb-6">
             This event started 2022 as the brain child of Dr. Sadie McConner, who was inspired by the documentary "PUSH OUT: Criminalization of Black Girls" written by Monique Morris.
           </p>
-          <p className="text-xl font-semibold text-rose-600">
+          <p className="text-xl font-semibold gradient-text">
             Our future does not belong to us - Sacrifice, Believe, and Manifest for good.
           </p>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-hero-pattern bg-cover bg-center">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-8">Get Involved</h2>
+          <h2 className="text-3xl font-bold mb-8 text-white">Get Involved</h2>
           <div className="flex gap-4 justify-center">
-            <Button
+            <Link
               href="/donations"
-              variant="primary"
+              className="bg-gradient-to-r from-gold to-orange text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-orange/20 shine-effect group"
             >
-              Make a Donation
-            </Button>
-            <Button
+              <span className="relative z-10 flex items-center justify-center">
+                Make a Donation
+                <svg
+                  className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </Link>
+            <Link
               href="/events"
-              variant="secondary"
+              className="glass-card text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:border-white/40 group"
             >
-              Join Our Events
-            </Button>
+              <span className="relative z-10 flex items-center justify-center">
+                Join Our Events
+                <svg
+                  className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </span>
+            </Link>
           </div>
         </div>
       </section>

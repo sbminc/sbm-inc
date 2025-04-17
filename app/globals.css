@@ -92,3 +92,44 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Navbar Styles */
+.navbar {
+  @apply fixed top-0 left-0 w-full z-50 transition-all duration-300 ease-in-out;
+}
+
+.navbar-scrolled {
+  @apply bg-white shadow-md;
+}
+
+.nav-link {
+  @apply relative text-gray-800 hover:text-pink-600 transition-colors duration-300 px-4 py-2;
+}
+
+.nav-link::after {
+  @apply content-[''] absolute left-0 bottom-0 w-0 h-0.5 bg-pink-600 transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+.mobile-menu {
+  @apply fixed top-16 right-0 w-64 h-screen bg-white shadow-lg transform transition-transform duration-300 ease-in-out;
+}
+
+.mobile-menu.hidden {
+  @apply translate-x-full;
+}
+
+.mobile-menu-link {
+  @apply block w-full text-left px-6 py-3 text-gray-800 hover:bg-pink-50 hover:text-pink-600 transition-colors duration-300;
+}
+
+.mobile-menu-button {
+  @apply p-2 rounded-md hover:bg-pink-50 transition-colors duration-300;
+}
+
+.donate-button {
+  @apply bg-pink-600 text-white px-6 py-2 rounded-full hover:bg-pink-700 transition-colors duration-300 shadow-md hover:shadow-lg;
+}

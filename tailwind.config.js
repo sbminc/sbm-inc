@@ -2,10 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     container: {
@@ -17,12 +18,6 @@ module.exports = {
     },
     extend: {
       colors: {
-        sbm: {
-          navy: "#1A237E", // Dark navy from night sky
-          gold: "#FFD700", // Gold from stars
-          orange: "#FF4500", // Warm orange from phoenix wing
-          white: "#FFFFFF", // White from angel wing
-        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -56,25 +51,32 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        "deep-blue": "#1a2a47",
+        "midnight-blue": "#0f172a",
+        gold: "#e9b949",
+        orange: "#e67e22",
+        "light-orange": "#f39c12",
+        "off-white": "#f8f9fa",
+        "light-gray": "#e2e8f0",
+        "sbm-navy": "#1a2a47",
+        "sbm-gold": "#e9b949",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-      keyframes: {
-        "accordion-down": {
-          from: { height: 0 },
-          to: { height: "var(--radix-accordion-content-height)" },
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: 0 },
-        },
+      backgroundImage: {
+        "hero-pattern": "linear-gradient(to right, rgba(26, 42, 71, 0.9), rgba(15, 23, 42, 0.8)), url('/hero-bg.jpg')",
       },
       animation: {
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
+        float: "float 6s ease-in-out infinite",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+        },
       },
     },
   },
