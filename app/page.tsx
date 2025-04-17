@@ -1,29 +1,41 @@
+import { Button } from "./components/Button"
 import Image from "next/image"
 import Link from "next/link"
 
-export default function HomePage() {
+export default function Home() {
   return (
     <main>
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center text-white">
-        <div className="absolute inset-0 z-0">
+      <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+        {/* Placeholder image with gradient overlay */}
+        <div className="absolute inset-0">
           <Image
-            src="/Homepage Image-1.jpg"
-            alt="Group of young people at SBM Inc. event"
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3"
+            alt="Students collaborating"
             fill
-            className="object-cover brightness-50"
+            className="object-cover"
             priority
           />
+          <div className="absolute inset-0 bg-gradient-to-r from-sbm-navy/90 to-sbm-navy/70" />
         </div>
-        <div className="relative z-10 text-center">
-          <h1 className="text-5xl font-bold mb-6">SBM Inc.</h1>
-          <p className="text-xl mb-8">Empowering BIPOC Girls in Volusia County</p>
-          <Link
-            href="/events"
-            className="inline-block bg-rose-500 text-white px-8 py-4 rounded-md text-lg hover:bg-rose-600 transition-colors"
-          >
-            Join Our Next Event
-          </Link>
+        
+        {/* Content */}
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white mb-6 leading-tight">
+              Empowering BIPOC Girls in Volusia County
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 mb-8 font-light leading-relaxed">
+              Through mentorship, education, and community engagement, we're building the next generation of leaders.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Button href="/about" variant="primary">
+                Learn More
+              </Button>
+              <Button href="/donate" variant="outline" className="text-white border-white/30 hover:border-white/50 hover:bg-white/10">
+                Support Our Mission
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -65,18 +77,18 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-8">Get Involved</h2>
           <div className="flex gap-4 justify-center">
-            <Link
+            <Button
               href="/donations"
-              className="bg-rose-500 text-white px-6 py-3 rounded-md hover:bg-rose-600 transition-colors"
+              variant="primary"
             >
               Make a Donation
-            </Link>
-            <Link
+            </Button>
+            <Button
               href="/events"
-              className="bg-gray-800 text-white px-6 py-3 rounded-md hover:bg-gray-900 transition-colors"
+              variant="secondary"
             >
               Join Our Events
-            </Link>
+            </Button>
           </div>
         </div>
       </section>
