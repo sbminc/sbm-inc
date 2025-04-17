@@ -1,66 +1,109 @@
+"use client"
+
+import { useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "../components/Button"
 
 export default function EventsPage() {
+  const pageRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!pageRef.current) return
+      const sections = pageRef.current.querySelectorAll('.scroll-fade-in')
+      
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect()
+        const isVisible = rect.top < window.innerHeight * 0.75
+        
+        if (isVisible) {
+          section.classList.add('visible')
+        }
+      })
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // Check on initial load
+    
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <div className="container mx-auto py-12 px-4">
-      <h1 className="text-4xl font-bold text-center mb-4 text-sbm-navy">Events</h1>
+    <div ref={pageRef} className="min-h-screen bg-gradient-to-b from-deep-blue to-midnight-blue text-white">
+      {/* Hero Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-gold/10 to-orange/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-br from-gold/10 to-orange/10 rounded-full blur-3xl"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              Our <span className="shimmer-text">Events</span>
+            </h1>
+            <p className="text-xl text-white/80 mb-8">
+              Join us for transformative events that empower BIPOC girls in Volusia County.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Logo Section */}
-      <section className="mb-16 text-center">
-        <div className="relative h-48 max-w-md mx-auto">
-          <Image
-            src="/IMG_3163.jpg"
-            alt="SBM Inc. Logo and Upcoming Events"
-            fill
-            className="object-contain"
-          />
+      <section className="py-16 scroll-fade-in">
+        <div className="container mx-auto px-4">
+          <div className="max-w-md mx-auto">
+            <div className="glass-card-dark p-8 rounded-2xl text-center">
+              <div className="relative h-48 mb-6">
+                <Image
+                  src="/IMG_3163.jpg"
+                  alt="SBM Inc. Logo and Upcoming Events"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-lg text-white/80">
+                Stay connected with our community through our upcoming events and conferences.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Upcoming Events Section */}
-      <section className="mb-16">
-        <h2 className="text-3xl font-bold mb-8 text-center text-sbm-navy">Upcoming Events</h2>
-        <div className="grid md:grid-cols-2 gap-8">
-          {/* Young Men's Conference */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-sbm-navy">
-            <div className="relative h-48 bg-gradient-to-br from-sbm-navy to-sbm-orange/20">
-              <Image
-                src="/young-man-silhouette.jpg"
-                alt="Young Men's Conference"
-                fill
-                className="object-contain p-4"
-              />
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-bold mb-4 text-sbm-navy">Young Men's Conference</h3>
-              <p className="text-gray-600 mb-4">
-                A special conference dedicated to empowering young men in our community.
-              </p>
-              <div className="bg-gradient-to-r from-sbm-navy/5 to-sbm-gold/5 p-4 rounded-lg border border-sbm-navy/10">
-                <p className="text-sbm-navy/70 italic">More details coming soon...</p>
+      <section className="py-16 scroll-fade-in">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Upcoming Events</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* Young Men's Conference */}
+            <div className="glass-card-dark rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-orange/10 transition-all duration-300">
+              <div className="relative h-48">
+                <div className="absolute inset-0 bg-gradient-to-br from-deep-blue via-midnight-blue to-deep-blue"></div>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-4">Young Men's Conference</h3>
+                <p className="text-white/80 mb-4">
+                  A special conference dedicated to empowering young men in our community.
+                </p>
+                <div className="glass-card p-4 rounded-lg border border-white/10">
+                  <p className="text-white/70 italic">More details coming soon...</p>
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* Young Women's Conference */}
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-sbm-orange">
-            <div className="relative h-48 bg-gradient-to-br from-sbm-orange to-sbm-gold/20">
-              <Image
-                src="/young-woman-silhouette.jpg"
-                alt="Young Women's Conference"
-                fill
-                className="object-contain p-4"
-              />
-            </div>
-            <div className="p-8">
-              <h3 className="text-2xl font-bold mb-4 text-sbm-orange">Young Women's Conference</h3>
-              <p className="text-gray-600 mb-4">
-                A dedicated conference focusing on empowering young women in our community.
-              </p>
-              <div className="bg-gradient-to-r from-sbm-orange/5 to-sbm-gold/5 p-4 rounded-lg border border-sbm-orange/10">
-                <p className="text-sbm-orange/70 italic">More details coming soon...</p>
+            {/* Young Women's Conference */}
+            <div className="glass-card-dark rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-orange/10 transition-all duration-300">
+              <div className="relative h-48">
+                <div className="absolute inset-0 bg-gradient-to-br from-gold via-orange to-gold"></div>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-4">Young Women's Conference</h3>
+                <p className="text-white/80 mb-4">
+                  A dedicated conference focusing on empowering young women in our community.
+                </p>
+                <div className="glass-card p-4 rounded-lg border border-white/10">
+                  <p className="text-white/70 italic">More details coming soon...</p>
+                </div>
               </div>
             </div>
           </div>
@@ -68,51 +111,61 @@ export default function EventsPage() {
       </section>
 
       {/* Main Conference Section */}
-      <section className="mb-16">
-        <div className="bg-white rounded-lg shadow-lg overflow-hidden border-2 border-sbm-gold">
-          <div className="relative h-96 bg-gradient-to-br from-sbm-navy via-sbm-orange to-sbm-gold">
-            <Image
-              src="/placeholder.jpg"
-              alt="Msichana Conference 2024 Banner"
-              fill
-              className="object-cover mix-blend-overlay opacity-50"
-            />
-          </div>
-          <div className="p-8">
-            <h2 className="text-3xl font-bold mb-4 text-sbm-navy">The Big Day: Msichana Conference 2024</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-sbm-orange">Event Details</h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-center">
-                    <span className="font-semibold mr-2 text-sbm-navy">Date:</span>
-                    Saturday, November 16, 2024
-                  </li>
-                  <li className="flex items-center">
-                    <span className="font-semibold mr-2 text-sbm-navy">Time:</span>
-                    10 AM - 3 PM
-                  </li>
-                  <li className="flex items-center">
-                    <span className="font-semibold mr-2 text-sbm-navy">Location:</span>
-                    Yvonne Scarlet Golden Center
-                  </li>
-                  <li className="flex items-center">
-                    <span className="font-semibold mr-2 text-sbm-navy">Address:</span>
-                    1000 Vine St, Daytona Beach, FL 32117
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4 text-sbm-orange">Registration</h3>
-                <p className="text-gray-600 mb-4">
-                  Join us for this transformative event dedicated to empowering BIPOC girls in our community.
-                </p>
-                <Button
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSfkeEsqEWdF8CiZvzmBH8va9mQjYyTLPPSRhTUDVNIi1sg-MA/viewform"
-                  external
-                >
-                  Register Now
-                </Button>
+      <section className="py-16 scroll-fade-in">
+        <div className="container mx-auto px-4">
+          <div className="glass-card-dark rounded-2xl overflow-hidden max-w-6xl mx-auto">
+            <div className="relative h-96">
+              <div className="absolute inset-0 bg-gradient-to-br from-gold via-orange to-deep-blue"></div>
+            </div>
+            <div className="p-8">
+              <h2 className="text-3xl font-bold mb-6">The Big Day: Msichana Conference 2024</h2>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-gold">Event Details</h3>
+                  <ul className="space-y-3 text-white/80">
+                    <li className="flex items-center">
+                      <span className="font-semibold mr-2 text-gold">Date:</span>
+                      Saturday, November 16, 2024
+                    </li>
+                    <li className="flex items-center">
+                      <span className="font-semibold mr-2 text-gold">Time:</span>
+                      10 AM - 3 PM
+                    </li>
+                    <li className="flex items-center">
+                      <span className="font-semibold mr-2 text-gold">Location:</span>
+                      Yvonne Scarlet Golden Center
+                    </li>
+                    <li className="flex items-center">
+                      <span className="font-semibold mr-2 text-gold">Address:</span>
+                      1000 Vine St, Daytona Beach, FL 32117
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-4 text-gold">Registration</h3>
+                  <p className="text-white/80 mb-6">
+                    Join us for this transformative event dedicated to empowering BIPOC girls in our community.
+                  </p>
+                  <Link
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSfkeEsqEWdF8CiZvzmBH8va9mQjYyTLPPSRhTUDVNIi1sg-MA/viewform"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-gradient-to-r from-gold to-orange text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-orange/20 shine-effect inline-block group"
+                  >
+                    <span className="relative z-10 flex items-center justify-center">
+                      Register Now
+                      <svg
+                        className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>
@@ -120,43 +173,50 @@ export default function EventsPage() {
       </section>
 
       {/* Event Information */}
-      <section className="mb-16">
-        <div className="max-w-4xl mx-auto bg-gradient-to-br from-sbm-navy/5 to-sbm-gold/5 p-8 rounded-lg border border-sbm-navy/10">
-          <h2 className="text-2xl font-semibold mb-4 text-sbm-navy">About Our Conference</h2>
-          <p className="text-gray-600 mb-6">
-            This event started in 2022 as the brain child of Dr. Sadie McConner, who was inspired by the documentary "PUSH OUT: Criminalization of Black Girls" written by Monique Morris.
-          </p>
-          <div className="mb-6">
-            <h3 className="text-xl font-semibold mb-2 text-sbm-orange">Conference Materials</h3>
-            <Button
-              href="https://docs.google.com/presentation/d/1lqnVmG84c09VgYn9FtwPheEoVrLSJa_4HQ2jwlF8lMc/edit?slide=id.p1"
-              variant="outline"
-              external
-            >
-              View Conference Presentation
-            </Button>
+      <section className="py-16 scroll-fade-in">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto glass-card-dark p-8 rounded-2xl">
+            <h2 className="text-2xl font-semibold mb-4">About Our Conference</h2>
+            <p className="text-white/80 mb-6">
+              This event started in 2022 as the brain child of Dr. Sadie McConner, who was inspired by the documentary "PUSH OUT: Criminalization of Black Girls" written by Monique Morris.
+            </p>
+            <div className="mb-6">
+              <h3 className="text-xl font-semibold mb-4 text-gold">Conference Materials</h3>
+              <div className="space-y-4">
+                <p className="text-white/80">
+                  All conference materials will be provided at the event. Participants should bring:
+                </p>
+                <ul className="list-disc list-inside text-white/80 space-y-2">
+                  <li>Notebook and pen</li>
+                  <li>Positive attitude</li>
+                  <li>Questions for our speakers</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Past Events Section */}
-      <section>
-        <h2 className="text-3xl font-bold mb-8 text-sbm-navy">Past Events</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-white rounded-lg shadow-md overflow-hidden border border-sbm-navy/10">
-            <div className="relative h-64">
-              <Image
-                src="/highlight 1.jpg"
-                alt="Past Msichana Conference 2023"
-                fill
-                className="object-cover"
-              />
-            </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2 text-sbm-navy">Msichana Conference 2023</h3>
-              <p className="text-gray-600">
-                A successful gathering that brought together our community to inspire and empower BIPOC girls.
-              </p>
+      <section className="py-16 scroll-fade-in">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold mb-12 text-center">Past Events</h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="glass-card-dark rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-orange/10 transition-all duration-300">
+              <div className="relative h-64">
+                <Image
+                  src="/highlight 1.jpg"
+                  alt="Past Msichana Conference 2023"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold mb-2">Msichana Conference 2023</h3>
+                <p className="text-white/80">
+                  A successful gathering that brought together our community to inspire and empower BIPOC girls.
+                </p>
+              </div>
             </div>
           </div>
         </div>

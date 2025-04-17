@@ -9,13 +9,6 @@ module.exports = {
     "*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
       colors: {
         border: "hsl(var(--border))",
@@ -58,8 +51,6 @@ module.exports = {
         "light-orange": "#f39c12",
         "off-white": "#f8f9fa",
         "light-gray": "#e2e8f0",
-        "sbm-navy": "#1a2a47",
-        "sbm-gold": "#e9b949",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -81,4 +72,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} 
+}
