@@ -23,7 +23,7 @@ const programs = [
     title: "College Preparation",
     description: "Preparing for higher education is a key focus of our program. We provide guidance on college applications, scholarship opportunities, test preparation, and campus life. Our goal is to ensure every participant has the tools and confidence to pursue their educational dreams.",
     image: "/images/programs/college-prep.jpg",
-    link: "/programs/college-prep",
+    link: "/programs/college-preparation",
     icon: "🎓"
   },
   {
