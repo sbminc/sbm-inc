@@ -2,21 +2,20 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { Logo } from "./Logo"
 
 export default function Navigation() {
   const pathname = usePathname()
 
   const isActive = (path: string) => {
-    return pathname === path ? "text-rose-500" : "text-gray-600 hover:text-gray-900"
+    return pathname === path ? "text-sbm-gold" : "text-sbm-navy hover:text-sbm-orange"
   }
 
   return (
     <nav className="bg-white shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-xl font-bold">
-            SBM Inc.
-          </Link>
+          <Logo />
 
           <div className="hidden md:flex space-x-8">
             <Link href="/" className={isActive("/")}>
@@ -41,7 +40,7 @@ export default function Navigation() {
 
           <div className="md:hidden">
             {/* Mobile menu button - we can add this later if needed */}
-            <button className="text-gray-600 hover:text-gray-900">
+            <button className="text-sbm-navy hover:text-sbm-orange">
               <span className="sr-only">Open menu</span>
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
