@@ -35,24 +35,24 @@ export default function ProgramsSection() {
 
   const programs = [
     {
-      title: "Mentorship Program",
-      description: "One-on-one guidance from successful professionals who provide support and advice.",
-      icon: "👥",
+      title: "Mental Wellness",
+      description: "Supporting emotional well-being through counseling, group sessions, and mindfulness practices.",
+      icon: "🧠",
     },
     {
-      title: "Leadership Workshop",
-      description: "Interactive sessions focused on developing essential leadership and communication skills.",
-      icon: "🚀",
+      title: "Financial Literacy",
+      description: "Building strong financial foundations through education and practical money management skills.",
+      icon: "💰",
     },
     {
-      title: "Academic Support",
-      description: "Tutoring and educational resources to help girls excel in their studies.",
-      icon: "📚",
+      title: "College Preparation",
+      description: "Comprehensive guidance for college admissions, scholarships, and academic success.",
+      icon: "🎓",
     },
     {
-      title: "Community Service",
-      description: "Opportunities to give back to the community and develop a sense of social responsibility.",
-      icon: "🤝",
+      title: "Healthy Living",
+      description: "Promoting physical and mental wellness through nutrition, exercise, and self-care practices.",
+      icon: "🌱",
     },
   ]
 
