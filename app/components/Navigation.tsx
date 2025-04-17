@@ -39,7 +39,7 @@ export default function Navigation() {
           </div>
 
           <div className="md:hidden">
-            {/* Mobile menu button - we can add this later if needed */}
+            {/* Mobile menu button */}
             <button className="text-sbm-navy hover:text-sbm-orange">
               <span className="sr-only">Open menu</span>
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
