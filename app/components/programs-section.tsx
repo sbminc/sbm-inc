@@ -35,23 +35,23 @@ export default function ProgramsSection() {
 
   const programs = [
     {
-      title: "Msichana Conference",
-      description: "Annual conference bringing together BIPOC girls for empowerment, learning, and community building.",
+      title: "Mentorship Program",
+      description: "One-on-one guidance from successful professionals who provide support and advice for personal and academic growth.",
       icon: "👥",
     },
     {
-      title: "Leadership Development",
-      description: "Workshops and training sessions focused on building essential leadership and communication skills.",
+      title: "Leadership Workshop",
+      description: "Interactive sessions focused on developing essential leadership skills, public speaking, and self-confidence.",
       icon: "🚀",
     },
     {
-      title: "College Preparation",
-      description: "Guidance and resources to help girls prepare for higher education and career success.",
+      title: "Academic Support",
+      description: "Tutoring, study groups, and educational resources to help girls excel in their studies and prepare for college.",
       icon: "📚",
     },
     {
       title: "Community Service",
-      description: "Opportunities to give back to the community and develop social responsibility.",
+      description: "Engaging in meaningful projects that make a positive impact in Volusia County while developing social responsibility.",
       icon: "🤝",
     },
   ]
@@ -64,7 +64,7 @@ export default function ProgramsSection() {
             Our <span className="shimmer-text">Programs</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            We offer various programs designed to support the growth and development of BIPOC girls in Volusia County.
+            We offer comprehensive programs designed to empower and support BIPOC girls in their journey to success.
           </p>
         </div>
 
@@ -102,10 +102,10 @@ export default function ProgramsSection() {
 
         <div className="text-center mt-16">
           <Link
-            href="/events"
+            href="/programs"
             className="bg-gradient-to-r from-gold to-orange text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-orange/20 shine-effect inline-block"
           >
-            View All Events
+            View All Programs
           </Link>
         </div>
       </div>

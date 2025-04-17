@@ -50,12 +50,12 @@ export default function VisionSection() {
             <div className="relative">
               <div className="absolute -top-10 -left-10 w-20 h-20 bg-gradient-to-br from-gold/20 to-orange/20 rounded-full blur-xl"></div>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 relative">
-                OUR <span className="shimmer-text">VISION</span>
+                THE <span className="shimmer-text">VISION</span>
               </h2>
             </div>
 
             <p className="text-xl mb-8 text-gray-700 leading-relaxed">
-              To educate, empower, and inspire BIPOC girls from the ages of 11-18 years old in Volusia County through mentorship, education, and community engagement.
+              To educate, empower, and inspire BIPOC girls from the ages of 11-18 years old in Volusia County.
             </p>
 
             <div className="space-y-6">
@@ -67,7 +67,7 @@ export default function VisionSection() {
                   <div>
                     <h3 className="font-semibold text-xl mb-2">Education</h3>
                     <p className="text-white/80">
-                      Providing academic support, college preparation, and career guidance to help girls achieve their educational goals.
+                      Providing resources and opportunities for academic excellence and personal growth.
                     </p>
                   </div>
                 </div>
@@ -81,7 +81,7 @@ export default function VisionSection() {
                   <div>
                     <h3 className="font-semibold text-xl mb-2">Empowerment</h3>
                     <p className="text-white/80">
-                      Building confidence, leadership skills, and self-esteem through mentorship and positive role models.
+                      Building confidence and leadership skills through mentorship and guidance.
                     </p>
                   </div>
                 </div>
@@ -93,9 +93,9 @@ export default function VisionSection() {
                     <span className="font-bold">03</span>
                   </div>
                   <div>
-                    <h3 className="font-semibold text-xl mb-2">Community</h3>
+                    <h3 className="font-semibold text-xl mb-2">Inspiration</h3>
                     <p className="text-white/80">
-                      Creating a supportive network that fosters growth, achievement, and lasting connections within our community.
+                      Creating a supportive community that fosters growth, achievement, and self-belief.
                     </p>
                   </div>
                 </div>
