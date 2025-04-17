@@ -1,14 +1,31 @@
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import Navigation from "./components/Navigation"
-import Footer from "./components/Footer"
-
-const inter = Inter({ subsets: ["latin"] })
+import type { Metadata } from 'next'
+import './globals.css'
+import Navbar from '@/components/navbar'
 
 export const metadata: Metadata = {
-  title: "SBM Inc.",
-  description: "Empowering BIPOC Girls in Volusia County",
+  title: 'SBM Inc. - Empowering BIPOC Girls in Volusia County',
+  description: 'SBM Inc. is dedicated to empowering BIPOC girls in Volusia County through education, mentorship, and community programs.',
+  icons: {
+    icon: [
+      {
+        url: '/favicon.ico',
+        sizes: '32x32',
+        type: 'image/x-icon',
+      },
+      {
+        url: '/icon.png',
+        sizes: '192x192',
+        type: 'image/png',
+      },
+    ],
+    apple: [
+      {
+        url: '/apple-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({
@@ -18,14 +35,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
-        <Navigation />
+      <body>
+        <Navbar />
         {children}
-        <Footer />
       </body>
     </html>
   )
 }
-
-
-import './globals.css'
