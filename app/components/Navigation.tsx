@@ -3,24 +3,14 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { Logo } from "./Logo"
-import { useState, useEffect } from "react"
+import { useState } from "react"
 
 export default function Navigation() {
   const pathname = usePathname()
-  const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10)
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
   const isActive = (path: string) => {
-    return pathname === path ? "text-sbm-gold" : `${isScrolled ? 'text-sbm-navy' : 'text-white'} hover:text-sbm-orange`
+    return pathname === path ? "text-sbm-gold" : "text-white hover:text-sbm-orange"
   }
 
   const navLinks = [
@@ -32,12 +22,14 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-sm' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Logo />
+    <nav className="fixed w-full z-50 bg-sbm-navy">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-14">
+          <div className="flex-shrink-0">
+            <Logo />
+          </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <Link key={link.href} href={link.href} className={`${isActive(link.href)} text-sm font-medium`}>
                 {link.label}
@@ -45,7 +37,7 @@ export default function Navigation() {
             ))}
             <Link 
               href="/donations" 
-              className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-sbm-orange hover:bg-sbm-gold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sbm-gold transition-colors duration-200"
+              className="inline-flex items-center px-4 py-2 text-sm font-medium rounded-full text-white bg-sbm-orange hover:bg-sbm-gold transition-colors duration-200"
             >
               Donate
             </Link>
@@ -54,7 +46,7 @@ export default function Navigation() {
           <div className="md:hidden">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`${isScrolled ? 'text-sbm-navy' : 'text-white'} hover:text-sbm-orange`}
+              className="text-white hover:text-sbm-orange"
             >
               <span className="sr-only">Open menu</span>
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
