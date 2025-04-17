@@ -101,38 +101,38 @@ export default function Footer() {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="/programs/mentorship"
+                  href="/programs/mental-wellness"
                   className="text-white/80 hover:text-gold transition-colors flex items-center"
                 >
                   <span className="w-1.5 h-1.5 bg-gold rounded-full mr-2"></span>
-                  Mentorship Program
+                  Mental Wellness
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/programs/leadership"
+                  href="/programs/financial-literacy"
                   className="text-white/80 hover:text-gold transition-colors flex items-center"
                 >
                   <span className="w-1.5 h-1.5 bg-gold rounded-full mr-2"></span>
-                  Leadership Workshop
+                  Financial Literacy
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/programs/academic"
+                  href="/programs/college-preparation"
                   className="text-white/80 hover:text-gold transition-colors flex items-center"
                 >
                   <span className="w-1.5 h-1.5 bg-gold rounded-full mr-2"></span>
-                  Academic Support
+                  College Preparation
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/programs/community"
+                  href="/programs/healthy-living"
                   className="text-white/80 hover:text-gold transition-colors flex items-center"
                 >
                   <span className="w-1.5 h-1.5 bg-gold rounded-full mr-2"></span>
-                  Community Service
+                  Healthy Living
                 </Link>
               </li>
             </ul>
