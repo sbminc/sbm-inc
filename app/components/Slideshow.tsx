@@ -20,8 +20,14 @@ interface SlideshowProps {
 export default function Slideshow({ slides, autoPlayInterval = 5000 }: SlideshowProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
+  const [imageError, setImageError] = useState(false)
 
   useEffect(() => {
+    // Log current slide info for debugging
+    console.log('Current slide:', currentSlide)
+    console.log('Current slide image:', slides[currentSlide].image)
+    console.log('Image error state:', imageError)
+
     if (!isAutoPlaying) return
 
     const interval = setInterval(() => {
@@ -29,7 +35,7 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
     }, autoPlayInterval)
 
     return () => clearInterval(interval)
-  }, [isAutoPlaying, slides.length, autoPlayInterval])
+  }, [isAutoPlaying, slides.length, autoPlayInterval, currentSlide, imageError])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -47,16 +53,22 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
+  const handleImageError = () => {
+    console.error('Image failed to load:', slides[currentSlide].image)
+    setImageError(true)
+  }
+
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       {/* Slide Content */}
-      <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+      <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-black">
         {slides[currentSlide].video ? (
           <div className="relative w-full h-full">
             <img
               src={slides[currentSlide].video.thumbnail}
               alt={slides[currentSlide].title}
               className="absolute inset-0 w-full h-full object-contain"
+              onError={handleImageError}
             />
             <button
               onClick={() => openVideo(slides[currentSlide].video!.url)}
@@ -75,6 +87,7 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
               src={slides[currentSlide].image}
               alt={slides[currentSlide].title}
               className="absolute inset-0 w-full h-full object-contain"
+              onError={handleImageError}
             />
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-8">
               <div className="text-center">
