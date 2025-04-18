@@ -3,6 +3,101 @@
 import { useRef, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import Slideshow from "../components/Slideshow"
+
+// Presentation slides with actual content from MSICHANA Conference presentation
+const presentationSlides = [
+  {
+    title: "MSICHANA Conference",
+    content: "October 22, 2022 - Yvonne Scarlett Golden Center",
+    image: "/presentation/full slide 2nd try/present-index_Page_01.jpg"
+  },
+  {
+    title: "The Vision",
+    content: "To educate, empower and inspire BIPOC girls from the ages of 11-18 years old in Volusia.",
+    image: "/presentation/full slide 2nd try/present-index_Page_02.jpg"
+  },
+  {
+    title: "The Influence behind The Vision",
+    content: "Inspired by the documentary 'PUSH OUT: Criminalization of Black Girls'",
+    image: "/presentation/full slide 2nd try/present-index_Page_03.jpg"
+  },
+  {
+    title: "Black is",
+    content: "A member of a dark-skinned people, especially one of African or Australian Aboriginal ancestry.",
+    image: "/presentation/full slide 2nd try/present-index_Page_04.jpg"
+  },
+  {
+    title: "Sarah Breedlove",
+    content: "She was a multi-millionaire oil baron at just 12 years old. And as a black woman especially, the story of Sarah Rector is almost completely unbelievable.",
+    image: "/presentation/full slide 2nd try/present-index_Page_05.jpg"
+  },
+  {
+    title: "Civil Rights Leaders",
+    content: "'If I fall, I'll fall five feet four inches forward in the fight for freedom. I'm not backing off.' - Fannie Lou Hamer | Ruby Bridges was the first African American child to attend an all-white public elementary school in the American South in 1960.",
+    image: "/presentation/full slide 2nd try/present-index_Page_06.jpg"
+  },
+  {
+    title: "Indigenous is",
+    content: "People who belong to the country in which they are found, rather than coming there or being brought there from another country.",
+    image: "/presentation/full slide 2nd try/present-index_Page_07.jpg"
+  },
+  {
+    title: "Indigenous Leaders",
+    content: "Susan La Flesche: First female Native American to earn a medical degree (1889). Wilma Mankiller: First female principal chief of the Cherokee Nation (1985).",
+    image: "/presentation/full slide 2nd try/present-index_Page_08.jpg"
+  },
+  {
+    title: "BIPOC Leaders in STEM and Politics",
+    content: "Mary Golda Ross: Aerospace Engineer, Educator, and Advocate | Autumn Peltier: Chief Water Commissioner for the Aniiishnabek Nation at age 15.",
+    image: "/presentation/full slide 2nd try/present-index_Page_09.jpg"
+  },
+  {
+    title: "POC (People of Color)",
+    content: "Is any person not considered 'white'.",
+    image: "/presentation/full slide 2nd try/present-index_Page_10.jpg"
+  },
+  {
+    title: "Global BIPOC Leaders",
+    content: "Malala Yousafzai: Nobel Peace Prize laureate | Kamala Harris: First female, first African American, and first Asian American vice president.",
+    image: "/presentation/full slide 2nd try/present-index_Page_11.jpg"
+  },
+  {
+    title: "Pioneering Leaders",
+    content: "Indra Nooyi: First Asian Pacific American female CEO of PepsiCo | Clara Campoamor: Spanish women's rights advocate and suffrage champion.",
+    image: "/presentation/full slide 2nd try/present-index_Page_12.jpg"
+  },
+  {
+    title: "Female youth BIPOC leaders",
+    content: "Are capable and eager to serve.",
+    image: "/presentation/full slide 2nd try/present-index_Page_13.jpg"
+  },
+  {
+    title: "Young Activists",
+    content: "Deja Foxx: Healthcare advocate | Mari Copeny: Fighting the Flint Water Crisis",
+    image: "/presentation/full slide 2nd try/present-index_Page_14.jpg"
+  },
+  {
+    title: "Youth Making Change",
+    content: "Emma Gonzalez: Gun violence prevention | Marley Dias: #1000BlackGirlBooks founder",
+    image: "/presentation/full slide 2nd try/present-index_Page_15.jpg"
+  },
+  {
+    title: "Young Changemakers",
+    content: "Khloe Thompson: Founder of Khloe Kares | Aija Mayrock: Author of 'The Survival Guide to Bullying'",
+    image: "/presentation/full slide 2nd try/present-index_Page_16.jpg"
+  },
+  {
+    title: "Will you be the next BIPOC Leader?",
+    content: "",
+    image: "/presentation/full slide 2nd try/present-index_Page_17.jpg"
+  },
+  {
+    title: "Affirmation",
+    content: "I am a black, mahogany, pecan tan, cocoa bean, chestnut brown, chocolate chip, caramel, milk chocolate girl with so many ordained gifts. I am innovative, intelligent, beautiful, and kind. I am mentally well, financially literate, college and career bound, nutritionally wise, a conflict resolver and a social advocate. Now watch me, watch me work, watch me grow, watch me flourish - by Dr. Sadie B. McConner",
+    image: "/presentation/full slide 2nd try/present-index_Page_18.jpg"
+  }
+]
 
 export default function AboutPage() {
   const pageRef = useRef<HTMLDivElement>(null)
@@ -79,41 +174,15 @@ export default function AboutPage() {
       {/* MSICHANA Conference Presentation */}
       <section className="py-16 scroll-fade-in">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="glass-card-dark p-8 rounded-2xl">
-              <h2 className="text-3xl font-bold mb-6 text-center">MSICHANA Young Women's Conference</h2>
-              <p className="text-lg text-white/80 mb-8 text-center">
-                Explore our presentation from the MSICHANA Young Women's Conference, showcasing BIPOC women's history and achievements. Learn about the remarkable stories that inspire our mission.
-              </p>
-              <div className="relative aspect-video mb-8">
-                <Image
-                  src="/presentation/present-index_Page_01_Image_0001.jpg"
-                  alt="MSICHANA Conference Presentation Cover"
-                  fill
-                  className="object-contain rounded-lg"
-                />
-              </div>
-              <div className="text-center">
-                <Link 
-                  href="https://docs.google.com/presentation/d/1lqnVmG84c09VgYn9FtwPheEoVrLSJa_4HQ2jwlF8lMc/edit?slide=id.p1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-gold to-orange text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-orange/20 shine-effect inline-block group"
-                >
-                  <span className="relative z-10 flex items-center justify-center">
-                    View Full Presentation
-                    <svg
-                      className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </Link>
-              </div>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-center shimmer-text">
+              MSICHANA Young Women's Conference
+            </h2>
+            <p className="text-lg text-white/80 text-center mb-8">
+              Our presentation from the Young Women's Conference, showcasing our mission and vision for empowering BIPOC girls.
+            </p>
+            <div className="glass-card-dark rounded-2xl overflow-hidden">
+              <Slideshow slides={presentationSlides} />
             </div>
           </div>
         </div>
