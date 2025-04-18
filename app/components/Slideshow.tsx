@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 interface Slide {
   title: string
@@ -50,40 +51,42 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       {/* Slide Content */}
-      <div className="relative aspect-[16/9] overflow-hidden rounded-2xl glass-card">
-        <div className="absolute inset-0 flex items-center justify-center p-8">
-          {slides[currentSlide].video ? (
-            <div className="relative w-full h-full">
-              {slides[currentSlide].video.thumbnail ? (
-                <img
-                  src={slides[currentSlide].video.thumbnail}
-                  alt={slides[currentSlide].title}
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-              ) : (
-                <div className="absolute inset-0 bg-black/50" />
-              )}
-              <button
-                onClick={() => openVideo(slides[currentSlide].video!.url)}
-                className="absolute inset-0 w-full h-full flex items-center justify-center group"
-              >
-                <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm transition-transform group-hover:scale-110">
-                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M8 5v14l11-7z" />
-                  </svg>
-                </div>
-              </button>
+      <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
+        {slides[currentSlide].video ? (
+          <div className="relative w-full h-full">
+            <div className="absolute inset-0">
+              <Image
+                src={slides[currentSlide].video.thumbnail || ''}
+                alt={slides[currentSlide].title}
+                fill
+                className="object-contain"
+                priority
+              />
             </div>
-          ) : (
-            <>
-              {slides[currentSlide].image && (
-                <img
-                  src={slides[currentSlide].image}
-                  alt={slides[currentSlide].title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-20"
-                />
-              )}
-              <div className="relative z-10 text-center">
+            <button
+              onClick={() => openVideo(slides[currentSlide].video!.url)}
+              className="absolute inset-0 w-full h-full flex items-center justify-center group"
+            >
+              <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm transition-transform group-hover:scale-110">
+                <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </button>
+          </div>
+        ) : (
+          <div className="relative w-full h-full">
+            <div className="absolute inset-0">
+              <Image
+                src={slides[currentSlide].image || ''}
+                alt={slides[currentSlide].title}
+                fill
+                className="object-contain"
+                priority
+              />
+            </div>
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-8">
+              <div className="text-center">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 shimmer-text">
                   {slides[currentSlide].title}
                 </h3>
@@ -91,9 +94,9 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
                   {slides[currentSlide].content}
                 </p>
               </div>
-            </>
-          )}
-        </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Navigation Arrows */}
