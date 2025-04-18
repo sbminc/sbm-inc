@@ -10,35 +10,35 @@ const presentationSlides = [
   {
     title: "MSICHANA Conference",
     content: "October 22, 2022 - Yvonne Scarlett Golden Center",
-    image: "/presentation/full slide 2nd try/present-index_Page_01.jpg"
+    image: "/presentation/present-index_Page_01.jpg"
   },
   {
     title: "The Vision",
     content: "To educate, empower and inspire BIPOC girls from the ages of 11-18 years old in Volusia.",
-    image: "/presentation/full slide 2nd try/present-index_Page_02.jpg"
+    image: "/presentation/present-index_Page_02.jpg"
   },
   {
     title: "The Influence behind The Vision",
     content: "Inspired by the documentary 'PUSH OUT: Criminalization of Black Girls'",
     video: {
       url: "https://youtu.be/nWPayvrHkEM",
-      thumbnail: "/presentation/full slide 2nd try/present-index_Page_03.jpg"
+      thumbnail: "/presentation/present-index_Page_03.jpg"
     }
   },
   {
     title: "Black is",
     content: "A member of a dark-skinned people, especially one of African or Australian Aboriginal ancestry.",
-    image: "/presentation/full slide 2nd try/present-index_Page_04.jpg"
+    image: "/presentation/present-index_Page_04.jpg"
   },
   {
     title: "Sarah Breedlove",
     content: "She was a multi-millionaire oil baron at just 12 years old. And as a black woman especially, the story of Sarah Rector is almost completely unbelievable.",
-    image: "/presentation/full slide 2nd try/present-index_Page_05.jpg"
+    image: "/presentation/present-index_Page_05.jpg"
   },
   {
     title: "Civil Rights Leaders",
     content: "'If I fall, I'll fall five feet four inches forward in the fight for freedom. I'm not backing off.' - Fannie Lou Hamer | Ruby Bridges was the first African American child to attend an all-white public elementary school in the American South in 1960.",
-    image: "/presentation/full slide 2nd try/present-index_Page_06.jpg"
+    image: "/presentation/present-index_Page_06.jpg"
   },
   {
     title: "Indigenous is",

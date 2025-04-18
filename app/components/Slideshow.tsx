@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 interface Slide {
   title: string
@@ -20,14 +21,9 @@ interface SlideshowProps {
 export default function Slideshow({ slides, autoPlayInterval = 5000 }: SlideshowProps) {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
-  const [imageError, setImageError] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Log current slide info for debugging
-    console.log('Current slide:', currentSlide)
-    console.log('Current slide image:', slides[currentSlide].image)
-    console.log('Image error state:', imageError)
-
     if (!isAutoPlaying) return
 
     const interval = setInterval(() => {
@@ -35,7 +31,7 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
     }, autoPlayInterval)
 
     return () => clearInterval(interval)
-  }, [isAutoPlaying, slides.length, autoPlayInterval, currentSlide, imageError])
+  }, [isAutoPlaying, slides.length, autoPlayInterval])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -53,9 +49,8 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
-  const handleImageError = () => {
-    console.error('Image failed to load:', slides[currentSlide].image)
-    setImageError(true)
+  const handleImageLoad = () => {
+    setIsLoading(false)
   }
 
   return (
@@ -64,12 +59,16 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
       <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-black">
         {slides[currentSlide].video ? (
           <div className="relative w-full h-full">
-            <img
-              src={slides[currentSlide].video.thumbnail}
-              alt={slides[currentSlide].title}
-              className="absolute inset-0 w-full h-full object-contain"
-              onError={handleImageError}
-            />
+            <div className={`absolute inset-0 transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+              <Image
+                src={slides[currentSlide].video!.thumbnail || ''}
+                alt={slides[currentSlide].title}
+                fill
+                className="object-contain"
+                onLoad={handleImageLoad}
+                priority
+              />
+            </div>
             <button
               onClick={() => openVideo(slides[currentSlide].video!.url)}
               className="absolute inset-0 w-full h-full flex items-center justify-center group"
@@ -83,12 +82,16 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
           </div>
         ) : (
           <div className="relative w-full h-full">
-            <img
-              src={slides[currentSlide].image}
-              alt={slides[currentSlide].title}
-              className="absolute inset-0 w-full h-full object-contain"
-              onError={handleImageError}
-            />
+            <div className={`absolute inset-0 transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+              <Image
+                src={slides[currentSlide].image || ''}
+                alt={slides[currentSlide].title}
+                fill
+                className="object-contain"
+                onLoad={handleImageLoad}
+                priority
+              />
+            </div>
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-8">
               <div className="text-center">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 shimmer-text">
@@ -106,7 +109,7 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
       {/* Navigation Arrows */}
       <button
         onClick={previousSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
+        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
         aria-label="Previous slide"
       >
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -115,7 +118,7 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
+        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
         aria-label="Next slide"
       >
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
