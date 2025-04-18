@@ -1,7 +1,6 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import Image from 'next/image'
 
 interface Slide {
   title: string
@@ -54,15 +53,11 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
       <div className="relative aspect-[16/9] overflow-hidden rounded-2xl">
         {slides[currentSlide].video ? (
           <div className="relative w-full h-full">
-            <div className="absolute inset-0">
-              <Image
-                src={slides[currentSlide].video.thumbnail || ''}
-                alt={slides[currentSlide].title}
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+            <img
+              src={slides[currentSlide].video.thumbnail}
+              alt={slides[currentSlide].title}
+              className="absolute inset-0 w-full h-full object-contain"
+            />
             <button
               onClick={() => openVideo(slides[currentSlide].video!.url)}
               className="absolute inset-0 w-full h-full flex items-center justify-center group"
@@ -76,15 +71,11 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
           </div>
         ) : (
           <div className="relative w-full h-full">
-            <div className="absolute inset-0">
-              <Image
-                src={slides[currentSlide].image || ''}
-                alt={slides[currentSlide].title}
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
+            <img
+              src={slides[currentSlide].image}
+              alt={slides[currentSlide].title}
+              className="absolute inset-0 w-full h-full object-contain"
+            />
             <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-8">
               <div className="text-center">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 shimmer-text">
