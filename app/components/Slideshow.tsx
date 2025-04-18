@@ -56,60 +56,62 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
   return (
     <div className="relative w-full max-w-4xl mx-auto">
       {/* Slide Content */}
-      <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-black">
-        {slides[currentSlide].video ? (
-          <div className="relative w-full h-full">
-            <div className={`absolute inset-0 transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
-              <Image
-                src={slides[currentSlide].video!.thumbnail || ''}
-                alt={slides[currentSlide].title}
-                fill
-                className="object-contain"
-                onLoad={handleImageLoad}
-                priority
-              />
-            </div>
-            <button
-              onClick={() => openVideo(slides[currentSlide].video!.url)}
-              className="absolute inset-0 w-full h-full flex items-center justify-center group"
-            >
-              <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm transition-transform group-hover:scale-110">
-                <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M8 5v14l11-7z" />
-                </svg>
+      <div className="flex flex-col gap-6">
+        <div className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-black">
+          {slides[currentSlide].video ? (
+            <div className="relative w-full h-full">
+              <div className={`absolute inset-0 transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+                <Image
+                  src={slides[currentSlide].video!.thumbnail || ''}
+                  alt={slides[currentSlide].title}
+                  fill
+                  className="object-contain"
+                  onLoad={handleImageLoad}
+                  priority
+                />
               </div>
-            </button>
-          </div>
-        ) : (
-          <div className="relative w-full h-full">
-            <div className={`absolute inset-0 transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
-              <Image
-                src={slides[currentSlide].image || ''}
-                alt={slides[currentSlide].title}
-                fill
-                className="object-contain"
-                onLoad={handleImageLoad}
-                priority
-              />
+              <button
+                onClick={() => openVideo(slides[currentSlide].video!.url)}
+                className="absolute inset-0 w-full h-full flex items-center justify-center group"
+              >
+                <div className="w-20 h-20 rounded-full bg-white/20 flex items-center justify-center backdrop-blur-sm transition-transform group-hover:scale-110">
+                  <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </button>
             </div>
-            <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-8">
-              <div className="text-center">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 shimmer-text">
-                  {slides[currentSlide].title}
-                </h3>
-                <p className="text-lg md:text-xl text-white/80">
-                  {slides[currentSlide].content}
-                </p>
+          ) : (
+            <div className="relative w-full h-full">
+              <div className={`absolute inset-0 transition-opacity duration-500 ${isLoading ? 'opacity-0' : 'opacity-100'}`}>
+                <Image
+                  src={slides[currentSlide].image || ''}
+                  alt={slides[currentSlide].title}
+                  fill
+                  className="object-contain"
+                  onLoad={handleImageLoad}
+                  priority
+                />
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
+
+        {/* Text Content */}
+        <div className="text-center p-4">
+          <h3 className="text-2xl md:text-3xl font-bold mb-4 shimmer-text">
+            {slides[currentSlide].title}
+          </h3>
+          <p className="text-lg md:text-xl text-white/80">
+            {slides[currentSlide].content}
+          </p>
+        </div>
       </div>
 
       {/* Navigation Arrows */}
       <button
         onClick={previousSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
+        className="absolute left-4 top-1/3 -translate-y-1/2 p-3 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
         aria-label="Previous slide"
       >
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -118,7 +120,7 @@ export default function Slideshow({ slides, autoPlayInterval = 5000 }: Slideshow
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
+        className="absolute right-4 top-1/3 -translate-y-1/2 p-3 rounded-full bg-black/30 text-white hover:bg-black/50 transition-colors"
         aria-label="Next slide"
       >
         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">

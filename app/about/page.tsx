@@ -43,62 +43,62 @@ const presentationSlides = [
   {
     title: "Indigenous is",
     content: "People who belong to the country in which they are found, rather than coming there or being brought there from another country.",
-    image: "/presentation/full slide 2nd try/present-index_Page_07.jpg"
+    image: "/presentation/present-index_Page_07.jpg"
   },
   {
     title: "Indigenous Leaders",
     content: "Susan La Flesche: First female Native American to earn a medical degree (1889). Wilma Mankiller: First female principal chief of the Cherokee Nation (1985).",
-    image: "/presentation/full slide 2nd try/present-index_Page_08.jpg"
+    image: "/presentation/present-index_Page_08.jpg"
   },
   {
     title: "BIPOC Leaders in STEM and Politics",
     content: "Mary Golda Ross: Aerospace Engineer, Educator, and Advocate | Autumn Peltier: Chief Water Commissioner for the Aniiishnabek Nation at age 15.",
-    image: "/presentation/full slide 2nd try/present-index_Page_09.jpg"
+    image: "/presentation/present-index_Page_09.jpg"
   },
   {
     title: "POC (People of Color)",
     content: "Is any person not considered 'white'.",
-    image: "/presentation/full slide 2nd try/present-index_Page_10.jpg"
+    image: "/presentation/present-index_Page_10.jpg"
   },
   {
     title: "Global BIPOC Leaders",
     content: "Malala Yousafzai: Nobel Peace Prize laureate | Kamala Harris: First female, first African American, and first Asian American vice president.",
-    image: "/presentation/full slide 2nd try/present-index_Page_11.jpg"
+    image: "/presentation/present-index_Page_11.jpg"
   },
   {
     title: "Pioneering Leaders",
     content: "Indra Nooyi: First Asian Pacific American female CEO of PepsiCo | Clara Campoamor: Spanish women's rights advocate and suffrage champion.",
-    image: "/presentation/full slide 2nd try/present-index_Page_12.jpg"
+    image: "/presentation/present-index_Page_12.jpg"
   },
   {
     title: "Female youth BIPOC leaders",
     content: "Are capable and eager to serve.",
-    image: "/presentation/full slide 2nd try/present-index_Page_13.jpg"
+    image: "/presentation/present-index_Page_13.jpg"
   },
   {
     title: "Young Activists",
     content: "Deja Foxx: Healthcare advocate | Mari Copeny: Fighting the Flint Water Crisis",
-    image: "/presentation/full slide 2nd try/present-index_Page_14.jpg"
+    image: "/presentation/present-index_Page_14.jpg"
   },
   {
     title: "Youth Making Change",
     content: "Emma Gonzalez: Gun violence prevention | Marley Dias: #1000BlackGirlBooks founder",
-    image: "/presentation/full slide 2nd try/present-index_Page_15.jpg"
+    image: "/presentation/present-index_Page_15.jpg"
   },
   {
     title: "Young Changemakers",
     content: "Khloe Thompson: Founder of Khloe Kares | Aija Mayrock: Author of 'The Survival Guide to Bullying'",
-    image: "/presentation/full slide 2nd try/present-index_Page_16.jpg"
+    image: "/presentation/present-index_Page_16.jpg"
   },
   {
     title: "Will you be the next BIPOC Leader?",
     content: "",
-    image: "/presentation/full slide 2nd try/present-index_Page_17.jpg"
+    image: "/presentation/present-index_Page_17.jpg"
   },
   {
     title: "Affirmation",
     content: "I am a black, mahogany, pecan tan, cocoa bean, chestnut brown, chocolate chip, caramel, milk chocolate girl with so many ordained gifts. I am innovative, intelligent, beautiful, and kind. I am mentally well, financially literate, college and career bound, nutritionally wise, a conflict resolver and a social advocate. Now watch me, watch me work, watch me grow, watch me flourish - by Dr. Sadie B. McConner",
-    image: "/presentation/full slide 2nd try/present-index_Page_18.jpg"
+    image: "/presentation/present-index_Page_18.jpg"
   }
 ]
 
