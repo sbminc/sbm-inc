@@ -104,70 +104,47 @@ const presentationSlides = [
 ]
 
 export default function AboutPage() {
-  const aboutRef = useRef<HTMLDivElement>(null)
+  const pageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
-      const elements = document.querySelectorAll('.scroll-fade-in')
-      elements.forEach((element) => {
-        const rect = element.getBoundingClientRect()
-        const isVisible = rect.top <= window.innerHeight * 0.8
+      if (!pageRef.current) return
+      const sections = pageRef.current.querySelectorAll('.scroll-fade-in')
+      
+      sections.forEach((section) => {
+        const rect = section.getBoundingClientRect()
+        const isVisible = rect.top < window.innerHeight * 0.75
+        
         if (isVisible) {
-          element.classList.add('opacity-100', 'translate-y-0')
+          section.classList.add('visible')
         }
       })
     }
 
     window.addEventListener('scroll', handleScroll)
-    handleScroll() // Check initial state
-
+    handleScroll() // Check on initial load
+    
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
   return (
-    <div ref={aboutRef} className="min-h-screen bg-gradient-to-b from-purple-900 to-blue-900">
+    <div ref={pageRef} className="min-h-screen bg-gradient-to-b from-deep-blue to-midnight-blue text-white">
       {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/stars.png"
-            alt="Stars background"
-            fill
-            className="object-cover opacity-20"
-          />
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-br from-gold/10 to-orange/10 rounded-full blur-3xl"></div>
+          <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-br from-gold/10 to-orange/10 rounded-full blur-3xl"></div>
         </div>
-        <div className="relative z-10 text-center px-4 md:px-8 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 shimmer-text">
-            About Sisters Building Minds
-          </h1>
-          <p className="text-xl md:text-2xl text-purple-100/90">
-            Empowering BIPOC girls in Volusia County through education and mentorship
-          </p>
-        </div>
-      </section>
-
-      {/* Organization Overview Presentation */}
-      <section className="py-16 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 shimmer-text">
-            Organization Overview
-          </h2>
-          <div className="rounded-2xl overflow-hidden glass-card">
-            <Presentation />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+              About <span className="shimmer-text">SBM Inc.</span>
+            </h1>
+            <p className="text-xl text-white/80 mb-8">
+              Empowering BIPOC girls in Volusia County through education, mentorship, and community engagement.
+            </p>
           </div>
-        </div>
-      </section>
-
-      {/* MSICHANA Conference Presentation */}
-      <section className="py-16 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 shimmer-text">
-            MSICHANA Young Women's Conference
-          </h2>
-          <p className="text-xl text-purple-100/80 text-center mb-8">
-            Our presentation from the Young Women's Conference, showcasing our mission and vision for empowering BIPOC girls.
-          </p>
-          <Slideshow slides={presentationSlides} />
         </div>
       </section>
 
@@ -198,39 +175,32 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Presentation Section */}
+      {/* Organization Overview Presentation */}
       <section className="py-16 scroll-fade-in">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="glass-card-dark p-8 rounded-2xl">
-              <h2 className="text-3xl font-bold mb-6 text-center">BIPOC Women's History Presentation</h2>
-              <p className="text-lg text-white/80 mb-8 text-center">
-                Explore our comprehensive presentation on BIPOC women's history and achievements. Learn about the remarkable stories that inspire our mission.
-              </p>
-              <div className="mb-8">
-                <Slideshow slides={presentationSlides} autoPlayInterval={6000} />
-              </div>
-              <div className="text-center mt-12">
-                <Link 
-                  href="https://docs.google.com/presentation/d/1lqnVmG84c09VgYn9FtwPheEoVrLSJa_4HQ2jwlF8lMc/edit?slide=id.p1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-gradient-to-r from-gold to-orange text-white px-8 py-4 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-orange/20 shine-effect inline-block group"
-                >
-                  <span className="relative z-10 flex items-center justify-center">
-                    View Full Presentation
-                    <svg
-                      className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </Link>
-              </div>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-12 text-center shimmer-text">
+              Organization Overview
+            </h2>
+            <div className="glass-card-dark rounded-2xl overflow-hidden">
+              <Presentation />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* MSICHANA Conference Presentation */}
+      <section className="py-16 scroll-fade-in">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold mb-6 text-center shimmer-text">
+              MSICHANA Young Women's Conference
+            </h2>
+            <p className="text-lg text-white/80 text-center mb-8">
+              Our presentation from the Young Women's Conference, showcasing our mission and vision for empowering BIPOC girls.
+            </p>
+            <div className="glass-card-dark rounded-2xl overflow-hidden">
+              <Slideshow slides={presentationSlides} />
             </div>
           </div>
         </div>
