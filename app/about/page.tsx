@@ -106,6 +106,9 @@ export default function AboutPage() {
   const pageRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    // Log the first image path to check if it's correct
+    console.log('First slide image path:', presentationSlides[0].image)
+
     const handleScroll = () => {
       if (!pageRef.current) return
       const sections = pageRef.current.querySelectorAll('.scroll-fade-in')
