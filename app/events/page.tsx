@@ -43,7 +43,7 @@ export default function EventsPage() {
               Our <span className="shimmer-text">Events</span>
             </h1>
             <p className="text-xl text-white/80 mb-8">
-              Join us for transformative events that empower BIPOC girls in Volusia County.
+              Join us for transformative events that empower BIPOC youth in Volusia County.
             </p>
           </div>
         </div>
@@ -75,13 +75,13 @@ export default function EventsPage() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Upcoming Events</h2>
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-            {/* Young Men's Conference */}
+            {/* MVULANA Young Men's Conference */}
             <div className="glass-card-dark rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-orange/10 transition-all duration-300">
               <div className="relative h-48">
                 <div className="absolute inset-0 bg-gradient-to-br from-deep-blue via-midnight-blue to-deep-blue"></div>
               </div>
               <div className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Young Men's Conference</h3>
+                <h3 className="text-2xl font-bold mb-4">MVULANA Young Men's Conference</h3>
                 <p className="text-white/80 mb-4">
                   A special conference dedicated to empowering young men in our community.
                 </p>
@@ -91,15 +91,15 @@ export default function EventsPage() {
               </div>
             </div>
 
-            {/* Young Women's Conference */}
+            {/* MSICHANA Young Women's Conference */}
             <div className="glass-card-dark rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-orange/10 transition-all duration-300">
               <div className="relative h-48">
                 <div className="absolute inset-0 bg-gradient-to-br from-gold via-orange to-gold"></div>
               </div>
               <div className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Young Women's Conference</h3>
+                <h3 className="text-2xl font-bold mb-4">MSICHANA Young Women's Conference</h3>
                 <p className="text-white/80 mb-4">
-                  A dedicated conference focusing on empowering young women in our community.
+                  Join us for our annual conference empowering young women in our community.
                 </p>
                 <div className="glass-card p-4 rounded-lg border border-white/10">
                   <p className="text-white/70 italic">More details coming soon...</p>
@@ -201,21 +201,44 @@ export default function EventsPage() {
       <section className="py-16 scroll-fade-in">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold mb-12 text-center">Past Events</h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {/* MSICHANA Young Women's Conference 2022 */}
             <div className="glass-card-dark rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-orange/10 transition-all duration-300">
-              <div className="relative h-64">
+              <div className="relative h-48">
                 <Image
-                  src="/highlight 1.jpg"
-                  alt="Past Msichana Conference 2023"
+                  src="/images/events/msichana-2022.jpg"
+                  alt="MSICHANA Young Women's Conference 2022"
                   fill
                   className="object-cover"
                 />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Msichana Conference 2023</h3>
-                <p className="text-white/80">
-                  A successful gathering that brought together our community to inspire and empower BIPOC girls.
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-4">MSICHANA Young Women's Conference 2022</h3>
+                <p className="text-white/80 mb-4">
+                  Our inaugural conference at the Yvonne Scarlett Golden Center, October 22, 2022.
                 </p>
+                <Link 
+                  href="/about#msichana-presentation" 
+                  className="inline-block bg-gradient-to-r from-gold to-orange text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-orange/20"
+                >
+                  View Presentation
+                </Link>
+              </div>
+            </div>
+
+            {/* Placeholder for future past events */}
+            <div className="glass-card-dark rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-orange/10 transition-all duration-300">
+              <div className="relative h-48">
+                <div className="absolute inset-0 bg-gradient-to-br from-deep-blue via-midnight-blue to-deep-blue"></div>
+              </div>
+              <div className="p-8">
+                <h3 className="text-2xl font-bold mb-4">More Events Coming Soon</h3>
+                <p className="text-white/80 mb-4">
+                  Stay tuned for more exciting events and conferences.
+                </p>
+                <div className="glass-card p-4 rounded-lg border border-white/10">
+                  <p className="text-white/70 italic">Check back regularly for updates...</p>
+                </div>
               </div>
             </div>
           </div>

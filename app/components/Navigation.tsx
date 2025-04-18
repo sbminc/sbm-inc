@@ -19,6 +19,7 @@ export default function Navigation() {
     { href: "/programs", label: "Programs" },
     { href: "/events", label: "Events" },
     { href: "/our-leaders", label: "Our Leaders" },
+    { href: "/contact", label: "Contact" },
   ]
 
   return (
