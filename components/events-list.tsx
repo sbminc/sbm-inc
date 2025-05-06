@@ -75,7 +75,7 @@ export default function EventsList() {
       description:
         "A series of interactive workshops focused on developing leadership skills, confidence, and communication abilities.",
       category: "workshop",
-      image: "/Mvulana-Logo-1.png",
+      image: "/Logos/mvulana-logo-1.png",
     },
     {
       id: 2,
