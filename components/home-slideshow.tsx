@@ -4,20 +4,20 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const images = [
-  '/Images/Nov 16th Msichana/group-1.jpg',
-  '/Images/Nov 16th Msichana/group-2.jpg',
-  '/Images/Nov 16th Msichana/group-3.jpg',
-  '/Images/Nov 16th Msichana/group-4.jpg',
-  '/Images/Nov 16th Msichana/group-k-1.jpg',
-  '/Images/Nov 16th Msichana/group-k-2.jpg',
-  '/Images/Nov 16th Msichana/group-k-3.jpg',
-  '/Images/Nov 16th Msichana/group-k-4.jpg',
-  '/Images/Nov 16th Msichana/group-l-1.jpg',
-  '/Images/Nov 16th Msichana/group-l-2.jpg',
-  '/Images/Nov 16th Msichana/group-l-3.jpg',
-  '/Images/Nov 16th Msichana/group-l-4.jpg',
-  '/Images/Nov 16th Msichana/group-l-5.jpg',
-  '/Images/Nov 16th Msichana/drsadie-2.jpg',
+  '/images/nov-16-msichana/group-1.jpg',
+  '/images/nov-16-msichana/group-2.jpg',
+  '/images/nov-16-msichana/group-3.jpg',
+  '/images/nov-16-msichana/group-4.jpg',
+  '/images/nov-16-msichana/group-k-1.jpg',
+  '/images/nov-16-msichana/group-k-2.jpg',
+  '/images/nov-16-msichana/group-k-3.jpg',
+  '/images/nov-16-msichana/group-k-4.jpg',
+  '/images/nov-16-msichana/group-l-1.jpg',
+  '/images/nov-16-msichana/group-l-2.jpg',
+  '/images/nov-16-msichana/group-l-3.jpg',
+  '/images/nov-16-msichana/group-l-4.jpg',
+  '/images/nov-16-msichana/group-l-5.jpg',
+  '/images/nov-16-msichana/drsadie-2.jpg',
 ];
 
 export default function HomeSlideshow() {
