@@ -1,0 +1,278 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --deep-blue: #1a2a47;
+  --midnight-blue: #0f172a;
+  --navy: #152238;
+  --gold: #e9b949;
+  --orange: #e67e22;
+  --light-orange: #f39c12;
+  --burgundy: #800020;
+  --burgundy-light: #9a2a3a;
+  --white: #ffffff;
+  --off-white: #f8f9fa;
+  --light-gray: #e2e8f0;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    opacity: 0.6;
+    filter: blur(8px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(12px);
+  }
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes shooting-star {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(500px) translateY(500px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--midnight-blue);
+  background-color: var(--off-white);
+}
+
+.gradient-text {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--orange) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, var(--gold) 0%, var(--orange) 50%, var(--gold) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.burgundy-shimmer-text {
+  background: linear-gradient(90deg, var(--burgundy) 0%, var(--burgundy-light) 50%, var(--burgundy) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+
+.hero-gradient {
+  background: linear-gradient(to right, rgba(26, 42, 71, 0.9), rgba(15, 23, 42, 0.8)), url("/hero-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.starry-bg {
+  background-color: var(--navy);
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #0f172a, #152238);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+.glass-card-dark {
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.shine-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shine-effect::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: rotate(30deg);
+  transition: transform 0.5s ease;
+}
+
+.shine-effect:hover::after {
+  transform: rotate(30deg) translate(50%, 50%);
+}
+
+.glow {
+  position: relative;
+}
+
+.glow::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, var(--gold) 0%, transparent 70%);
+  transform: translate(-50%, -50%);
+  opacity: 0.3;
+  filter: blur(20px);
+  z-index: -1;
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.burgundy-glow::before {
+  background: radial-gradient(circle, var(--burgundy) 0%, transparent 70%);
+}
+
+.parallax-scroll {
+  transform: translateY(var(--scroll-y, 0));
+  transition: transform 0.1s ease-out;
+}
+
+.nav-blur {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(21, 34, 56, 0.8);
+}
+
+.burgundy-gradient {
+  background: linear-gradient(90deg, var(--burgundy) 0%, var(--burgundy-light) 100%);
+}
+
+.burgundy-text {
+  color: var(--burgundy);
+}
+
+.burgundy-border {
+  border-color: var(--burgundy);
+}
+
+.shooting-star {
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+  animation: shooting-star 5s linear infinite;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+/* Add these styles at the end of the file */
+
+.adinkra-bg-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.adinkra-bg-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath fill='%23e9b949' opacity='0.03' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z'/%3E%3C/svg%3E");
+  background-size: 100px 100px;
+  opacity: 0.05;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.adinkra-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.adinkra-divider::before,
+.adinkra-divider::after {
+  content: "";
+  flex-grow: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(233, 185, 73, 0.3), transparent);
+  margin: 0 1rem;
+}
+
+.adinkra-loading {
+  animation: adinkra-spin 1.5s linear infinite;
+}
+
+@keyframes adinkra-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
