@@ -7,6 +7,7 @@ import TestimonialsSection from "@/components/testimonials-section"
 import CTASection from "@/components/cta-section"
 import Footer from "@/components/footer"
 import SectionDivider from "@/components/section-divider"
+import HomeSlideshow from '@/components/home-slideshow'
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <SectionDivider symbol="akoma" />
       <TestimonialsSection />
       <SectionDivider symbol="aya" />
+      <HomeSlideshow />
       <CTASection />
       <Footer />
     </main>
