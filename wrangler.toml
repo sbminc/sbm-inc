@@ -8,4 +8,6 @@ bucket = "./out"
 command = "npm install --legacy-peer-deps && npm run build"
 
 [build.environment]
-NODE_VERSION = "18" 
+NODE_VERSION = "18"
+
+pages_build_output_dir = "out" 
