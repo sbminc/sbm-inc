@@ -56,7 +56,7 @@ export default function LeadersHero() {
   return (
     <div
       ref={heroRef}
-      className="relative starry-bg py-32 md:py-40 overflow-hidden"
+      className="relative starry-bg py-32 md:py-40 min-h-[500px] overflow-hidden"
       style={{ backgroundColor: "#0f172a" }}
     >
       {/* Stars */}
