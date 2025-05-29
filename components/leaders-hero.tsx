@@ -54,12 +54,13 @@ export default function LeadersHero() {
         />
       ))}
 
-      {/* Animated gradient orbs */}
-      <div className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full bg-gradient-to-r from-gold/10 to-burgundy/10 blur-3xl animate-pulse"></div>
-      <div
-        className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-deep-blue/20 to-burgundy/20 blur-3xl animate-pulse"
-        style={{ animationDelay: "1s" }}
-      ></div>
+      {/* Animated gradient orbs (replaced with star glow) */}
+      <div className="absolute top-1/2 left-1/2 w-[320px] h-[320px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
+        style={{
+          background: "radial-gradient(circle, rgba(255,255,200,0.5) 0%, rgba(255,255,200,0.2) 40%, rgba(255,255,200,0) 80%)",
+          boxShadow: "0 0 80px 40px rgba(255,255,200,0.4), 0 0 160px 80px rgba(255,255,200,0.2)"
+        }}
+      />
 
       {/* Logo in background */}
       {/*
