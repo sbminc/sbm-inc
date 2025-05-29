@@ -39,7 +39,7 @@ export default function AboutContent() {
               </div>
               <div className="bg-white rounded-xl shadow-lg p-6 border-t-4 border-burgundy transition-transform hover:scale-105">
                 <h3 className="text-xl font-bold mb-4 text-deep-blue">Empowerment</h3>
-                <p className="text-gray-700">We believe in empowering young women to find their voice, develop their strengths, and become confident leaders in their communities.</p>
+                <p className="text-gray-700">We believe in empowering young people to find their voice, develop their strengths, and become confident leaders in their communities.</p>
               </div>
               <div className="bg-white rounded-xl shadow-lg p-6 border-t-4 border-gold transition-transform hover:scale-105">
                 <h3 className="text-xl font-bold mb-4 text-deep-blue">Community</h3>

@@ -8,7 +8,7 @@ export default function LeadersList() {
     name: "Dr. Sadie McConner",
     role: "Founder & Executive Director",
     image: "/ms sadie.jpg",
-    bio: "Dr. Sadie McConner is the visionary founder of SBM Inc., inspired by the documentary 'PUSH OUT: Criminalization of Black Girls' written by Monique Morris. With a passion for empowering BIPOC girls, she leads our mission to create positive change in Volusia County."
+    bio: "Dr. Sadie McConner is the visionary founder of SBM Inc., inspired by the documentary 'PUSH OUT: Criminalization of Black Girls' written by Monique Morris. With a passion for empowering BIPOC youth, she leads our mission to create positive change in Volusia County."
   }
 
   // Leadership team with bios and images

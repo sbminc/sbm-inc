@@ -52,7 +52,7 @@ export default function CommunitySection() {
               <h3 className="text-xl font-bold text-deep-blue">Shared Purpose</h3>
             </div>
             <p className="text-gray-700">
-              Though we may have different roles, we share a common goal of empowering BIPOC girls to reach their full
+              Though we may have different roles, we share a common goal of empowering BIPOC youth to reach their full
               potential.
             </p>
           </div>

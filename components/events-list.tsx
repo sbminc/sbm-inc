@@ -168,43 +168,43 @@ export default function EventsList() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredEvents.map((event) => (
-            <div
-              key={event.id}
-              className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100"
-            >
-              <div
-                className="relative h-60 w-full"
-                style={{ backgroundColor: event.id === 1 ? '#f5e7d6' : event.id === 2 ? '#f3e3d3' : '#fff' }}
+            (event.id === 1 || event.id === 2) ? (
+              <Link
+                key={event.id}
+                href={`/events/${event.id}`}
+                className="group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gold"
+                tabIndex={0}
+                aria-label={`View details for ${event.title}`}
               >
-                <Image src={event.image || "/placeholder.svg"} alt={event.title} fill className="object-contain p-6" />
-                <div className="absolute top-4 right-4">
-                  <span className="px-4 py-1 bg-burgundy text-white text-sm font-medium rounded-full capitalize">
-                    {event.category}
-                  </span>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-2xl font-bold mb-3 text-deep-blue">{event.title}</h3>
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center text-gray-600">
-                    <Calendar size={18} className="mr-2 text-burgundy" />
-                    <span>{event.date}</span>
-                  </div>
-                  <div className="flex items-center text-gray-600">
-                    <Clock size={18} className="mr-2 text-burgundy" />
-                    <span>{event.time}</span>
-                  </div>
-                  <div className="flex items-center text-gray-600">
-                    <MapPin size={18} className="mr-2 text-burgundy" />
-                    <span>{event.location}</span>
+                <div
+                  className="relative h-60 w-full"
+                  style={{ backgroundColor: event.id === 1 ? '#f5e7d6' : event.id === 2 ? '#f3e3d3' : '#fff' }}
+                >
+                  <Image src={event.image || "/placeholder.svg"} alt={event.title} fill className="object-contain p-6" />
+                  <div className="absolute top-4 right-4">
+                    <span className="px-4 py-1 bg-burgundy text-white text-sm font-medium rounded-full capitalize">
+                      {event.category}
+                    </span>
                   </div>
                 </div>
-                <p className="text-gray-600 mb-6">{event.description}</p>
-                {event.id === 1 || event.id === 2 ? (
-                  <Link
-                    href={`/events/${event.id}`}
-                    className="inline-flex items-center text-burgundy hover:text-burgundy-light font-medium group"
-                  >
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-3 text-deep-blue">{event.title}</h3>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center text-gray-600">
+                      <Calendar size={18} className="mr-2 text-burgundy" />
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center text-gray-600">
+                      <Clock size={18} className="mr-2 text-burgundy" />
+                      <span>{event.time}</span>
+                    </div>
+                    <div className="flex items-center text-gray-600">
+                      <MapPin size={18} className="mr-2 text-burgundy" />
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 mb-6">{event.description}</p>
+                  <span className="inline-flex items-center text-burgundy hover:text-burgundy-light font-medium group-hover:underline">
                     Event Details
                     <svg
                       className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
@@ -215,14 +215,48 @@ export default function EventsList() {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
-                  </Link>
-                ) : (
+                  </span>
+                </div>
+              </Link>
+            ) : (
+              <div
+                key={event.id}
+                className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100"
+              >
+                <div
+                  className="relative h-60 w-full"
+                  style={{ backgroundColor: '#fff' }}
+                >
+                  <Image src={event.image || "/placeholder.svg"} alt={event.title} fill className="object-contain p-6" />
+                  <div className="absolute top-4 right-4">
+                    <span className="px-4 py-1 bg-burgundy text-white text-sm font-medium rounded-full capitalize">
+                      {event.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-3 text-deep-blue">{event.title}</h3>
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center text-gray-600">
+                      <Calendar size={18} className="mr-2 text-burgundy" />
+                      <span>{event.date}</span>
+                    </div>
+                    <div className="flex items-center text-gray-600">
+                      <Clock size={18} className="mr-2 text-burgundy" />
+                      <span>{event.time}</span>
+                    </div>
+                    <div className="flex items-center text-gray-600">
+                      <MapPin size={18} className="mr-2 text-burgundy" />
+                      <span>{event.location}</span>
+                    </div>
+                  </div>
+                  <p className="text-gray-600 mb-6">{event.description}</p>
                   <span className="inline-flex items-center text-gray-400 font-medium cursor-not-allowed select-none">
                     Details Coming Soon
                   </span>
-                )}
+                </div>
               </div>
-            </div>
+            )
           ))}
         </div>
 
