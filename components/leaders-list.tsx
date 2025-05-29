@@ -16,13 +16,13 @@ export default function LeadersList() {
     {
       name: "Godzetta Whittington",
       role: "Board Member",
-      image: "/images/Leaders/Godzetta.jpg",
+      image: "/images/leaders/godzetta.jpg",
       bio: "Born and raised between Coney Island, New York, and North Carolina, Godzetta Whittington brings over 30 years of experience as a dedicated educator. Throughout her career, she has remained committed to the belief that all children can learn and thrive when given the right support and opportunities. As a proud board member of SBM, Godzetta supports the organization's mission to help young people connect with and celebrate their cultural heritage through transformative conferences and mentorship."
     },
     {
       name: "Dedrick L. Adell",
       role: "Board Member",
-      image: "/images/Leaders/Dedrick.jpg",
+      image: "/images/leaders/dedrick.jpg",
       bio: "Dedrick L. Adell is the President/CEO of Holistiq Planning, LLC, which educates clients on their personal retirement strategies such as achieving tax advantaged and tax advantaged retirement. Dedrick is originally from Blytheville, Arkansas, and a graduate of Blytheville High School. Upon graduation, he enlisted in the United States Marines Corps. Following his military service, he attended Park University in Parkville, Missouri, where he attained a bachelor's degree in Management and Finance. As Dedrick grew in his call to ministry, he attended Andersonville Theological Seminary in Andersonville, Georgia, where he graduated Summa Cum Laude with a Bachelor of Divinity in Pastoral Leadership. However, he did not stop there. He went on to pursue and obtain a Master of Arts in Ministry and Master of Divinity degree from Luther Rice Theological Seminary in Lithonia, Georgia. Most recently, Dedrick graduated from the Texas A&M School of Law with the Master of Jurisprudence in Wealth and Tax Management. In addition to his formal education, Dedrick has numerous professional licenses and certifications including Chartered Financial Consultant (ChFC®), Chartered Retirement Planning Counselor (CRPC®), Certified Tax Specialist®, and Accredited Investment Fiduciary (AIF®), Accredited Estate Planner (AEP®) to name a few. His current business memberships include an active membership in the National Association of Insurance and Financial Advisors (NAIFA), a member of The Financial Planning Association of Dallas Ft Worth, and a qualifying member of The Kingdom Advisors of Dallas. Dedrick is involved in many community organizations including Urban League of Dallas/Ft. Worth, Texas. He currently serves as an Associate Minister at Friendship Baptist Church of The Colony, serves as a facilitator in the Grief Ministry and New Members Orientation."
     },
     {
