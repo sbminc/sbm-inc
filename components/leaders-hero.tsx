@@ -10,12 +10,12 @@ export default function LeadersHero() {
 
   useEffect(() => {
     // Generate random stars with fixed random duration and delay
-    const newStars = Array.from({ length: 100 }, () => ({
+    const newStars = Array.from({ length: 150 }, () => ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
       size: `${Math.random() * 2 + 1}px`,
       duration: `${Math.random() * 5 + 3}s`,
-      delay: `${Math.random() * 5}s`,
+      delay: `${Math.random()}s`,
     }))
     setStars(newStars)
   }, [])
@@ -44,13 +44,13 @@ export default function LeadersHero() {
       ))}
 
       {/* Shooting stars */}
-      {Array.from({ length: 3 }).map((_, i) => (
+      {Array.from({ length: 8 }).map((_, i) => (
         <div
           key={i}
           className="shooting-star"
           style={{
             top: `${Math.random() * 50}%`,
-            left: `${Math.random() * 30}%`,
+            left: `${Math.random() * 90}%`,
             animationDelay: `${Math.random() * 15 + 5}s`,
             transform: `rotate(${Math.random() * 45 + 20}deg)`,
           }}
