@@ -55,7 +55,7 @@ export default function EventsHero() {
   return (
     <div
       ref={heroRef}
-      className="relative starry-bg py-32 md:py-40 min-h-[500px] overflow-hidden"
+      className="relative starry-bg min-h-[500px] flex flex-col items-center justify-center overflow-hidden"
       style={{ backgroundColor: "#0f172a" }}
     >
       {/* Stars */}
@@ -91,7 +91,7 @@ export default function EventsHero() {
       ))}
       {/* Logo in background */}
       <div
-        className="absolute opacity-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px]"
+        className="absolute opacity-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px]"
         style={{ transform: "translate(calc(-50% + var(--move-x, 0px)), calc(-50% + var(--move-y, 0px)))" }}
       >
         <Image src="/SBM-Logo-4.png" alt="SBM Inc. Logo Background" fill className="object-contain" />
