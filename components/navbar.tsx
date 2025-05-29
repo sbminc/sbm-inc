@@ -34,7 +34,9 @@ export default function Navbar() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="relative h-12 w-12 overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-110">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full transition-transform duration-300 group-hover:scale-110"
+              style={{ boxShadow: "0 0 24px 8px rgba(255,215,0,0.7), 0 0 48px 16px rgba(255,215,0,0.3)" }}
+            >
               <div className="absolute inset-0 bg-gradient-to-r from-gold to-burgundy opacity-20 rounded-full"></div>
               <Image src="/SBM-Logo-4.png" alt="SBM Inc. Logo" fill className="object-contain p-1" />
             </div>
