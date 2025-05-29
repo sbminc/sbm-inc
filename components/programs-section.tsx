@@ -39,21 +39,25 @@ export default function ProgramsSection() {
       title: "Academic Support",
       description: "Tutoring and educational resources to help BIPOC Youth excel in their studies.",
       symbol: "nea-onnim-no-sua-a-ohu" as const,
+      slug: "academic",
     },
     {
       title: "Mentorship Program",
       description: "One-on-one guidance from successful professionals who provide support and advice.",
       symbol: "mate-masie" as const,
+      slug: "mentorship",
     },
     {
       title: "Community Service",
       description: "Opportunities to give back to the community and develop a sense of social responsibility.",
       symbol: "bi-nka-bi" as const,
+      slug: "community",
     },
     {
       title: "Leadership Workshop",
       description: "Interactive sessions focused on developing essential leadership and communication skills.",
       symbol: "adinkrahene" as const,
+      slug: "leadership",
     },
   ]
 
@@ -87,7 +91,7 @@ export default function ProgramsSection() {
                 </div>
                 <p className="text-white/80 mb-6">{program.description}</p>
                 <Link
-                  href={`/programs/${program.title.toLowerCase().replace(/\s+/g, "-")}`}
+                  href={`/programs/${program.slug}`}
                   className="inline-flex items-center text-gold hover:text-orange font-medium group"
                 >
                   Learn more

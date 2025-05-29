@@ -169,9 +169,8 @@ export default function EventsList() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredEvents.map((event) => (
             (event.id === 1 || event.id === 2) ? (
-              <Link
+              <div
                 key={event.id}
-                href={`/events/${event.id}`}
                 className="group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gold"
                 tabIndex={0}
                 aria-label={`View details for ${event.title}`}
@@ -204,7 +203,11 @@ export default function EventsList() {
                     </div>
                   </div>
                   <p className="text-gray-600 mb-6">{event.description}</p>
-                  <span className="inline-flex items-center text-burgundy hover:text-burgundy-light font-medium group-hover:underline">
+                  <Link
+                    href={`/events/${event.id}`}
+                    className="inline-flex items-center text-burgundy hover:text-burgundy-light font-medium group-hover:underline"
+                    aria-label={`View details for ${event.title}`}
+                  >
                     Event Details
                     <svg
                       className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
@@ -215,9 +218,9 @@ export default function EventsList() {
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
-                  </span>
+                  </Link>
                 </div>
-              </Link>
+              </div>
             ) : (
               <div
                 key={event.id}

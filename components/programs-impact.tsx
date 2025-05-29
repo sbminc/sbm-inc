@@ -28,7 +28,7 @@ export default function ProgramsImpact() {
             Our <span className="shimmer-text">Impact</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            We measure our success by the positive changes we see in the lives of the girls we serve. Here are some of
+            We measure our success by the positive changes we see in the lives of the young people we serve. Here are some of
             the ways our programs are making a difference.
           </p>
         </div>
