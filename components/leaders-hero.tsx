@@ -2,17 +2,19 @@
 
 import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
+import './star-twinkle.css';
 
 export default function LeadersHero() {
   const heroRef = useRef<HTMLDivElement>(null)
-  const [stars, setStars] = useState<Array<{ top: string; left: string; size: string; delay: string }>>([])
+  const [stars, setStars] = useState<Array<{ top: string; left: string; size: string; duration: string; delay: string }>>([])
 
   useEffect(() => {
-    // Generate random stars
+    // Generate random stars with fixed random duration and delay
     const newStars = Array.from({ length: 100 }, () => ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
       size: `${Math.random() * 2 + 1}px`,
+      duration: `${Math.random() * 5 + 3}s`,
       delay: `${Math.random() * 5}s`,
     }))
     setStars(newStars)
@@ -28,14 +30,15 @@ export default function LeadersHero() {
       {stars.map((star, i) => (
         <div
           key={i}
-          className="absolute rounded-full bg-white"
+          className="absolute rounded-full bg-white star-twinkle"
           style={{
             top: star.top,
             left: star.left,
             width: star.size,
             height: star.size,
             opacity: Math.random() * 0.8 + 0.2,
-            animation: `twinkle ${Math.random() * 5 + 3}s infinite ${star.delay}`,
+            animationDuration: star.duration,
+            animationDelay: star.delay,
           }}
         />
       ))}
