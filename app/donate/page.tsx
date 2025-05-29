@@ -53,7 +53,7 @@ export default function DonatePage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div className="bg-gray-50 rounded-xl p-6 border-t-4 border-gold flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Empower Pre-teen BIPOC Youth</h3>
+                  <h3 className="font-bold text-lg mb-2">Empower BIPOC Pre-Teens</h3>
                   <div className="text-gold font-bold mb-1">$100</div>
                   <ul className="text-left text-gray-700 text-sm list-disc list-inside mb-4">
                     <li>Gain visibility with an information table and recognition on participant handouts</li>
@@ -70,7 +70,7 @@ export default function DonatePage() {
               </div>
               <div className="bg-gray-50 rounded-xl p-6 border-t-4 border-burgundy flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Empower Teen BIPOC Youth</h3>
+                  <h3 className="font-bold text-lg mb-2">Empower BIPOC Teens</h3>
                   <div className="text-burgundy font-bold mb-1">$150</div>
                   <ul className="text-left text-gray-700 text-sm list-disc list-inside mb-4">
                     <li>Elevate your brand with media recognition and exposure to our audience</li>
@@ -88,7 +88,7 @@ export default function DonatePage() {
               </div>
               <div className="bg-gray-50 rounded-xl p-6 border-t-4 border-gold flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Empower Adolescent BIPOC Youth</h3>
+                  <h3 className="font-bold text-lg mb-2">Empower BIPOC Adolescents</h3>
                   <div className="text-gold font-bold mb-1">$200+</div>
                   <ul className="text-left text-gray-700 text-sm list-disc list-inside mb-4">
                     <li>Maximize your impact and visibility with recognition on various media platforms during the event</li>

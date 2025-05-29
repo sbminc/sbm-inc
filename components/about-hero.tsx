@@ -41,14 +41,15 @@ export default function AboutHero() {
       ))}
 
       {/* Shooting stars */}
-      {Array.from({ length: 3 }).map((_, i) => (
+      {Array.from({ length: 8 }).map((_, i) => (
         <div
           key={i}
           className="shooting-star"
           style={{
             top: `${Math.random() * 50}%`,
-            left: `${Math.random() * 30}%`,
+            left: `${Math.random() * 90}%`,
             animationDelay: `${Math.random() * 15 + 5}s`,
+            animationDuration: `${Math.random() * 5 + 3}s`,
             transform: `rotate(${Math.random() * 45 + 20}deg)`,
           }}
         />

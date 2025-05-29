@@ -4,13 +4,26 @@ import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import './star-twinkle.css';
 
+function getRandomShootingStar() {
+  return {
+    id: Math.random().toString(36).substr(2, 9),
+    top: `${Math.random() * 50}%`,
+    left: `${Math.random() * 90}%`,
+    animationDelay: '0s',
+    animationDuration: `${Math.random() * 5 + 3}s`,
+    transform: `rotate(${Math.random() * 45 + 20}deg)`
+  }
+}
+
 export default function LeadersHero() {
   const heroRef = useRef<HTMLDivElement>(null)
   const [stars, setStars] = useState<Array<{ top: string; left: string; size: string; duration: string; delay: string }>>([])
+  const [shootingStars, setShootingStars] = useState<any[]>([])
+  const shootingStarCount = useRef(0)
 
   useEffect(() => {
     // Generate random stars with fixed random duration and delay
-    const newStars = Array.from({ length: 150 }, () => ({
+    const newStars = Array.from({ length: 100 }, () => ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
       size: `${Math.random() * 2 + 1}px`,
@@ -19,6 +32,26 @@ export default function LeadersHero() {
     }))
     setStars(newStars)
   }, [])
+
+  useEffect(() => {
+    let interval: NodeJS.Timeout
+    function addShootingStar() {
+      if (shootingStarCount.current >= 8) return
+      setShootingStars((prev) => {
+        if (prev.length >= 4) return prev
+        shootingStarCount.current += 1
+        return [...prev, getRandomShootingStar()]
+      })
+    }
+    interval = setInterval(() => {
+      addShootingStar()
+    }, Math.random() * 1500 + 1200) // 1.2s to 2.7s between new stars
+    return () => clearInterval(interval)
+  }, [])
+
+  function handleShootingStarEnd(id: string) {
+    setShootingStars((prev) => prev.filter((star) => star.id !== id))
+  }
 
   return (
     <div
@@ -44,26 +77,20 @@ export default function LeadersHero() {
       ))}
 
       {/* Shooting stars */}
-      {Array.from({ length: 8 }).map((_, i) => (
+      {shootingStars.map((star) => (
         <div
-          key={i}
+          key={star.id}
           className="shooting-star"
           style={{
-            top: `${Math.random() * 50}%`,
-            left: `${Math.random() * 90}%`,
-            animationDelay: `${Math.random() * 15 + 5}s`,
-            transform: `rotate(${Math.random() * 45 + 20}deg)`,
+            top: star.top,
+            left: star.left,
+            animationDelay: star.animationDelay,
+            animationDuration: star.animationDuration,
+            transform: star.transform,
           }}
+          onAnimationEnd={() => handleShootingStarEnd(star.id)}
         />
       ))}
-
-      {/* Animated gradient orbs (replaced with star glow) */}
-      <div className="absolute top-1/2 left-1/2 w-[480px] h-[480px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
-        style={{
-          background: "radial-gradient(circle, rgba(255,215,0,0.7) 0%, rgba(255,215,0,0.3) 40%, rgba(255,215,0,0) 80%)",
-          boxShadow: "0 0 120px 60px rgba(255,215,0,0.6), 0 0 240px 120px rgba(255,215,0,0.3)"
-        }}
-      />
 
       {/* Logo in background */}
       {/*
