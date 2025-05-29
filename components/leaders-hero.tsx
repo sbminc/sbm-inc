@@ -55,10 +55,10 @@ export default function LeadersHero() {
       ))}
 
       {/* Animated gradient orbs (replaced with star glow) */}
-      <div className="absolute top-1/2 left-1/2 w-[320px] h-[320px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
+      <div className="absolute top-1/2 left-1/2 w-[480px] h-[480px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0"
         style={{
-          background: "radial-gradient(circle, rgba(255,255,200,0.5) 0%, rgba(255,255,200,0.2) 40%, rgba(255,255,200,0) 80%)",
-          boxShadow: "0 0 80px 40px rgba(255,255,200,0.4), 0 0 160px 80px rgba(255,255,200,0.2)"
+          background: "radial-gradient(circle, rgba(255,215,0,0.7) 0%, rgba(255,215,0,0.3) 40%, rgba(255,215,0,0) 80%)",
+          boxShadow: "0 0 120px 60px rgba(255,215,0,0.6), 0 0 240px 120px rgba(255,215,0,0.3)"
         }}
       />
 
