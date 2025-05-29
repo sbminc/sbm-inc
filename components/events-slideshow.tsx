@@ -61,6 +61,7 @@ export default function EventsSlideshow() {
           </div>
         ))}
       </div>
+      {/*
       <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {images.map((_, index) => (
           <button
@@ -72,6 +73,7 @@ export default function EventsSlideshow() {
           />
         ))}
       </div>
+      */}
     </div>
   )
 } 

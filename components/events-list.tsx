@@ -200,7 +200,7 @@ export default function EventsList() {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-6">{event.description}</p>
-                {event.id === 1 ? (
+                {event.id === 1 || event.id === 2 ? (
                   <Link
                     href={`/events/${event.id}`}
                     className="inline-flex items-center text-burgundy hover:text-burgundy-light font-medium group"
