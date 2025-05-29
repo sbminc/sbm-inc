@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Facebook, Instagram, Twitter, Mail, MapPin, Phone } from "lucide-react"
+import { Facebook, Instagram, Youtube, Mail, MapPin, Phone } from "lucide-react"
 import AdinkraSymbol from "./adinkra-symbol"
 
 export default function Footer() {
@@ -76,7 +76,7 @@ export default function Footer() {
                 href="#"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-burgundy/20 transition-colors"
               >
-                <Twitter size={18} className="text-white" />
+                <Youtube size={18} className="text-white" />
               </a>
             </div>
           </div>
