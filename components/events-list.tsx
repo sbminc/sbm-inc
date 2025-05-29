@@ -15,7 +15,7 @@ export default function EventsList() {
       date: "November 16, 2024",
       location: "Daytona Beach, FL",
       description: "Join us for an empowering day of workshops, networking, and inspiration.",
-      image: "/Images/Nov 16th Msichana/IMG_0070.jpg",
+      image: "/images/nov-16th-msichana/IMG_0070.jpg",
       link: "/events/msichana-conference"
     },
     {
@@ -24,7 +24,7 @@ export default function EventsList() {
       date: "November 16, 2024",
       location: "Daytona Beach, FL",
       description: "Join us for an empowering day of workshops, networking, and inspiration.",
-      image: "/Images/Nov 16th Msichana/IMG_0071.jpg",
+      image: "/images/nov-16th-msichana/IMG_0071.jpg",
       link: "/events/msichana-conference"
     },
     {
@@ -33,7 +33,7 @@ export default function EventsList() {
       date: "November 16, 2024",
       location: "Daytona Beach, FL",
       description: "Join us for an empowering day of workshops, networking, and inspiration.",
-      image: "/Images/Nov 16th Msichana/IMG_0072.jpg",
+      image: "/images/nov-16th-msichana/IMG_0072.jpg",
       link: "/events/msichana-conference"
     },
     {
@@ -42,7 +42,7 @@ export default function EventsList() {
       date: "November 16, 2024",
       location: "Daytona Beach, FL",
       description: "Join us for an empowering day of workshops, networking, and inspiration.",
-      image: "/Images/Nov 16th Msichana/IMG_0073.jpg",
+      image: "/images/nov-16th-msichana/IMG_0073.jpg",
       link: "/events/msichana-conference"
     },
     {
@@ -51,7 +51,7 @@ export default function EventsList() {
       date: "November 16, 2024",
       location: "Daytona Beach, FL",
       description: "Join us for an empowering day of workshops, networking, and inspiration.",
-      image: "/Images/Nov 16th Msichana/IMG_0074.jpg",
+      image: "/images/nov-16th-msichana/IMG_0074.jpg",
       link: "/events/msichana-conference"
     },
     {
@@ -60,7 +60,7 @@ export default function EventsList() {
       date: "November 16, 2024",
       location: "Daytona Beach, FL",
       description: "Join us for an empowering day of workshops, networking, and inspiration.",
-      image: "/Images/Nov 16th Msichana/IMG_0075.jpg",
+      image: "/images/nov-16th-msichana/IMG_0075.jpg",
       link: "/events/msichana-conference"
     }
   ]
@@ -70,10 +70,10 @@ export default function EventsList() {
       id: 1,
       title: "MVULANA Young Men's Summit",
       date: "July 21, 2025",
-      time: "10:00 AM - 2:00 PM",
-      location: "Community Center, Daytona Beach",
+      time: "10:00 AM - 6:00 PM",
+      location: "Bethune–Cookman University | Civic Engagement Center, Daytona Beach",
       description:
-        "A series of interactive workshops focused on developing leadership skills, confidence, and communication abilities.",
+        "A series of interactive workshops focused on developing leadership skills, confidence, communication abilities, and mental health awareness.",
       category: "workshop",
       image: "/Logos/mvulana-logo-1.png",
     },
@@ -81,8 +81,8 @@ export default function EventsList() {
       id: 2,
       title: "MSICHANA Young Women's Summit",
       date: "November 15, 2025",
-      time: "6:00 PM - 10:00 PM",
-      location: "Grand Ballroom, Volusia County",
+      time: "10:00 AM - 6:00 PM",
+      location: "Yvonne Scarlett Golden Center, Daytona Beach",
       description:
         "Join us for an evening of celebration, inspiration, and fundraising to support our programs for the coming year.",
       category: "fundraiser",
@@ -91,9 +91,9 @@ export default function EventsList() {
     {
       id: 3,
       title: "Community Service Day",
-      date: "August 5, 2025",
-      time: "9:00 AM - 1:00 PM",
-      location: "Various Locations, Volusia County",
+      date: "TBD",
+      time: "TBD",
+      location: "TBD",
       description:
         "A day dedicated to giving back to our community through various service projects throughout Volusia County.",
       category: "community",
@@ -102,9 +102,9 @@ export default function EventsList() {
     {
       id: 4,
       title: "College Preparation Workshop",
-      date: "September 10, 2025",
-      time: "4:00 PM - 6:00 PM",
-      location: "Public Library, DeLand",
+      date: "TBD",
+      time: "TBD",
+      location: "TBD",
       description:
         "Learn about college applications, scholarships, financial aid, and how to prepare for higher education.",
       category: "workshop",
@@ -200,21 +200,27 @@ export default function EventsList() {
                   </div>
                 </div>
                 <p className="text-gray-600 mb-6">{event.description}</p>
-                <Link
-                  href={`/events/${event.id}`}
-                  className="inline-flex items-center text-burgundy hover:text-burgundy-light font-medium group"
-                >
-                  Event Details
-                  <svg
-                    className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
+                {event.id === 1 ? (
+                  <Link
+                    href={`/events/${event.id}`}
+                    className="inline-flex items-center text-burgundy hover:text-burgundy-light font-medium group"
                   >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Link>
+                    Event Details
+                    <svg
+                      className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </Link>
+                ) : (
+                  <span className="inline-flex items-center text-gray-400 font-medium cursor-not-allowed select-none">
+                    Details Coming Soon
+                  </span>
+                )}
               </div>
             </div>
           ))}

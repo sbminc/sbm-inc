@@ -32,7 +32,7 @@ export default function CTASection() {
 
             <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
               Whether you're interested in volunteering, donating, or participating in our programs, there are many ways
-              to support our mission of empowering BIPOC girls.
+              to support our mission of empowering BIPOC Youth.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center">

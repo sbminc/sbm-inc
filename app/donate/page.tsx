@@ -9,14 +9,14 @@ export default function DonatePage() {
         <div className="container mx-auto px-4 md:px-6 max-w-2xl text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 text-deep-blue">Support Our Mission</h1>
           <p className="text-xl text-gray-700 mb-12">
-            Your donation helps us empower BIPOC girls in Volusia County through education, mentorship, and community programs.
+            Your donation helps us empower BIPOC Youth in Volusia County through education, mentorship, and community programs.
           </p>
 
           <div className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-deep-blue">Ways to Give</h2>
             <div className="mb-6">
               <h3 className="font-semibold text-lg mb-2">Monetary Donations</h3>
-              <p className="text-gray-700 mb-2">Your financial support helps us continue our mission of empowering BIPOC girls in Volusia County.</p>
+              <p className="text-gray-700 mb-2">Your financial support helps us continue our mission of empowering BIPOC Youth in Volusia County.</p>
               <a
                 href="https://www.zeffy.com/en-US/donation-form/51e9784d-b5e6-4ac0-9c70-33d3d1f9ece4"
                 target="_blank"
@@ -53,7 +53,7 @@ export default function DonatePage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div className="bg-gray-50 rounded-xl p-6 border-t-4 border-gold flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Empower Pre-teen Girls</h3>
+                  <h3 className="font-bold text-lg mb-2">Empower Pre-teen BIPOC Youth</h3>
                   <div className="text-gold font-bold mb-1">$100</div>
                   <ul className="text-left text-gray-700 text-sm list-disc list-inside mb-4">
                     <li>Gain visibility with an information table and recognition on participant handouts</li>
@@ -70,7 +70,7 @@ export default function DonatePage() {
               </div>
               <div className="bg-gray-50 rounded-xl p-6 border-t-4 border-burgundy flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Empower Teen Girls</h3>
+                  <h3 className="font-bold text-lg mb-2">Empower Teen BIPOC Youth</h3>
                   <div className="text-burgundy font-bold mb-1">$150</div>
                   <ul className="text-left text-gray-700 text-sm list-disc list-inside mb-4">
                     <li>Elevate your brand with media recognition and exposure to our audience</li>
@@ -88,7 +88,7 @@ export default function DonatePage() {
               </div>
               <div className="bg-gray-50 rounded-xl p-6 border-t-4 border-gold flex flex-col justify-between">
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Empower Adolescent Girls</h3>
+                  <h3 className="font-bold text-lg mb-2">Empower Adolescent BIPOC Youth</h3>
                   <div className="text-gold font-bold mb-1">$200+</div>
                   <ul className="text-left text-gray-700 text-sm list-disc list-inside mb-4">
                     <li>Maximize your impact and visibility with recognition on various media platforms during the event</li>

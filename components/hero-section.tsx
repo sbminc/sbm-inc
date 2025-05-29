@@ -113,7 +113,7 @@ export default function HeroSection() {
           </h1>
 
           <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed">
-            Empowering BIPOC girls to reach their full potential through education, mentorship, and community support.
+            Empowering BIPOC Youth to reach their full potential through education, mentorship, and community support.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 justify-center">

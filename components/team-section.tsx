@@ -5,7 +5,7 @@ export default function TeamSection() {
     {
       name: "Jane Smith",
       role: "Founder & Executive Director",
-      bio: "Jane has over 15 years of experience in education and community organizing. She founded SBM Inc. with a vision to create opportunities for BIPOC girls in Volusia County.",
+      bio: "Jane has over 15 years of experience in education and community organizing. She founded SBM Inc. with a vision to create opportunities for BIPOC Youth in Volusia County.",
       image: "/placeholder.svg?height=400&width=400",
     },
     {
@@ -36,7 +36,7 @@ export default function TeamSection() {
             Meet Our <span className="shimmer-text">Team</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Our dedicated team brings diverse expertise and a shared passion for empowering BIPOC girls in our
+            Our dedicated team brings diverse expertise and a shared passion for empowering BIPOC Youth in our
             community.
           </p>
         </div>

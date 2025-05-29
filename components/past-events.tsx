@@ -4,17 +4,96 @@ import React, { useState } from "react"
 import Image from "next/image"
 
 const images = [
-  "/Images/Nov 16th Msichana/IMG_0070.jpg",
-  "/Images/Nov 16th Msichana/IMG_0071.jpg",
-  "/Images/Nov 16th Msichana/IMG_0072.jpg",
-  "/Images/Nov 16th Msichana/IMG_0073.jpg",
-  "/Images/Nov 16th Msichana/IMG_0074.jpg",
-  "/Images/Nov 16th Msichana/IMG_0075.jpg",
-  "/Images/Nov 16th Msichana/75BAC66A-CAA9-451E-8647-9ACD8426B624.jpeg",
-  "/Images/Nov 16th Msichana/6723BE3F-25DD-4E02-8D8A-40F9F4BBE294.jpeg",
-  "/Images/Nov 16th Msichana/22EF8BE4-F3B5-40C6-80CF-DBDB77F63361.jpeg",
-  "/Images/Nov 16th Msichana/C7011D7B-0A78-4169-A4BF-8B5A564EDC41.jpeg"
-]
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/0E5FEECC-BCBD-4558-BE95-5FD2AF618638.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/1DB1BAF3-77B0-45DA-BC25-6C2E768B80CA.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/2CE3C3C0-EB33-4890-A98B-0AB2271E4B6D.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/2FE12CB6-61B2-437F-BE3D-143B23163D51.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/3DB13117-49C2-4085-91E7-1FEE06388DB9(1).jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/3DD80648-4221-4E54-A276-DD195D6ACE3B.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/8F262001-77BD-4B64-BCA4-DDB418BE1A58.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/22EF8BE4-F3B5-40C6-80CF-DBDB77F63361.jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/62C1A70E-CF33-4DCF-9462-EB7B09BA9C30(1).jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/75BAC66A-CAA9-451E-8647-9ACD8426B624.jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/90C8C786-B0DF-4FFB-B40C-0145D8415261(1).jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/814BB3FB-AC33-42CD-BBD1-8680FF1C30FB.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/6723BE3F-25DD-4E02-8D8A-40F9F4BBE294.jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/454977B2-E835-418D-8C93-13E9810C519C.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/A8BF2346-33BC-4736-B6B9-B7CB2B5009C2.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/BBC60DD2-33A3-4737-AE02-888C2690D6B7.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/C8FF1B11-C4F8-4DE1-B6E9-BFB583DD646A.jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/C19AD39F-E695-4C20-B46C-99160BFD1816.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/C24FA224-BFD8-45D0-961F-46CDA4ECA54F.jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/C7011D7B-0A78-4169-A4BF-8B5A564EDC41.jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/C3075638-0179-405F-8130-CE96B222A213.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/drsadie-2.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/ECE7E490-6B96-448D-BE33-8931C8A2EF97.jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-1.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-2.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-3.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-4.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-k-1.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-k-2.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-k-3.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-k-4.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-l-1.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-l-2.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-l-3.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-l-4.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/group-l-5.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/imagejpeg_0.jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/imagejpeg_0(1).jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/imagejpeg_0(2).jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/imagejpeg_0(3).jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0070.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0071.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0072.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0073.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0074.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0075.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0084.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0085(1).jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0087.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0088.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0089(1).jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0090.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0091.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0092.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0093(1).jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0094.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0095.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0096.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0097.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0098.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0099.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0100.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0101.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0102.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0103.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0104.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0105.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0106.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0107.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0108.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0109.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0110.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0111.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_0191.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_1056.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_1057.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_1058.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_1063.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_1081.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_1082.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_1091.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_1128.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_6177.heic.jpeg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_9416.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_9433.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_9434.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/IMG_9435.jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/RenderedImage(1).jpg",
+  "https://sbminc.blob.core.windows.net/sbm-container/nov-16th-msichana/Resized_20241116_103036_1731771145496.jpeg"
+];
 
 const videos = [
   "/Videos/IMG_2599.mp4",
@@ -66,19 +145,11 @@ export default function PastEvents() {
               alt={`Summit photo ${current + 1}`}
               width={800}
               height={500}
-              className="w-full h-[400px] object-cover"
+              className="w-full h-[400px] object-contain bg-black"
             />
             <button onClick={next} className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-gold text-burgundy rounded-full p-2 shadow transition-colors" aria-label="Next slide">
               &#8594;
             </button>
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {images.map((_, idx) => (
-                <span
-                  key={idx}
-                  className={`w-3 h-3 rounded-full ${idx === current ? "bg-gold" : "bg-white/60"} border border-burgundy block`}
-                />
-              ))}
-            </div>
           </div>
 
           {/* YouTube-style Video Gallery */}
@@ -101,14 +172,6 @@ export default function PastEvents() {
               <button onClick={nextVideo} className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-gold text-burgundy rounded-full p-2 shadow transition-colors" aria-label="Next video">
                 &#8594;
               </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                {videos.map((_, idx) => (
-                  <span
-                    key={idx}
-                    className={`w-3 h-3 rounded-full ${idx === currentVideo ? "bg-gold" : "bg-white/60"} border border-burgundy block`}
-                  />
-                ))}
-              </div>
             </div>
             <span className="block text-white text-base font-medium px-2 text-center truncate w-full bg-[#181818] rounded-b-xl pb-4">Summit Video {currentVideo + 1}</span>
           </div>
@@ -141,14 +204,6 @@ export default function PastEvents() {
               <button onClick={nextPresentation} className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-gold text-burgundy rounded-full p-2 shadow transition-colors" aria-label="Next presentation">
                 &#8594;
               </button>
-              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                {presentations.map((_, idx) => (
-                  <span
-                    key={idx}
-                    className={`w-3 h-3 rounded-full ${idx === currentPresentation ? "bg-gold" : "bg-gray-300"} border border-burgundy block`}
-                  />
-                ))}
-              </div>
             </div>
           </div>
         </div>

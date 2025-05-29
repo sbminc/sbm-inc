@@ -7,7 +7,7 @@ export default function ProgramsList() {
       id: "mentorship",
       title: "Mentorship Program",
       description:
-        "Our flagship program pairs BIPOC girls with successful professionals who provide guidance, support, and advice. Mentors meet with their mentees regularly to help them navigate academic challenges, career exploration, and personal development.",
+        "Our flagship program pairs BIPOC Youth with successful professionals who provide guidance, support, and advice. Mentors meet with their mentees regularly to help them navigate academic challenges, career exploration, and personal development.",
       features: [
         "One-on-one mentoring sessions",
         "Career exploration opportunities",
@@ -33,7 +33,7 @@ export default function ProgramsList() {
       id: "academic",
       title: "Academic Support Program",
       description:
-        "We provide tutoring, study skills workshops, and educational resources to help girls excel in their studies. Our academic support program includes homework help, test preparation, and guidance on course selection and college applications.",
+        "We provide tutoring, study skills workshops, and educational resources to help BIPOC Youth excel in their studies. Our academic support program includes homework help, test preparation, and guidance on course selection and college applications.",
       features: [
         "After-school tutoring sessions",
         "Study skills workshops",
@@ -62,7 +62,7 @@ export default function ProgramsList() {
       <div className="container mx-auto px-4 md:px-6">
         <div className="max-w-4xl mx-auto mb-16">
           <p className="text-xl text-gray-700">
-            Our programs are designed to provide comprehensive support for BIPOC girls aged 11-18, addressing their
+            Our programs are designed to provide comprehensive support for BIPOC Youth aged 11-18, addressing their
             educational, social, and personal development needs. Each program offers unique opportunities for growth and
             learning in a supportive environment.
           </p>

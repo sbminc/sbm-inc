@@ -2,9 +2,11 @@
 
 import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useRouter } from "next/navigation"
 
 export default function EventsCalendar() {
   const [currentMonth, setCurrentMonth] = useState(new Date())
+  const router = useRouter();
 
   const months = [
     "January",
@@ -21,13 +23,15 @@ export default function EventsCalendar() {
     "December",
   ]
 
-  // Sample event dates
-  const eventDates = [
-    new Date(2024, 5, 15), // June 15, 2024
-    new Date(2024, 6, 22), // July 22, 2024
-    new Date(2024, 7, 5), // August 5, 2024
-    new Date(2024, 8, 10), // September 10, 2024
-  ]
+  // Event dates for real events
+  const eventMap: { [key: string]: string } = {
+    "2025-07-21": "/events/1",
+    "2025-11-15": "/events/2",
+  };
+  const eventDates = Object.keys(eventMap).map(dateStr => {
+    const [year, month, day] = dateStr.split("-").map(Number);
+    return new Date(year, month - 1, day);
+  });
 
   const getDaysInMonth = (year: number, month: number) => {
     return new Date(year, month + 1, 0).getDate()
@@ -60,17 +64,24 @@ export default function EventsCalendar() {
     // Add cells for each day of the month
     for (let day = 1; day <= daysInMonth; day++) {
       const date = new Date(year, month, day)
+      const dateKey = `${date.getFullYear()}-${String(date.getMonth()+1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
       const hasEvent = eventDates.some(
         (eventDate) =>
           eventDate.getDate() === date.getDate() &&
           eventDate.getMonth() === date.getMonth() &&
           eventDate.getFullYear() === date.getFullYear(),
       )
-
+      const handleClick = () => {
+        if (eventMap[dateKey]) {
+          router.push(eventMap[dateKey]);
+        }
+      };
       days.push(
         <div
           key={day}
-          className={`h-12 md:h-16 flex items-center justify-center relative ${hasEvent ? "font-bold" : ""}`}
+          className={`h-12 md:h-16 flex items-center justify-center relative ${hasEvent ? "font-bold cursor-pointer" : ""}`}
+          onClick={hasEvent ? handleClick : undefined}
+          style={hasEvent ? { cursor: "pointer" } : {}}
         >
           <span
             className={`w-10 h-10 flex items-center justify-center rounded-full ${

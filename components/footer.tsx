@@ -57,7 +57,7 @@ export default function Footer() {
               <span className="text-2xl font-bold group-hover:text-gold transition-colors">SBM Inc.</span>
             </Link>
             <p className="text-white/80 mb-6 leading-relaxed">
-              Sacrificing, Believing, and Manifesting for the future of BIPOC girls in Volusia County.
+              Sacrificing, Believing, and Manifesting for the future of BIPOC Youth in Volusia County.
             </p>
             <div className="flex space-x-4">
               <a
@@ -184,7 +184,7 @@ export default function Footer() {
                 <div className="w-10 h-10 rounded-full bg-burgundy/20 flex items-center justify-center mr-4 flex-shrink-0">
                   <Phone size={18} className="text-gold" />
                 </div>
-                <span className="text-white/80">(123) 456-7890</span>
+                <span className="text-white/80">+1 (904) 717-3105</span>
               </li>
             </ul>
           </div>

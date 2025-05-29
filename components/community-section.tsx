@@ -69,18 +69,7 @@ export default function CommunitySection() {
         </div>
 
         <div className="mt-16 text-center">
-          <div className="relative inline-block">
-            <Image
-              src="/placeholder.svg?height=400&width=800"
-              alt="Community gathering"
-              width={800}
-              height={400}
-              className="rounded-xl shadow-xl"
-            />
-            <div className="absolute bottom-4 right-4">
-              <AdinkraSymbol name="funtunfunefu-denkyemfunefu" size="lg" color="#e9b949" opacity={0.8} />
-            </div>
-          </div>
+          {/* Removed placeholder image and Adinkra symbol here */}
         </div>
       </div>
     </section>

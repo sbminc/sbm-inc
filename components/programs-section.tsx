@@ -37,7 +37,7 @@ export default function ProgramsSection() {
   const programs = [
     {
       title: "Academic Support",
-      description: "Tutoring and educational resources to help girls excel in their studies.",
+      description: "Tutoring and educational resources to help BIPOC Youth excel in their studies.",
       symbol: "nea-onnim-no-sua-a-ohu" as const,
     },
     {
@@ -65,7 +65,7 @@ export default function ProgramsSection() {
             Our <span className="text-gold">Programs</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-2xl mx-auto">
-            We offer various programs designed to support the growth and development of BIPOC girls in our community.
+            We offer various programs designed to support the growth and development of BIPOC Youth in our community.
           </p>
         </div>
 

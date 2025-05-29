@@ -1,3 +1,5 @@
+"use client"
+import { useState } from "react"
 import Image from "next/image"
 
 export default function LeadersList() {
@@ -9,18 +11,80 @@ export default function LeadersList() {
     bio: "Dr. Sadie McConner is the visionary founder of SBM Inc., inspired by the documentary 'PUSH OUT: Criminalization of Black Girls' written by Monique Morris. With a passion for empowering BIPOC girls, she leads our mission to create positive change in Volusia County."
   }
 
-  // Leadership team (names only, omitting Danielle Griffin-Baker and Nicole Small)
+  // Leadership team with bios and images
   const leaders = [
-    "Ariel Brown",
-    "Carolyn Gillis",
-    "Courtney Davison",
-    "Dealie Luckett",
-    "Dixie Morgese",
-    "Godzetta Whittington",
-    "Sharon Brown",
-    "Waynetha Neal Ferguson",
-    "Christine Robinson"
+    {
+      name: "Godzetta Whittington",
+      role: "Board Member",
+      image: "/images/Leaders/Godzetta.jpg",
+      bio: "Born and raised between Coney Island, New York, and North Carolina, Godzetta Whittington brings over 30 years of experience as a dedicated educator. Throughout her career, she has remained committed to the belief that all children can learn and thrive when given the right support and opportunities. As a proud board member of SBM, Godzetta supports the organization's mission to help young people connect with and celebrate their cultural heritage through transformative conferences and mentorship."
+    },
+    {
+      name: "Dedrick L. Adell",
+      role: "Board Member",
+      image: "/images/Leaders/Dedrick.jpg",
+      bio: "Dedrick L. Adell is the President/CEO of Holistiq Planning, LLC, which educates clients on their personal retirement strategies such as achieving tax advantaged and tax advantaged retirement. Dedrick is originally from Blytheville, Arkansas, and a graduate of Blytheville High School. Upon graduation, he enlisted in the United States Marines Corps. Following his military service, he attended Park University in Parkville, Missouri, where he attained a bachelor's degree in Management and Finance. As Dedrick grew in his call to ministry, he attended Andersonville Theological Seminary in Andersonville, Georgia, where he graduated Summa Cum Laude with a Bachelor of Divinity in Pastoral Leadership. However, he did not stop there. He went on to pursue and obtain a Master of Arts in Ministry and Master of Divinity degree from Luther Rice Theological Seminary in Lithonia, Georgia. Most recently, Dedrick graduated from the Texas A&M School of Law with the Master of Jurisprudence in Wealth and Tax Management. In addition to his formal education, Dedrick has numerous professional licenses and certifications including Chartered Financial Consultant (ChFC®), Chartered Retirement Planning Counselor (CRPC®), Certified Tax Specialist®, and Accredited Investment Fiduciary (AIF®), Accredited Estate Planner (AEP®) to name a few. His current business memberships include an active membership in the National Association of Insurance and Financial Advisors (NAIFA), a member of The Financial Planning Association of Dallas Ft Worth, and a qualifying member of The Kingdom Advisors of Dallas. Dedrick is involved in many community organizations including Urban League of Dallas/Ft. Worth, Texas. He currently serves as an Associate Minister at Friendship Baptist Church of The Colony, serves as a facilitator in the Grief Ministry and New Members Orientation."
+    },
+    {
+      name: "Ariel Brown",
+      role: "Leadership Team Member",
+      image: "/placeholder.svg",
+      bio: ""
+    },
+    {
+      name: "Carolyn Gillis",
+      role: "Leadership Team Member",
+      image: "/placeholder.svg",
+      bio: ""
+    },
+    {
+      name: "Courtney Davison",
+      role: "Leadership Team Member",
+      image: "/placeholder.svg",
+      bio: ""
+    },
+    {
+      name: "Dealie Luckett",
+      role: "Leadership Team Member",
+      image: "/placeholder.svg",
+      bio: ""
+    },
+    {
+      name: "Dixie Morgese",
+      role: "Leadership Team Member",
+      image: "/placeholder.svg",
+      bio: ""
+    },
+    {
+      name: "Sharon Brown",
+      role: "Leadership Team Member",
+      image: "/placeholder.svg",
+      bio: ""
+    },
+    {
+      name: "Waynetha Neal Ferguson",
+      role: "Leadership Team Member",
+      image: "/placeholder.svg",
+      bio: ""
+    },
+    {
+      name: "Christine Robinson",
+      role: "Leadership Team Member",
+      image: "/placeholder.svg",
+      bio: ""
+    }
   ]
+
+  // State to track which bios are expanded
+  const [expanded, setExpanded] = useState(Array(leaders.length).fill(false))
+
+  const toggleExpand = (idx: number) => {
+    setExpanded((prev) => {
+      const copy = [...prev]
+      copy[idx] = !copy[idx]
+      return copy
+    })
+  }
 
   return (
     <section className="py-20 bg-white">
@@ -39,17 +103,40 @@ export default function LeadersList() {
           </div>
         </div>
 
-        {/* Leadership Team List */}
-        <div className="max-w-3xl mx-auto mb-16">
-          <h2 className="text-2xl font-bold mb-6 text-deep-blue text-center">Leadership Team</h2>
-          <ul className="space-y-4 text-center">
-            {leaders.map((name, idx) => (
-              <li key={idx} className="text-lg text-gray-700">
-                <span className="font-semibold">{name}</span>
-                <span className="ml-2 text-gold">Leadership Team Member</span>
-              </li>
+        {/* Leadership Team Gallery */}
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold mb-12 text-deep-blue text-center">Leadership Team</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {leaders.map((leader, idx) => (
+              <div key={idx} className="bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100">
+                <div className="relative h-80 w-full bg-white flex items-center justify-center">
+                  <Image
+                    src={leader.image}
+                    alt={leader.name}
+                    fill
+                    className="object-contain p-4"
+                  />
+                </div>
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-2 text-deep-blue">{leader.name}</h3>
+                  <p className="text-gold font-medium mb-4">{leader.role}</p>
+                  {leader.bio && (
+                    <>
+                      <p className={`text-gray-600 leading-relaxed ${expanded[idx] ? '' : 'line-clamp-4'}`}>{leader.bio}</p>
+                      {leader.bio.length > 180 && (
+                        <button
+                          className="mt-2 text-burgundy hover:underline font-medium focus:outline-none"
+                          onClick={() => toggleExpand(idx)}
+                        >
+                          {expanded[idx] ? 'Show Less' : 'Read More'}
+                        </button>
+                      )}
+                    </>
+                  )}
+                </div>
+              </div>
             ))}
-          </ul>
+          </div>
         </div>
       </div>
     </section>

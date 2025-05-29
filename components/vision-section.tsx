@@ -62,7 +62,7 @@ export default function VisionSection() {
             </div>
 
             <p className="text-xl mb-8 text-gray-700 leading-relaxed">
-              To educate, empower, and inspire BIPOC girls from the ages of 11-18 years old in Volusia County.
+              To educate, empower, and inspire BIPOC Youth from the ages of 11-18 years old in Volusia County.
             </p>
 
             <div className="space-y-6">
