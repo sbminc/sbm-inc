@@ -172,8 +172,6 @@ export default function EventsList() {
               <div
                 key={event.id}
                 className="group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gold"
-                tabIndex={0}
-                aria-label={`View details for ${event.title}`}
               >
                 <div
                   className="relative h-60 w-full"
@@ -207,6 +205,7 @@ export default function EventsList() {
                     href={`/events/${event.id}`}
                     className="inline-flex items-center text-burgundy hover:text-burgundy-light font-medium group-hover:underline"
                     aria-label={`View details for ${event.title}`}
+                    style={{ zIndex: 10, position: 'relative' }}
                   >
                     Event Details
                     <svg
