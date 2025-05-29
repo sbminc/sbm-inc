@@ -5,45 +5,66 @@ import Link from "next/link"
 import Image from "next/image"
 import AdinkraPattern from "./adinkra-pattern"
 
+function getRandomShootingStar() {
+  return {
+    id: Math.random().toString(36).substr(2, 9),
+    top: `${Math.random() * 50}%`,
+    left: `${Math.random() * 90}%`,
+    animationDelay: '0s',
+    animationDuration: `${Math.random() * 5 + 3}s`,
+    transform: `rotate(${Math.random() * 45 + 20}deg)`
+  }
+}
+
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
-  const [stars, setStars] = useState<Array<{ top: string; left: string; size: string; delay: string }>>([])
-  const [shootingStars, setShootingStars] = useState<Array<{ top: string; left: string; delay: string }>>([])
+  const [stars, setStars] = useState<Array<{ top: string; left: string; size: string; duration: string; delay: string }>>([])
+  const [shootingStars, setShootingStars] = useState<any[]>([])
+  const shootingStarCount = useRef(0)
 
   useEffect(() => {
-    // Generate random stars
     const newStars = Array.from({ length: 100 }, () => ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
       size: `${Math.random() * 2 + 1}px`,
-      delay: `${Math.random() * 5}s`,
+      duration: `${Math.random() * 5 + 3}s`,
+      delay: `${Math.random()}s`,
     }))
     setStars(newStars)
+  }, [])
 
-    // Generate shooting stars
-    const newShootingStars = Array.from({ length: 3 }, () => ({
-      top: `${Math.random() * 50}%`,
-      left: `${Math.random() * 30}%`,
-      delay: `${Math.random() * 15 + 5}s`,
-    }))
-    setShootingStars(newShootingStars)
+  useEffect(() => {
+    let interval: NodeJS.Timeout
+    function addShootingStar() {
+      if (shootingStarCount.current >= 8) return
+      setShootingStars((prev) => {
+        if (prev.length >= 4) return prev
+        shootingStarCount.current += 1
+        return [...prev, getRandomShootingStar()]
+      })
+    }
+    interval = setInterval(() => {
+      addShootingStar()
+    }, Math.random() * 1500 + 1200)
+    return () => clearInterval(interval)
+  }, [])
 
+  function handleShootingStarEnd(id: string) {
+    setShootingStars((prev) => prev.filter((star) => star.id !== id))
+  }
+
+  useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       if (!heroRef.current) return
-
       const { clientX, clientY } = e
       const { width, height, left, top } = heroRef.current.getBoundingClientRect()
-
       const x = (clientX - left) / width
       const y = (clientY - top) / height
-
       const moveX = (x - 0.5) * 20
       const moveY = (y - 0.5) * 20
-
       heroRef.current.style.setProperty("--move-x", `${moveX}px`)
       heroRef.current.style.setProperty("--move-y", `${moveY}px`)
     }
-
     document.addEventListener("mousemove", handleMouseMove)
     return () => {
       document.removeEventListener("mousemove", handleMouseMove)
@@ -60,14 +81,15 @@ export default function HeroSection() {
       {stars.map((star, i) => (
         <div
           key={i}
-          className="absolute rounded-full bg-white"
+          className="absolute rounded-full bg-white star-twinkle"
           style={{
             top: star.top,
             left: star.left,
             width: star.size,
             height: star.size,
             opacity: Math.random() * 0.8 + 0.2,
-            animation: `twinkle ${Math.random() * 5 + 3}s infinite ${star.delay}`,
+            animationDuration: star.duration,
+            animationDelay: star.delay,
           }}
         />
       ))}
@@ -76,16 +98,18 @@ export default function HeroSection() {
       <AdinkraPattern color="white" baseOpacity={0.03} density="medium" />
 
       {/* Shooting stars */}
-      {shootingStars.map((star, i) => (
+      {shootingStars.map((star) => (
         <div
-          key={i}
+          key={star.id}
           className="shooting-star"
           style={{
             top: star.top,
             left: star.left,
-            animationDelay: star.delay,
-            transform: `rotate(${Math.random() * 45 + 20}deg)`,
+            animationDelay: star.animationDelay,
+            animationDuration: star.animationDuration,
+            transform: star.transform,
           }}
+          onAnimationEnd={() => handleShootingStarEnd(star.id)}
         />
       ))}
 
