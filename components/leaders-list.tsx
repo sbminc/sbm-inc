@@ -28,49 +28,49 @@ export default function LeadersList() {
     {
       name: "Ariel Brown",
       role: "Leadership Team Member",
-      image: "/placeholder.svg",
+      image: "/images/leaders/placeholderw.png",
       bio: ""
     },
     {
       name: "Carolyn Gillis",
       role: "Leadership Team Member",
-      image: "/placeholder.svg",
+      image: "/images/leaders/placeholderw.png",
       bio: ""
     },
     {
       name: "Courtney Davison",
       role: "Leadership Team Member",
-      image: "/placeholder.svg",
+      image: "/images/leaders/placeholderw.png",
       bio: ""
     },
     {
       name: "Dealie Luckett",
       role: "Leadership Team Member",
-      image: "/placeholder.svg",
+      image: "/images/leaders/placeholderw.png",
       bio: ""
     },
     {
       name: "Dixie Morgese",
       role: "Leadership Team Member",
-      image: "/placeholder.svg",
+      image: "/images/leaders/placeholderw.png",
       bio: ""
     },
     {
       name: "Sharon Brown",
       role: "Leadership Team Member",
-      image: "/placeholder.svg",
+      image: "/images/leaders/placeholderw.png",
       bio: ""
     },
     {
       name: "Waynetha Neal Ferguson",
       role: "Leadership Team Member",
-      image: "/placeholder.svg",
+      image: "/images/leaders/placeholderw.png",
       bio: ""
     },
     {
       name: "Christine Robinson",
       role: "Leadership Team Member",
-      image: "/placeholder.svg",
+      image: "/images/leaders/placeholderw.png",
       bio: ""
     }
   ]

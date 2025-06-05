@@ -1,5 +1,5 @@
-import Image from "next/image"
 import Link from "next/link"
+import ProgramImageCarousel from "./program-image-carousel"
 
 export default function ProgramsList() {
   const programs = [
@@ -14,7 +14,6 @@ export default function ProgramsList() {
         "Academic guidance and support",
         "Personal development activities",
       ],
-      image: "/placeholder.svg?height=400&width=600",
     },
     {
       id: "leadership",
@@ -27,7 +26,6 @@ export default function ProgramsList() {
         "Conflict resolution strategies",
         "Community leadership projects",
       ],
-      image: "/placeholder.svg?height=400&width=600",
     },
     {
       id: "academic",
@@ -40,7 +38,6 @@ export default function ProgramsList() {
         "College application assistance",
         "Scholarship information and guidance",
       ],
-      image: "/placeholder.svg?height=400&width=600",
     },
     {
       id: "community",
@@ -53,7 +50,6 @@ export default function ProgramsList() {
         "Leadership roles in service projects",
         "Reflection and growth discussions",
       ],
-      image: "/placeholder.svg?height=400&width=600",
     },
   ]
 
@@ -75,16 +71,7 @@ export default function ProgramsList() {
               className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center`}
             >
               <div className="lg:w-1/2">
-                <div className="relative rounded-xl overflow-hidden shadow-xl">
-                  <div className="absolute inset-0 bg-gradient-to-tr from-burgundy/20 to-gold/20 mix-blend-overlay"></div>
-                  <Image
-                    src={program.image || "/placeholder.svg"}
-                    alt={program.title}
-                    width={600}
-                    height={400}
-                    className="w-full h-auto object-cover"
-                  />
-                </div>
+                <ProgramImageCarousel programId={program.id} title={program.title} />
               </div>
               <div className="lg:w-1/2">
                 <h2 className="text-3xl md:text-4xl font-bold mb-4 text-deep-blue">{program.title}</h2>
