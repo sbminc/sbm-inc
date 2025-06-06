@@ -197,6 +197,11 @@ export default function Footer() {
             <AdinkraSymbol name="adinkrahene" size="sm" color="white" className="opacity-50" withTooltip />
             <AdinkraSymbol name="akoma" size="sm" color="white" className="opacity-50" withTooltip />
           </div>
+          <div className="mt-4 flex justify-center space-x-4">
+            <a href="/privacy-policy" className="underline hover:text-gold">Privacy Policy</a>
+            <span>|</span>
+            <a href="/accessibility" className="underline hover:text-gold">Accessibility</a>
+          </div>
         </div>
       </div>
     </footer>

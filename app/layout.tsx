@@ -57,6 +57,19 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
+        <link rel="canonical" href="https://sbminc.org" />
+        <meta name="description" content="SBM Inc. is dedicated to empowering BIPOC youth through education, mentorship, and community support. Join us in our mission to create lasting positive change." />
+        <meta name="keywords" content="BIPOC youth, education, mentorship, community support, empowerment, SBM Inc." />
+        <meta property="og:title" content="SBM Inc. | Empowering BIPOC Youth" />
+        <meta property="og:description" content="Empowering BIPOC youth through education, mentorship, and community support." />
+        <meta property="og:image" content="/og-image.jpg" />
+        <meta property="og:url" content="https://sbminc.org" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="SBM Inc. | Empowering BIPOC Youth" />
+        <meta name="twitter:description" content="Empowering BIPOC youth through education, mentorship, and community support." />
+        <meta name="twitter:image" content="/og-image.jpg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
       </head>
       <body className="antialiased">{children}</body>
     </html>

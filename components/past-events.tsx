@@ -109,11 +109,11 @@ const videos = [
 const presentations = [
   {
     title: "BIPOC Women's History Presentation",
-    file: "/Powerpoints/BIPOC Womens History Presentation (1).pptx"
+    file: "/powerpoints/BIPOC Womens History Presentation (1).pptx"
   },
   {
-    title: "Msichana 2024 Presentation",
-    file: "/Powerpoints/Msichana 2024 Presentation.pptx"
+    title: "Msichana Sponsor Levels",
+    file: "/powerpoints/Msichana Sponsor Levels.docx"
   }
 ];
 

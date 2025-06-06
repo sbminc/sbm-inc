@@ -54,7 +54,7 @@ export default function AboutContent() {
 
           <div className="mb-16 flex flex-col md:flex-row items-center gap-8">
             <div className="w-full md:w-1/2 flex justify-center">
-              <img src="/ms sadie.jpg" alt="Dr. Sadie McConner" className="rounded-xl shadow-lg max-w-xs" />
+              <img src="/ms sadie.jpg" alt="Dr. Sadie McConner" className="rounded-xl shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-xs h-auto object-cover" />
             </div>
             <div className="w-full md:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-deep-blue">Affirmation</h2>
@@ -78,20 +78,20 @@ export default function AboutContent() {
 
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-deep-blue">Our Impact</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-              <div className="bg-gray-50 rounded-xl p-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-8">
+              <div className="bg-gray-50 rounded-xl p-6 sm:p-8">
                 <div className="text-5xl font-bold text-burgundy mb-4">100+</div>
                 <p className="text-xl text-gray-700">BIPOC Youth served through our programs annually</p>
               </div>
-              <div className="bg-gray-50 rounded-xl p-8">
+              <div className="bg-gray-50 rounded-xl p-6 sm:p-8">
                 <div className="text-5xl font-bold text-burgundy mb-4">90%</div>
                 <p className="text-xl text-gray-700">Program participants report increased confidence</p>
               </div>
-              <div className="bg-gray-50 rounded-xl p-8">
+              <div className="bg-gray-50 rounded-xl p-6 sm:p-8">
                 <div className="text-5xl font-bold text-burgundy mb-4">85%</div>
                 <p className="text-xl text-gray-700">Improvement in academic performance</p>
               </div>
-              <div className="bg-gray-50 rounded-xl p-8">
+              <div className="bg-gray-50 rounded-xl p-6 sm:p-8">
                 <div className="text-5xl font-bold text-burgundy mb-4">1,000+</div>
                 <p className="text-xl text-gray-700">Community service hours completed</p>
               </div>
