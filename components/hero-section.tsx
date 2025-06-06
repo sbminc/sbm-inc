@@ -18,17 +18,20 @@ function getRandomShootingStar() {
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
-  const [stars, setStars] = useState<Array<{ top: string; left: string; size: string; duration: string; delay: string }>>([])
+  const [stars, setStars] = useState<Array<{ top: string; left: string; size: string; duration: string; delay: string; color: string; opacity: number }>>([])
   const [shootingStars, setShootingStars] = useState<any[]>([])
   const shootingStarCount = useRef(0)
 
   useEffect(() => {
-    const newStars = Array.from({ length: 100 }, () => ({
+    const starColors = ["#fff", "#bcdfff", "#ffe9b3"];
+    const newStars = Array.from({ length: 140 }, () => ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
-      size: `${Math.random() * 2 + 1}px`,
+      size: `${Math.random() * 2.5 + 0.7}px`,
       duration: `${Math.random() * 5 + 3}s`,
       delay: `${Math.random()}s`,
+      color: starColors[Math.floor(Math.random() * starColors.length)],
+      opacity: Math.random() * 0.7 + 0.3,
     }))
     setStars(newStars)
   }, [])
@@ -81,13 +84,14 @@ export default function HeroSection() {
       {stars.map((star, i) => (
         <div
           key={i}
-          className="absolute rounded-full bg-white star-twinkle"
+          className="absolute rounded-full star-twinkle"
           style={{
             top: star.top,
             left: star.left,
             width: star.size,
             height: star.size,
-            opacity: Math.random() * 0.8 + 0.2,
+            background: star.color,
+            opacity: star.opacity,
             animationDuration: star.duration,
             animationDelay: star.delay,
           }}
