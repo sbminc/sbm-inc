@@ -26,6 +26,7 @@ export default function AdinkraPattern({
   }
   const count = counts[density]
 
+  const [mounted, setMounted] = useState(false)
   const [randomPattern, setRandomPattern] = useState<{
     symbol: AdinkraSymbolName
     size: "xs" | "sm" | "md"
@@ -36,23 +37,31 @@ export default function AdinkraPattern({
   }[] | null>(null)
 
   useEffect(() => {
-    const arr = Array.from({ length: count }).map(() => ({
-      symbol: symbols[Math.floor(Math.random() * symbols.length)],
-      size: ["xs", "sm", "md"][Math.floor(Math.random() * 3)] as "xs" | "sm" | "md",
-      opacity: baseOpacity * (Math.random() * 0.5 + 0.5),
+    setMounted(true)
+    // Only generate random Adinkra symbols on the client
+    const adinkraSymbols = [
+      "fawohodie", "gye-nyame", "sankofa", "duafe", "aya", "akoma", "dwennimmen", "nyame-nti", "nkyinkyim", "osram-ne-nsoromma"
+    ]
+    const sizes = ["xs", "sm", "md"] as const
+    const newSymbols = Array.from({ length: count }, () => ({
       top: Math.random() * 100,
       left: Math.random() * 100,
+      size: sizes[Math.floor(Math.random() * sizes.length)],
+      symbol: adinkraSymbols[Math.floor(Math.random() * adinkraSymbols.length)] as AdinkraSymbolName,
+      opacity: Math.random() * 0.3 + 0.2,
       rotate: Math.random() * 360,
     }))
-    setRandomPattern(arr)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [count, baseOpacity, symbols.join(",")])
+    setRandomPattern(newSymbols)
+  }, [count])
 
-  if (!randomPattern) return null
+  if (!mounted) {
+    // Static fallback for SSR: no random Adinkra symbols
+    return null
+  }
 
   return (
     <div className={`absolute inset-0 overflow-hidden pointer-events-none ${className}`}>
-      {randomPattern.map((item, i) => (
+      {randomPattern?.map((item, i) => (
         <div
           key={i}
           className="absolute"

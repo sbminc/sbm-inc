@@ -18,11 +18,14 @@ function getRandomShootingStar() {
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
   const [stars, setStars] = useState<Array<{ top: string; left: string; size: string; duration: string; delay: string; color: string; opacity: number }>>([])
   const [shootingStars, setShootingStars] = useState<any[]>([])
   const shootingStarCount = useRef(0)
 
   useEffect(() => {
+    setMounted(true)
+    // Only generate random stars on the client
     const starColors = ["#fff", "#bcdfff", "#ffe9b3"];
     const newStars = Array.from({ length: 140 }, () => ({
       top: `${Math.random() * 100}%`,
@@ -37,6 +40,7 @@ export default function HeroSection() {
   }, [])
 
   useEffect(() => {
+    if (!mounted) return;
     let interval: NodeJS.Timeout
     function addShootingStar() {
       if (shootingStarCount.current >= 8) return
@@ -50,13 +54,14 @@ export default function HeroSection() {
       addShootingStar()
     }, Math.random() * 1500 + 1200)
     return () => clearInterval(interval)
-  }, [])
+  }, [mounted])
 
   function handleShootingStarEnd(id: string) {
     setShootingStars((prev) => prev.filter((star) => star.id !== id))
   }
 
   useEffect(() => {
+    if (!mounted) return;
     const handleMouseMove = (e: MouseEvent) => {
       if (!heroRef.current) return
       const { clientX, clientY } = e
@@ -72,7 +77,31 @@ export default function HeroSection() {
     return () => {
       document.removeEventListener("mousemove", handleMouseMove)
     }
-  }, [])
+  }, [mounted])
+
+  if (!mounted) {
+    // Static fallback for SSR: no random stars or shooting stars
+    return (
+      <div
+        ref={heroRef}
+        className="relative starry-bg min-h-screen flex items-center justify-center py-32 md:py-40 overflow-hidden"
+        style={{ backgroundColor: "#0f172a" }}
+      >
+        <div className="container mx-auto px-4 md:px-6 relative z-10">
+          <div className="max-w-3xl mx-auto text-center">
+            <h1 className="text-5xl md:text-7xl font-bold mb-8">
+              <span className="block mb-2" style={{ color: '#C8102E' }}>SACRIFICING,</span>
+              <span className="block mb-2" style={{ color: '#C8102E' }}>BELIEVING,</span>
+              <span className="block" style={{ color: '#C8102E' }}>MANIFESTING</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 mb-10 leading-relaxed">
+              Empowering BIPOC Youth to reach their full potential through education, mentorship, and community support.
+            </p>
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div

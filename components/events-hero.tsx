@@ -17,11 +17,14 @@ function getRandomShootingStar() {
 
 export default function EventsHero() {
   const heroRef = useRef<HTMLDivElement>(null)
+  const [mounted, setMounted] = useState(false)
   const [stars, setStars] = useState<Array<{ top: string; left: string; size: string; duration: string; delay: string }>>([])
   const [shootingStars, setShootingStars] = useState<any[]>([])
   const shootingStarCount = useRef(0)
 
   useEffect(() => {
+    setMounted(true)
+    // Only generate random stars on the client
     const newStars = Array.from({ length: 100 }, () => ({
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
@@ -33,6 +36,7 @@ export default function EventsHero() {
   }, [])
 
   useEffect(() => {
+    if (!mounted) return;
     let interval: NodeJS.Timeout
     function addShootingStar() {
       if (shootingStarCount.current >= 8) return
@@ -46,10 +50,44 @@ export default function EventsHero() {
       addShootingStar()
     }, Math.random() * 1500 + 1200)
     return () => clearInterval(interval)
-  }, [])
+  }, [mounted])
 
   function handleShootingStarEnd(id: string) {
     setShootingStars((prev) => prev.filter((star) => star.id !== id))
+  }
+
+  useEffect(() => {
+    if (!mounted) return;
+    const handleMouseMove = (e: MouseEvent) => {
+      if (!heroRef.current) return
+      const { clientX, clientY } = e
+      const { width, height, left, top } = heroRef.current.getBoundingClientRect()
+      const x = (clientX - left) / width
+      const y = (clientY - top) / height
+      const moveX = (x - 0.5) * 20
+      const moveY = (y - 0.5) * 20
+      heroRef.current.style.setProperty("--move-x", `${moveX}px`)
+      heroRef.current.style.setProperty("--move-y", `${moveY}px`)
+    }
+    document.addEventListener("mousemove", handleMouseMove)
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove)
+    }
+  }, [mounted])
+
+  if (!mounted) {
+    // Static fallback for SSR: no random stars or shooting stars
+    return (
+      <div
+        ref={heroRef}
+        className="relative starry-bg min-h-[500px] flex flex-col items-center justify-center overflow-hidden"
+        style={{ backgroundColor: "#0f172a" }}
+      >
+        <div className="absolute opacity-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px]">
+          <Image src="/SBM-Logo-4.png" alt="SBM Inc. Logo Background" fill className="object-contain" />
+        </div>
+      </div>
+    )
   }
 
   return (

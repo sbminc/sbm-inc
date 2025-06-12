@@ -1,24 +1,53 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { Facebook, Instagram, Youtube, Mail, MapPin, Phone } from "lucide-react"
 import AdinkraSymbol from "./adinkra-symbol"
+import { useState, useEffect } from "react"
 
 export default function Footer() {
+  const [mounted, setMounted] = useState(false)
+  const [stars, setStars] = useState<Array<{ top: string; left: string; size: string; opacity: number }>>([])
+
+  useEffect(() => {
+    setMounted(true)
+    // Only generate random stars on the client
+    const newStars = Array.from({ length: 60 }, () => ({
+      top: `${Math.random() * 100}%`,
+      left: `${Math.random() * 100}%`,
+      size: `${Math.random() * 2 + 1}px`,
+      opacity: Math.random() * 0.5 + 0.3,
+    }))
+    setStars(newStars)
+  }, [])
+
+  if (!mounted) {
+    // Static fallback for SSR: no random stars
+    return (
+      <footer className="relative bg-burgundy text-white py-10 px-4 md:px-8 mt-16">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* ...existing footer content... */}
+        </div>
+      </footer>
+    )
+  }
+
   return (
     <footer className="bg-gradient-to-b from-burgundy via-deep-blue to-midnight-blue text-white relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-r from-gold/10 to-orange/10 opacity-30"></div>
         <div className="stars-container absolute inset-0">
-          {Array.from({ length: 50 }).map((_, i) => (
+          {stars.map((star, index) => (
             <div
-              key={i}
+              key={index}
               className="absolute rounded-full bg-white opacity-70"
               style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                width: `${Math.random() * 2 + 1}px`,
-                height: `${Math.random() * 2 + 1}px`,
+                top: star.top,
+                left: star.left,
+                width: star.size,
+                height: star.size,
                 animation: `twinkle ${Math.random() * 5 + 3}s infinite`,
               }}
             />
