@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import BackToTop from '@/components/back-to-top'
 
 export const metadata: Metadata = {
   title: 'SBM Inc. | Empowering BIPOC Youth',
@@ -43,7 +44,37 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
+  verification: {
+    google: 'your-google-site-verification', // Add your Google verification code
+  },
+}
+
+// Structured data for the organization
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'NonprofitOrganization',
+  name: 'SBM Inc.',
+  url: 'https://sbm-inc.org',
+  logo: 'https://sbm-inc.org/SBM-Logo-4.png',
+  description: 'SBM Inc. is dedicated to empowering BIPOC youth through education, mentorship, and community support.',
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: 'Florida',
+    addressCountry: 'US'
+  },
+  sameAs: [
+    'https://www.facebook.com/profile.php?id=61576995671629',
+    'https://www.instagram.com/sbmincorg/',
+    'https://www.youtube.com/channel/UCj_LR2uIn5mdwvT5UB9BsdA'
+  ]
 }
 
 export default function RootLayout({
@@ -70,8 +101,15 @@ export default function RootLayout({
         <meta name="twitter:description" content="Empowering BIPOC youth through education, mentorship, and community support." />
         <meta name="twitter:image" content="/og-image.jpg" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
       </head>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <BackToTop />
+      </body>
     </html>
   )
 }
