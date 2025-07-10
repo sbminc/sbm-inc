@@ -127,9 +127,6 @@ export default function HeroSection() {
         />
       ))}
 
-      {/* Adinkra Pattern Background */}
-      <AdinkraPattern color="white" baseOpacity={0.03} density="medium" />
-
       {/* Shooting stars */}
       {shootingStars.map((star) => (
         <div
