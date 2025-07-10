@@ -32,7 +32,8 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className={`fixed bottom-8 right-8 p-3 rounded-full bg-burgundy text-white shadow-lg transition-all duration-300 hover:bg-burgundy/90 focus:outline-none focus:ring-2 focus:ring-burgundy focus:ring-offset-2 ${
+      // If the button is still unclickable in production, check for parent elements with overflow:hidden or high z-index.
+      className={`fixed bottom-8 right-8 z-50 p-3 rounded-full bg-burgundy text-white shadow-lg transition-all duration-300 hover:bg-burgundy/90 focus:outline-none focus:ring-2 focus:ring-burgundy focus:ring-offset-2 ${
         isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10 pointer-events-none"
       }`}
       aria-label="Back to top"
