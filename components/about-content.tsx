@@ -54,7 +54,7 @@ export default function AboutContent() {
 
           <div className="mb-16 flex flex-col md:flex-row items-center gap-8">
             <div className="w-full md:w-1/2 flex justify-center">
-              <img src="/ms sadie.jpg" alt="Dr. Sadie McConner" className="rounded-xl shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-xs h-auto object-cover" />
+              <img src="/ms sadie.jpg?v=2" alt="Dr. Sadie McConner" className="rounded-xl shadow-lg w-full max-w-xs sm:max-w-sm md:max-w-xs h-auto object-cover" />
             </div>
             <div className="w-full md:w-1/2">
               <h2 className="text-3xl md:text-4xl font-bold mb-6 text-deep-blue">Affirmation</h2>
