@@ -158,6 +158,12 @@ export default function Footer() {
                   Donate
                 </Link>
               </li>
+              <li>
+                <Link href="/black-history-heroes" className="text-white/80 hover:text-gold transition-colors flex items-center">
+                  <span className="w-1.5 h-1.5 bg-gold rounded-full mr-2"></span>
+                  Black History Heroes
+                </Link>
+              </li>
             </ul>
           </div>
 
