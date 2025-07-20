@@ -274,6 +274,78 @@ export const heroes: Hero[] = [
       "Co-founded The Church for the Fellowship of All Peoples, the first interracial congregation",
       "Became the first African American to serve as Dean of Marsh Chapel at Boston University"
     ]
+  },
+  {
+    id: 19,
+    name: "Ryan Coogler",
+    title: "Film Director and Screenwriter",
+    bio: "Ryan Kyle Coogler (born April 23, 1986) is an American film director, screenwriter, and producer who has emerged as one of the most influential voices in contemporary cinema. Born in Oakland, California, Coogler grew up in a working-class family and attended Saint Mary's College of California on a football scholarship, where he discovered his passion for filmmaking. He later earned his MFA from the USC School of Cinematic Arts. Coogler burst onto the scene with his debut feature film, Fruitvale Station (2013), which won the Grand Jury Prize and Audience Award at the Sundance Film Festival. The film, based on the true story of Oscar Grant III, who was killed by police in Oakland in 2009, established Coogler as a filmmaker with a powerful social conscience and an ability to tell deeply human stories. His sophomore effort, Creed (2015), revitalized the Rocky franchise and earned Sylvester Stallone an Academy Award nomination. Coogler's most significant achievement came with Black Panther (2018), which he directed and co-wrote. The film became a cultural phenomenon, grossing over $1.3 billion worldwide and earning seven Academy Award nominations, including Best Picture. Black Panther was celebrated not only for its groundbreaking representation of Black superheroes but also for its exploration of African culture, identity, and the African diaspora. The film's success demonstrated that stories centered on Black characters could achieve both critical acclaim and massive commercial success. Coogler continued his work with Black Panther: Wakanda Forever (2022), which he directed and co-wrote, further expanding the world he created. Beyond his filmmaking, Coogler is known for his commitment to diversity in Hollywood and his mentorship of emerging filmmakers. He has been recognized with numerous awards, including the NAACP Image Award for Outstanding Director and the BET Award for Best Director. Ryan Coogler's work continues to inspire a new generation of filmmakers and audiences, proving that authentic storytelling can bridge cultural divides and create lasting impact.",
+    image: "/images/heroes/ryan-coogler.jpg",
+    birthYear: "1986",
+    achievements: [
+      "Directed 'Black Panther,' which grossed over $1.3 billion worldwide",
+      "Won the Grand Jury Prize at Sundance for his debut film 'Fruitvale Station'",
+      "Revitalized the Rocky franchise with 'Creed,' earning Sylvester Stallone an Oscar nomination",
+      "Became one of the most influential voices in contemporary cinema with authentic storytelling"
+    ]
+  },
+  {
+    id: 20,
+    name: "Damola Adamolekun",
+    title: "Technology Executive and Entrepreneur",
+    bio: "Damola Adamolekun is a Nigerian-American technology executive and entrepreneur who has made significant contributions to the global tech industry. Born in Nigeria and raised in the United States, Adamolekun has built a distinguished career spanning multiple sectors of technology and business. He has held leadership positions at some of the world's most influential companies, including Google, where he served as a senior executive working on strategic initiatives and product development. Adamolekun's expertise lies in the intersection of technology, business strategy, and emerging markets, particularly in Africa. He has been instrumental in developing technology solutions that address the unique challenges and opportunities in developing economies. His work has focused on digital transformation, mobile technology adoption, and creating inclusive technology platforms that serve diverse populations. Beyond his corporate achievements, Adamolekun is known for his commitment to fostering the next generation of African tech leaders. He has been involved in various initiatives aimed at building technology ecosystems in Africa, including mentorship programs, startup accelerators, and educational initiatives. His vision extends beyond traditional tech roles to encompass the broader impact of technology on society, particularly in bridging digital divides and creating economic opportunities. Adamolekun's leadership style is characterized by his ability to navigate complex global markets, his commitment to diversity and inclusion in tech, and his forward-thinking approach to emerging technologies. He continues to be a prominent voice in discussions about the future of technology in Africa and the role of African diaspora professionals in global tech leadership.",
+    image: "/images/heroes/damola-adamolekun.jpg",
+    birthYear: "1980s",
+    achievements: [
+      "Held senior executive positions at Google working on strategic initiatives",
+      "Specialized in technology solutions for emerging markets, particularly in Africa",
+      "Committed to fostering the next generation of African tech leaders",
+      "Advocated for diversity and inclusion in global technology leadership"
+    ]
+  },
+  {
+    id: 21,
+    name: "Quincy Wilson",
+    title: "Track and Field Athlete",
+    bio: "Quincy Wilson is an American track and field athlete who has emerged as one of the most promising young talents in the sport. Born in the early 2000s, Wilson has demonstrated exceptional speed and athleticism from a young age, particularly in sprint events. His natural talent and dedication to training have propelled him to national recognition in youth and junior track competitions. Wilson's achievements in track and field have made him a role model for young athletes, particularly in the African American community. His success demonstrates the importance of early development in sports and the potential for young athletes to achieve excellence through hard work and proper training. Wilson's performances have drawn attention from college recruiters and track enthusiasts, positioning him as a potential future star in American track and field. His journey represents the continuation of a rich tradition of African American excellence in athletics, following in the footsteps of legendary sprinters and track athletes. Wilson's commitment to his sport and his ability to perform under pressure have earned him respect within the track and field community. As he continues to develop his skills and compete at higher levels, Quincy Wilson represents the next generation of American track and field talent, carrying forward the legacy of Black excellence in athletics.",
+    image: "/images/heroes/quincy-wilson.jpg",
+    birthYear: "2000s",
+    achievements: [
+      "Demonstrated exceptional speed and athleticism in sprint events",
+      "Achieved national recognition in youth and junior track competitions",
+      "Became a role model for young athletes in the African American community",
+      "Positioned as a potential future star in American track and field"
+    ]
+  },
+  {
+    id: 22,
+    name: "Langston Hughes",
+    title: "Poet, Novelist, and Playwright",
+    bio: "James Mercer Langston Hughes (February 1, 1901 – May 22, 1967) was one of the most influential and celebrated African American writers of the 20th century. Born in Joplin, Missouri, Hughes was raised primarily by his grandmother in Lawrence, Kansas, after his parents separated. His early life was marked by frequent moves and financial hardship, but he developed a love for literature and writing at an early age. Hughes attended Columbia University briefly before traveling extensively, including a year in Mexico and time in Paris. His breakthrough came in 1921 when his poem 'The Negro Speaks of Rivers' was published in The Crisis magazine, edited by W.E.B. Du Bois. This poem, written when Hughes was just 17, established him as a major voice in African American literature. Hughes became a central figure in the Harlem Renaissance, a cultural movement of the 1920s and 1930s that celebrated Black artistic and intellectual achievement. His poetry, characterized by its musicality, use of vernacular language, and celebration of Black culture, resonated with both Black and white audiences. Notable works include The Weary Blues (1926), his first poetry collection, and Not Without Laughter (1930), his first novel. Hughes was also a prolific playwright, essayist, and children's book author. His work often explored themes of racial identity, the African American experience, and the struggle for equality. He wrote in various styles, from the blues-influenced poetry of his early work to the more political poetry of his later years. Hughes traveled extensively, including to the Soviet Union, and was influenced by socialist and communist ideas, though he was never a member of the Communist Party. His later work became more overtly political, addressing issues of civil rights and social justice. Langston Hughes died in 1967, leaving behind a vast body of work that continues to influence writers and readers worldwide. His legacy as a poet, novelist, playwright, and cultural figure remains unmatched in American literature.",
+    image: "/images/heroes/langston-hughes.jpg",
+    birthYear: "1901",
+    deathYear: "1967",
+    achievements: [
+      "Published 'The Negro Speaks of Rivers' at age 17, establishing him as a major voice",
+      "Became a central figure in the Harlem Renaissance movement",
+      "Authored numerous poetry collections, novels, plays, and children's books",
+      "His work continues to influence writers and readers worldwide"
+    ]
+  },
+  {
+    id: 23,
+    name: "A. Philip Randolph",
+    title: "Labor Leader and Civil Rights Activist",
+    bio: "Asa Philip Randolph (April 15, 1889 – May 16, 1979) was a pioneering African American labor leader, civil rights activist, and socialist whose work laid the foundation for the modern Civil Rights Movement. Born in Crescent City, Florida, Randolph moved to New York City in 1911, where he became involved in the labor movement and socialist politics. He co-founded the Brotherhood of Sleeping Car Porters (BSCP) in 1925, becoming the first Black labor union to be recognized by the American Federation of Labor. The BSCP represented Pullman porters, who were predominantly Black men working on luxury railroad cars. Randolph's leadership of the union was marked by his commitment to both labor rights and civil rights, recognizing that economic justice was inseparable from racial justice. In 1941, Randolph threatened to organize a massive march on Washington to protest discrimination in the defense industry. This threat led President Franklin D. Roosevelt to issue Executive Order 8802, which banned discrimination in defense industries and established the Fair Employment Practices Committee. Though the march was called off, it demonstrated Randolph's ability to use mass mobilization as a political strategy. After World War II, Randolph continued his activism, founding the League for Nonviolent Civil Disobedience Against Military Segregation in 1948. His pressure on President Harry Truman led to the desegregation of the armed forces through Executive Order 9981. In 1963, Randolph was a key organizer of the March on Washington for Jobs and Freedom, where Martin Luther King Jr. delivered his famous 'I Have a Dream' speech. Randolph served as the march's director and was one of its principal speakers. Throughout his life, Randolph advocated for both economic and racial justice, believing that true equality required both civil rights and economic empowerment. His legacy continues to inspire labor activists and civil rights leaders who recognize the interconnected nature of economic and racial justice.",
+    image: "/images/heroes/a-philip-randolph.jpg",
+    birthYear: "1889",
+    deathYear: "1979",
+    achievements: [
+      "Founded the Brotherhood of Sleeping Car Porters, the first recognized Black labor union",
+      "Threatened the 1941 March on Washington, leading to Executive Order 8802",
+      "Helped desegregate the armed forces through Executive Order 9981",
+      "Was a key organizer of the 1963 March on Washington for Jobs and Freedom"
+    ]
   }
 ]
 

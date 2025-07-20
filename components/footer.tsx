@@ -164,6 +164,12 @@ export default function Footer() {
                   Black History Heroes
                 </Link>
               </li>
+              <li>
+                <Link href="/SBM-Mvulana-Slides-Simple.html" className="text-white/80 hover:text-gold transition-colors flex items-center">
+                  <span className="w-1.5 h-1.5 bg-gold rounded-full mr-2"></span>
+                  Summit Slideshow
+                </Link>
+              </li>
             </ul>
           </div>
 
