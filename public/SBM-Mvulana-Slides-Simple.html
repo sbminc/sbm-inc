@@ -66,7 +66,7 @@
             max-width: 80%;
             max-height: 80%;
             object-fit: contain;
-            opacity: 0.4;
+            opacity: 0.3;
         }
 
         /* Single Logo Display */
@@ -83,16 +83,16 @@
         }
 
         .single-logo img {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 60%;
+            max-height: 60%;
             object-fit: contain;
-            opacity: 0.8;
+            opacity: 0.4;
         }
 
         /* Make Bethune-Cookman logo specifically larger */
         #bethune-logo img {
-            max-width: 75%;
-            max-height: 75%;
+            max-width: 70%;
+            max-height: 70%;
         }
 
         /* Reposition logo slide elements to avoid overlap */
@@ -123,15 +123,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding-top: 120px;
-            padding-bottom: 120px;
         }
 
         .single-logo img {
-            max-width: 85%;
-            max-height: 85%;
+            max-width: 60%;
+            max-height: 60%;
             object-fit: contain;
-            opacity: 0.8;
+            opacity: 0.4;
         }
 
         /* Make navigation buttons smaller to fit in one row */
@@ -194,34 +192,56 @@
 
         /* Adjust content to not cover logos */
         .slide-content {
-            font-size: 1.3rem;
-            line-height: 1.4;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
-            padding: 1.5rem;
+            padding: 1rem;
             border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            max-height: 50vh;
-            overflow-y: auto;
-            margin-bottom: 100px;
+            border: 1px solid rgba(233, 185, 73, 0.3);
+            color: var(--gold);
+            margin: 10px 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            /* Ensure content fits without scrolling */
+            max-height: 35vh;
+            overflow: hidden;
+        }
+
+
+
+        /* Special positioning for slide 1 to avoid logo overlap */
+        #slide1 .slide-title {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        #slide1 .slide-subtitle {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 2rem;
+        }
+
+        #slide1 .slide-content {
+            position: relative;
+            z-index: 10;
+            /* Reduce height for slide 1 to avoid background logo overlap */
+            max-height: 40vh;
         }
 
         /* Optimize bio slides for single page view */
         .slide:not(.logo-slide) .slide-content {
-            max-height: 80vh;
-            padding: 0.8rem;
-            font-size: 1rem;
-            line-height: 1.2;
+            max-height: 70vh;
+            padding: 1rem;
+            font-size: 0.85rem;
+            line-height: 1.3;
             overflow: hidden;
         }
 
         /* Compact bio text layout */
         .slide:not(.logo-slide) .slide-content p {
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.4rem;
             text-align: left;
         }
 
@@ -231,228 +251,293 @@
 
         /* Reduce image size in bio slides */
         .slide:not(.logo-slide) .slide-content img {
-            width: 150px !important;
-            height: 150px !important;
-            margin-bottom: 0.5rem !important;
+            width: 100px !important;
+            height: 100px !important;
+            margin-bottom: 0.3rem !important;
         }
 
         /* Reduce title sizes in bio slides */
         .slide:not(.logo-slide) .slide-content h2 {
-            font-size: 1.5rem !important;
-            margin-bottom: 0.3rem !important;
+            font-size: 1.3rem !important;
+            margin-bottom: 0.2rem !important;
         }
 
         .slide:not(.logo-slide) .slide-content p[style*="color: var(--orange)"] {
-            font-size: 1rem !important;
-            margin-bottom: 1rem !important;
+            font-size: 0.9rem !important;
+            margin-bottom: 0.8rem !important;
         }
 
         /* Optimize schedule table for single page view */
         .slide:not(.logo-slide) .slide-content table {
-            font-size: 0.9rem;
-            line-height: 1.2;
+            font-size: 0.7rem;
+            line-height: 1.0;
         }
 
         .slide:not(.logo-slide) .slide-content th,
         .slide:not(.logo-slide) .slide-content td {
-            padding: 0.4rem 0.6rem;
-            font-size: 0.9rem;
+            padding: 0.2rem 0.4rem;
+            font-size: 0.7rem;
         }
 
         .slide:not(.logo-slide) .slide-content thead th {
-            font-size: 1rem;
-            padding: 0.5rem 0.6rem;
+            font-size: 0.8rem;
+            padding: 0.3rem 0.4rem;
+        }
+
+        /* Specific adjustments for slide 6 schedule */
+        #slide6 .slide-content {
+            max-height: 85vh;
+            padding: 1rem;
+        }
+
+        #slide6 .slide-content table {
+            font-size: 0.85rem;
+            line-height: 1.1;
+        }
+
+        #slide6 .slide-content th,
+        #slide6 .slide-content td {
+            padding: 0.35rem 0.5rem;
+            font-size: 0.85rem;
         }
 
         /* Special positioning for logo slides to avoid covering logos */
         .logo-slide .slide-content {
-            max-height: 25vh;
-            position: absolute;
-            bottom: 80px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            max-width: 600px;
-            background: rgba(0, 0, 0, 0.7);
+            position: relative;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.8);
             backdrop-filter: blur(10px);
             padding: 1.5rem;
             border-radius: 15px;
             border: 1px solid rgba(233, 185, 73, 0.3);
             color: var(--gold);
+            margin-top: 0;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            /* Ensure logo slide content doesn't overlap navigation */
+            max-height: 25vh;
+            overflow-y: auto;
+        }
+
+        /* Logo slide layout - move content below logos */
+        .logo-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
         .logo-slide .slide-title {
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            margin-top: 0;
         }
 
         .logo-slide .slide-subtitle {
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
         }
 
-        .slide-title {
-            font-size: 3.5rem;
-            font-weight: bold;
+        /* Position logos in the center area */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            height: 35vh;
+        }
+
+        /* Move logo lower for slide 2 */
+        #slide2 .logo-container {
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Specific styling for slide 4 logo */
+        #slide4 .slide-logo {
+            max-width: 120%;
+            max-height: 120%;
+            transform: scale(1.2);
+        }
+
+        /* Move logo lower for slide 4 */
+        #slide4 .logo-container {
+            margin-top: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Move text box lower for slide 4 */
+        #slide4 .slide-content {
+            margin-top: 4rem;
+            max-height: 20vh;
+            overflow: hidden;
+        }
+
+        /* Specific styling for slide 3 logo */
+        #slide3 .slide-logo {
+            max-width: 120%;
+            max-height: 120%;
+            transform: scale(1.2);
+        }
+
+        /* Move logo lower for slide 3 */
+        #slide3 .logo-container {
+            margin-top: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Move text box lower for slide 3 */
+        #slide3 .slide-content {
+            margin-top: 4rem;
+            max-height: 20vh;
+            overflow: hidden;
+        }
+
+        /* Move text box lower for slide 5 */
+        #slide5 .slide-content {
+            margin-top: 3rem;
+            max-height: 50vh;
+            padding: 2rem;
+            overflow: hidden;
+        }
+
+        .slide-logo {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            opacity: 0.9;
+        }
+
+        /* Specific styling for slide 2 logo */
+        #slide2 .slide-logo {
+            max-width: 120%;
+            max-height: 120%;
+            transform: scale(1.2);
+        }
+
+        /* Move text box lower for slide 2 */
+        #slide2 .slide-content {
+            margin-top: 4rem;
+            max-height: 20vh;
+            overflow: hidden;
+        }
+
+        /* Position content below the logo */
+        .logo-slide .slide-content {
+            position: relative;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-radius: 15px;
+            border: 1px solid rgba(233, 185, 73, 0.3);
+            color: var(--gold);
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            max-height: 20vh;
+            overflow: hidden;
             text-align: center;
-            margin-bottom: 2rem;
-            background: linear-gradient(45deg, var(--gold), var(--orange), var(--burgundy));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .logo-slide .slide-content p {
+            text-align: center;
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        /* Improve text spacing and readability */
+        .slide-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.6rem;
+            text-align: center;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 1rem;
         }
 
         .slide-subtitle {
-            font-size: 2rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--gold);
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .slide-content {
-            font-size: 1.5rem;
-            line-height: 1.6;
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        .bullet-points {
-            text-align: left;
-            margin-top: 2rem;
-        }
-
-        .bullet-points li {
+            font-size: 1.1rem;
             margin-bottom: 1rem;
-            font-size: 1.3rem;
+            text-align: center;
+            color: var(--gold);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
 
-        /* Speaker Grid */
-        .speaker-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-            max-height: 65vh;
+        /* Improve speaker slide content */
+        .speaker-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            /* Reduce height to prevent overlap */
+            max-height: 35vh;
             overflow-y: auto;
-            padding-right: 10px;
         }
 
-        .speaker-grid::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .speaker-grid::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-        }
-
-        .speaker-grid::-webkit-scrollbar-thumb {
-            background: var(--gold);
-            border-radius: 4px;
-        }
-
-        .speaker-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .speaker-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .speaker-image {
-            width: 120px;
-            height: 120px;
+        .speaker-photo {
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             object-fit: cover;
-            margin: 0 auto 1rem;
-            display: block;
             border: 3px solid var(--gold);
+            margin: 0 auto 0.5rem auto;
         }
 
         .speaker-name {
             font-size: 1.4rem;
             font-weight: bold;
             color: var(--gold);
-            margin-bottom: 0.5rem;
             text-align: center;
+            margin-bottom: 0.2rem;
         }
 
         .speaker-title {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: var(--orange);
-            margin-bottom: 1rem;
             text-align: center;
+            margin-bottom: 0.5rem;
             font-style: italic;
         }
 
         .speaker-bio {
-            font-size: 0.9rem;
-            line-height: 1.5;
-            text-align: left;
+            color: white;
+            line-height: 1.3;
+            text-align: justify;
+            font-size: 0.8rem;
         }
 
         /* Schedule Table */
         .schedule-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            overflow: hidden;
-            max-height: 50vh;
+            margin-top: 1rem;
+            max-height: 40vh;
             overflow-y: auto;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(233, 185, 73, 0.3);
+            font-size: 0.85rem;
         }
 
         .schedule-table th {
             background: rgba(233, 185, 73, 0.2);
-            color: var(--burgundy);
-            padding: 12px;
-            text-align: left;
+            color: var(--gold);
             font-weight: bold;
-            border-bottom: 1px solid rgba(233, 185, 73, 0.4);
         }
 
-        .schedule-table td {
-            padding: 12px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-
-        .schedule-table tr:hover {
+        .schedule-table tr:nth-child(even) {
             background: rgba(255, 255, 255, 0.05);
-        }
-
-        .schedule-table thead {
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .schedule-table::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .schedule-table::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-        }
-
-        .schedule-table::-webkit-scrollbar-thumb {
-            background: var(--gold);
-            border-radius: 4px;
         }
 
         /* Navigation */
@@ -542,6 +627,70 @@
             font-weight: bold;
             font-size: 0.8rem;
         }
+
+        /* Improve navigation buttons */
+        .slide-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 8px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-button {
+            width: 35px;
+            height: 35px;
+            border: 2px solid var(--gold);
+            background: transparent;
+            color: var(--gold);
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .nav-button:hover {
+            background: var(--gold);
+            color: var(--midnight-blue);
+        }
+
+        .nav-button.active {
+            background: var(--gold);
+            color: var(--midnight-blue);
+        }
+
+        /* Ensure navigation is always visible */
+        .slide {
+            padding-bottom: 70px;
+        }
+
+        /* Improve list styling */
+        .workshop-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .workshop-list li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(233, 185, 73, 0.2);
+            color: white;
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+
+        .workshop-list li:last-child {
+            border-bottom: none;
+        }
     </style>
 </head>
 <body>
@@ -590,6 +739,9 @@
     <div class="content slide logo-slide" id="slide2">
         <h1 class="slide-title">SBM Inc.</h1>
         <h2 class="slide-subtitle">Sacrificing, Believing, and Manifesting</h2>
+        <div class="logo-container">
+            <img src="images/speakers/SBM-Logo-4.png" alt="SBM Logo" class="slide-logo">
+        </div>
         <div class="slide-content">
             <p>Dedicated to community advancement and sustainable impact.</p>
         </div>
@@ -599,6 +751,9 @@
     <div class="content slide logo-slide" id="slide3">
         <h1 class="slide-title">MVULANA</h1>
         <h2 class="slide-subtitle">Young Men's Leadership Initiative</h2>
+        <div class="logo-container">
+            <img src="images/speakers/Mvulana-Logo-1.PNG" alt="Mvulana Logo" class="slide-logo">
+        </div>
         <div class="slide-content">
             <p>Empowering young men to become leaders in their communities.</p>
         </div>
@@ -608,6 +763,9 @@
     <div class="content slide logo-slide" id="slide4">
         <h1 class="slide-title">Bethune-Cookman University</h1>
         <h2 class="slide-subtitle">Center for Civic Engagement</h2>
+        <div class="logo-container">
+            <img src="images/speakers/bethune-cookman-2.png" alt="Bethune-Cookman University Logo" class="slide-logo">
+        </div>
         <div class="slide-content">
             <p>Proud host of the MVULANA Young Men's Summit</p>
         </div>
@@ -805,9 +963,9 @@
         </div>
     </div>
 
-    <!-- Slide 13: Derrick Henry - Speaker of the Day -->
+    <!-- Slide 13: Derrick Henry - Keynote Speaker -->
     <div class="content slide" id="slide13">
-        <h1 class="slide-title">Speaker of the Day</h1>
+        <h1 class="slide-title">Keynote Speaker</h1>
         <div class="slide-content">
             <div style="text-align: center; margin-bottom: 2rem;">
                 <img src="images/speakers/derrick-henry.jpg" alt="Derrick Henry" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); margin-bottom: 1rem;">
@@ -877,13 +1035,9 @@
             // Show selected slide
             document.getElementById(`slide${slideNumber}`).classList.add('active');
             
-            // Show appropriate logo background
-            if (slideNumber === 2) {
-                document.getElementById('sbm-logo').style.display = 'flex';
-            } else if (slideNumber === 3) {
-                document.getElementById('mvulana-logo').style.display = 'flex';
-            } else if (slideNumber === 4) {
-                document.getElementById('bethune-logo').style.display = 'flex';
+            // Show background logos for non-logo slides
+            if (slideNumber >= 2 && slideNumber <= 4) {
+                // Logo slides now have inline logos, so no background logos needed
             } else {
                 document.getElementById('background-logos').style.display = 'block';
             }
