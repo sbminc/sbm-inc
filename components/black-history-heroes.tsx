@@ -40,14 +40,14 @@ export default function BlackHistoryHeroes() {
           </div>
 
           {/* Hero Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-8">
             {heroes.map((hero) => (
               <Link
                 key={hero.id}
                 href={`/black-history-heroes/${hero.id}`}
                 className="group"
               >
-                <div className="relative bg-white/5 rounded-lg p-4 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 h-64">
+                <div className="relative bg-white/5 rounded-lg p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105 border border-white/10 h-80">
                   {/* Hero Photo */}
                   <div className="relative mb-3">
                     <div className="w-32 h-32 rounded-lg overflow-hidden bg-gradient-to-br from-burgundy/20 to-deep-blue/20 mx-auto">

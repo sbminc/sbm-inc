@@ -398,10 +398,20 @@
 
         /* Move text box lower for slide 5 */
         #slide5 .slide-content {
-            margin-top: 3rem;
-            max-height: 50vh;
-            padding: 2rem;
+            margin-top: 1rem;
+            max-height: 70vh;
+            padding: 3rem 2.5rem;
             overflow: hidden;
+            font-size: 2rem;
+        }
+        #slide5 .slide-content ul, #slide5 .slide-content li {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--gold);
+        }
+        #slide5 .slide-content p {
+            font-size: 2rem;
+            color: var(--gold);
         }
 
         .slide-logo {
@@ -1036,6 +1046,9 @@
     <div class="content slide" id="slide22">
         <h1 class="slide-title">Black History Presentation</h1>
         <h2 class="slide-subtitle">Dr. Headley White</h2>
+        <div class="slide-content" style="display: flex; flex-direction: column; align-items: center;">
+            <!-- You can add more content here if needed -->
+        </div>
     </div>
 
     <!-- Slide 23: Break Out Groups (5&6) Rotation -->
@@ -1131,14 +1144,13 @@
         <button class="nav-btn" onclick="showSlide(23)">23</button>
         <button class="nav-btn" onclick="showSlide(24)">24</button>
         <button class="nav-btn" onclick="showSlide(25)">25</button>
-        <button class="nav-btn" onclick="showSlide(26)">26</button>
         <button class="nav-btn" onclick="showSlide(27)">27</button>
         <button class="nav-btn" onclick="showSlide(28)">28</button>
     </div>
 
     <script>
         let currentSlide = 1;
-        const totalSlides = 28;
+        const totalSlides = 27;
 
         function showSlide(slideNumber) {
             // Hide all slides
