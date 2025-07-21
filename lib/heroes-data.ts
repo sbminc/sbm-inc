@@ -346,6 +346,23 @@ export const heroes: Hero[] = [
       "Helped desegregate the armed forces through Executive Order 9981",
       "Was a key organizer of the 1963 March on Washington for Jobs and Freedom"
     ]
+  },
+  {
+    id: 24,
+    name: "Delane Parnell",
+    title: "Entrepreneur and Esports Pioneer",
+    bio: "Delane Parnell (born August 24, 1992) is an American entrepreneur best known as the founder and former CEO of PlayVS, a pioneering platform that brings organized esports to high schools and colleges across the U.S.\n\nEarly Life & Background\nBorn and raised in Western Detroit, Parnell grew up in challenging circumstances—raised by a single mother, his father was tragically killed before his birth, and he spent significant time with a family friend battling addiction. As he reflects: “I didn’t grow up in an ideal family environment”. At age 13, he began working 40+ hours per week at a MetroPCS store, both to support his family and avoid falling into gang life.\n\nEntrepreneurial Childhood\nBy 17, Parnell had purchased three cell phone stores and joined the founding team of Executive Car Rental, which now operates 16 locations across Michigan. Following a brief stint at the University of Michigan in 2010, he dropped out to pursue business full-time.\n\nHeating Up in Tech & Esports\nParnell’s passion for tech was fueled by Detroit’s startup scene. He worked at IncWell Venture Capital—becoming the youngest Black venture capitalist in the U.S.—and joined the early team at Rocket Fiber. While there, he founded Rush Esports, which was later acquired by TSM.\n\nFounding PlayVS & Scaling Scholastic Esports\nIn 2017, after meeting investor Peter Pham at SXSW, Parnell moved to Los Angeles to pursue his vision. In January 2018, he officially founded PlayVS, and by April, had secured an exclusive partnership with the National Federation of State High School Associations (NFHS)—making esports an officially sanctioned high school activity. PlayVS has since raised over $100 million in venture capital and onboarded thousands of schools.\n\nStepping Down & Legacy\nIn May 2023, Parnell stepped down as CEO and transitioned to a senior advisory role while remaining on the board. He continues to shape the esports ecosystem and inspire Black tech founders.\n\nImpact & Recognition\nNamed to Forbes 30 Under 30 in 2019, Parnell has been celebrated for transforming esports into a structured, accessible avenue for student growth and inclusion. His story emphasizes resilience, opportunity, and community empowerment.",
+    image: "/images/heroes/delane-parnell.jpg",
+    birthYear: "1992",
+    achievements: [
+      "Founded PlayVS, bringing organized esports to high schools and colleges across the U.S.",
+      "Became the youngest Black venture capitalist in the U.S. at IncWell Venture Capital",
+      "Founded Rush Esports, later acquired by TSM",
+      "Secured exclusive partnership with NFHS to sanction high school esports",
+      "Raised over $100 million in venture capital for PlayVS",
+      "Named to Forbes 30 Under 30 in 2019",
+      "Inspires Black tech founders and continues to shape the esports ecosystem"
+    ]
   }
 ]
 
