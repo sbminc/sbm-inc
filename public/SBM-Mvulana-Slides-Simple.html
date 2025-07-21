@@ -188,6 +188,7 @@
             justify-content: center;
             overflow-y: auto;
             max-height: 100vh;
+            margin-bottom: 4.5rem;
         }
 
         /* Adjust content to not cover logos */
@@ -232,7 +233,7 @@
 
         /* Optimize bio slides for single page view */
         .slide:not(.logo-slide) .slide-content {
-            max-height: 60vh;
+            max-height: 80vh;
             padding: 1rem;
             font-size: 0.85rem;
             line-height: 1.3;
@@ -558,19 +559,28 @@
             transform: translateX(-50%);
             z-index: 4;
             display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            justify-content: center;
+            gap: 6px;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            overflow-x: auto;
+            max-width: 90vw;
+            padding-bottom: 4px;
         }
 
         .nav-btn {
             background: rgba(233, 185, 73, 0.8);
             color: var(--deep-blue);
             border: none;
-            padding: 10px 20px;
-            border-radius: 25px;
+            padding: 4px 10px;
+            border-radius: 18px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 0.9rem;
+            min-width: 1.8rem;
+            max-width: 1.8rem;
+            height: 1.8rem;
+            line-height: 1;
+            margin: 2px 0;
             transition: all 0.3s ease;
         }
 
@@ -700,6 +710,24 @@
 
         .workshop-list li:last-child {
             border-bottom: none;
+        }
+
+        /* Only center and enlarge text, not the whole slide */
+        #slide14 .slide-title, #slide15 .slide-title, #slide16 .slide-title, #slide17 .slide-title, #slide19 .slide-title, #slide20 .slide-title, #slide21 .slide-title, #slide22 .slide-title, #slide23 .slide-title, #slide24 .slide-title, #slide25 .slide-title, #slide26 .slide-title, #slide27 .slide-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-top: 20vh;
+        }
+        #slide14 .slide-subtitle, #slide15 .slide-subtitle, #slide16 .slide-subtitle, #slide17 .slide-subtitle, #slide19 .slide-subtitle, #slide20 .slide-subtitle, #slide21 .slide-subtitle, #slide22 .slide-subtitle, #slide23 .slide-subtitle, #slide24 .slide-subtitle, #slide25 .slide-subtitle, #slide26 .slide-subtitle, #slide27 .slide-subtitle {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        #slide26 .slide-title, #slide27 .slide-title {
+            margin-bottom: 2.5rem;
+        }
+        #slide26 .slide-content, #slide27 .slide-content {
+            margin-bottom: 6rem;
         }
     </style>
 </head>
@@ -841,6 +869,11 @@
                         <td>Committee Members/Omega Psi Phi</td>
                     </tr>
                     <tr>
+                        <td>12:00-12:30 PM</td>
+                        <td>Meet Kofi Zulu of AduKicks</td>
+                        <td>Kofi Zulu</td>
+                    </tr>
+                    <tr>
                         <td>12:30-1:10 PM</td>
                         <td>Break Out Groups (3&4) Rotation</td>
                         <td>Group Facilitators</td>
@@ -852,18 +885,18 @@
                     </tr>
                     <tr>
                         <td>1:10-1:40 PM</td>
+                        <td>Power of the Tie Presentation</td>
+                        <td>Mr. Mayner & Mr. Jermaine McKinney</td>
+                    </tr>
+                    <tr>
+                        <td>1:40-2:20 PM</td>
                         <td>Black History Presentation</td>
                         <td>Dr. Headley White</td>
                     </tr>
                     <tr>
-                        <td>1:40-2:20 PM</td>
+                        <td>2:20-2:50 PM</td>
                         <td>Break Out Groups (5&6) Rotation</td>
                         <td>Group Facilitators</td>
-                    </tr>
-                    <tr>
-                        <td>2:20-2:50 PM</td>
-                        <td>Power of the Tie Presentation</td>
-                        <td>Mr. Mayner & Mr. Jermaine McKinney</td>
                     </tr>
                     <tr>
                         <td>2:50-4:00 PM</td>
@@ -1007,9 +1040,9 @@
         <h2 class="slide-subtitle">Group Participants</h2>
     </div>
 
-    <!-- Slide 18: Mayor Henry Presentation (with bio) -->
+    <!-- Slide 18: Making Successful Decisions (Mayor) -->
     <div class="content slide" id="slide18">
-        <h1 class="slide-title">Mayor Henry Presentation</h1>
+        <h1 class="slide-title">Making Successful Decisions</h1>
         <h2 class="slide-subtitle">Mayor of Daytona Beach Florida</h2>
         <div class="slide-content">
             <div style="text-align: center; margin-bottom: 2rem;">
@@ -1030,37 +1063,34 @@
         <h2 class="slide-subtitle">Committee Members/Omega Psi Phi</h2>
     </div>
 
-    <!-- Slide 20: Break Out Groups (3&4) Rotation -->
+    <!-- Slide 20: Meet Kofi Zulu of AduKicks -->
     <div class="content slide" id="slide20">
+        <h1 class="slide-title">Meet Kofi Zulu of AduKicks</h1>
+        <h2 class="slide-subtitle">Kofi Zulu</h2>
+    </div>
+
+    <!-- Slide 21: Break Out Groups (3&4) Rotation -->
+    <div class="content slide" id="slide21">
         <h1 class="slide-title">Break Out Groups (3&4) Rotation</h1>
         <h2 class="slide-subtitle">Group Facilitators</h2>
     </div>
 
-    <!-- Slide 21: Gabriel Hannans - Parents Seminar: Gentle Parenting -->
-    <div class="content slide" id="slide21">
+    <!-- Slide 22: Gabriel Hannans - Parents Seminar: Gentle Parenting -->
+    <div class="content slide" id="slide22">
         <h1 class="slide-title">Gabriel Hannans - Parents Seminar: Gentle Parenting</h1>
         <h2 class="slide-subtitle">Gabriel Hannans</h2>
     </div>
 
-    <!-- Slide 22: Black History Presentation -->
-    <div class="content slide" id="slide22">
-        <h1 class="slide-title">Black History Presentation</h1>
-        <h2 class="slide-subtitle">Dr. Headley White</h2>
-        <div class="slide-content" style="display: flex; flex-direction: column; align-items: center;">
-            <!-- You can add more content here if needed -->
-        </div>
-    </div>
-
-    <!-- Slide 23: Break Out Groups (5&6) Rotation -->
+    <!-- Slide 23: Power of the Tie Presentation -->
     <div class="content slide" id="slide23">
-        <h1 class="slide-title">Break Out Groups (5&6) Rotation</h1>
-        <h2 class="slide-subtitle">Group Facilitators</h2>
-    </div>
-
-    <!-- Slide 24: Power of the Tie Presentation -->
-    <div class="content slide" id="slide24">
         <h1 class="slide-title">Power of the Tie Presentation</h1>
         <h2 class="slide-subtitle">Mr. Mayner & Mr. Jermaine McKinney</h2>
+    </div>
+
+    <!-- Slide 24: Black History Presentation -->
+    <div class="content slide" id="slide24">
+        <h1 class="slide-title">Black History Presentation</h1>
+        <h2 class="slide-subtitle">Dr. Headley White</h2>
     </div>
 
     <!-- Slide 25: Participants Feedback/Presentation of Certificates & Closing Ceremony -->
@@ -1069,26 +1099,8 @@
         <h2 class="slide-subtitle">Group Participants/Dr. McConner & Mr. McKinney</h2>
     </div>
 
-    <!-- Slide 26: Registration -->
+    <!-- Slide 26: Thank You -->
     <div class="content slide" id="slide26">
-        <h1 class="slide-title">Join Us</h1>
-        <h2 class="slide-subtitle">Registration Now Open</h2>
-        <div class="slide-content">
-            <p>Don't miss this opportunity to be part of a transformative experience!</p>
-            <div style="margin-top: 2rem; font-size: 1.3rem;">
-                <p><strong>Registration Deadline:</strong> July 15, 2025</p>
-                <p><strong>Limited Spaces Available</strong></p>
-                <p><strong>Free Admission</strong></p>
-            </div>
-            <div style="margin-top: 2rem; padding: 1rem; background: rgba(233, 185, 73, 0.2); border-radius: 10px;">
-                <p><strong>Contact:</strong> [Your Contact Information]</p>
-                <p><strong>Website:</strong> [Your Website]</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Slide 27: Thank You -->
-    <div class="content slide" id="slide27">
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
             <img src="images/speakers/SBM-Logo-4.png" alt="SBM Logo" style="max-width: 180px; opacity: 0.7; margin-bottom: 2rem;" />
             <h1 class="slide-title" style="margin-bottom: 1rem;">Thank You</h1>
@@ -1100,8 +1112,8 @@
         </div>
     </div>
 
-    <!-- Slide 28: Community Partners and Sponsors -->
-    <div class="content slide" id="slide28">
+    <!-- Slide 27: Community Partners and Sponsors -->
+    <div class="content slide" id="slide27">
         <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
             <img src="images/speakers/SBM-Logo-4.png" alt="SBM Logo" style="max-width: 120px; opacity: 0.7; margin-bottom: 1.5rem;" />
             <h1 class="slide-title" style="margin-bottom: 1rem;">Community Partners and Sponsors</h1>
@@ -1144,8 +1156,8 @@
         <button class="nav-btn" onclick="showSlide(23)">23</button>
         <button class="nav-btn" onclick="showSlide(24)">24</button>
         <button class="nav-btn" onclick="showSlide(25)">25</button>
+        <button class="nav-btn" onclick="showSlide(26)">26</button>
         <button class="nav-btn" onclick="showSlide(27)">27</button>
-        <button class="nav-btn" onclick="showSlide(28)">28</button>
     </div>
 
     <script>
@@ -1185,15 +1197,21 @@
         document.addEventListener('keydown', function(e) {
             if (e.key === 'ArrowRight' || e.key === ' ') {
                 e.preventDefault();
-                const nextSlide = currentSlide + 1;
-                if (nextSlide <= totalSlides) {
+                let nextSlide = currentSlide + 1;
+                while (nextSlide <= totalSlides && !document.getElementById(`slide${nextSlide}`)) {
+                    nextSlide++;
+                }
+                if (nextSlide <= totalSlides && document.getElementById(`slide${nextSlide}`)) {
                     showSlide(nextSlide);
                     document.querySelector(`[onclick="showSlide(${nextSlide})"]`).classList.add('active');
                 }
             } else if (e.key === 'ArrowLeft') {
                 e.preventDefault();
-                const prevSlide = currentSlide - 1;
-                if (prevSlide >= 1) {
+                let prevSlide = currentSlide - 1;
+                while (prevSlide >= 1 && !document.getElementById(`slide${prevSlide}`)) {
+                    prevSlide--;
+                }
+                if (prevSlide >= 1 && document.getElementById(`slide${prevSlide}`)) {
                     showSlide(prevSlide);
                     document.querySelector(`[onclick="showSlide(${prevSlide})"]`).classList.add('active');
                 }

@@ -135,6 +135,12 @@ export default function YoungMensSummitDetails() {
                         <td className="px-4 py-3 border-b border-white/10">COMMITTEE MEMBERS/ OMEGA PSI PHI</td>
                       </tr>
                       <tr className="hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3 border-b border-white/10">12:00 PM</td>
+                        <td className="px-4 py-3 border-b border-white/10">12:30 PM</td>
+                        <td className="px-4 py-3 border-b border-white/10">MEET KOFI ZULU OF ADUKICKS</td>
+                        <td className="px-4 py-3 border-b border-white/10">KOFI ZULU</td>
+                      </tr>
+                      <tr className="hover:bg-white/5 transition-colors">
                         <td className="px-4 py-3 border-b border-white/10">12:30 PM</td>
                         <td className="px-4 py-3 border-b border-white/10">1:10 PM</td>
                         <td className="px-4 py-3 border-b border-white/10">BREAK OUT GROUPS (3 & 4) ROTATION</td>
@@ -149,6 +155,12 @@ export default function YoungMensSummitDetails() {
                       <tr className="hover:bg-white/5 transition-colors">
                         <td className="px-4 py-3 border-b border-white/10">1:10 PM</td>
                         <td className="px-4 py-3 border-b border-white/10">1:40 PM</td>
+                        <td className="px-4 py-3 border-b border-white/10">POWER OF THE TIE PRESENTATION</td>
+                        <td className="px-4 py-3 border-b border-white/10">MR. MAYNER & MR. JERMAINE MCKINNEY</td>
+                      </tr>
+                      <tr className="hover:bg-white/5 transition-colors">
+                        <td className="px-4 py-3 border-b border-white/10">1:40 PM</td>
+                        <td className="px-4 py-3 border-b border-white/10">2:20 PM</td>
                         <td className="px-4 py-3 border-b border-white/10">BLACK HISTORY PRESENTATION</td>
                         <td className="px-4 py-3 border-b border-white/10">DR. HEADLEY WHITE</td>
                       </tr>
@@ -161,12 +173,6 @@ export default function YoungMensSummitDetails() {
                       <tr className="hover:bg-white/5 transition-colors">
                         <td className="px-4 py-3 border-b border-white/10">2:20 PM</td>
                         <td className="px-4 py-3 border-b border-white/10">2:50 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">POWER OF THE TIE PRESENTATION</td>
-                        <td className="px-4 py-3 border-b border-white/10">MR. MAYNER & MR. JERMAINE MCKINNEY</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">2:50 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">4:00 PM</td>
                         <td className="px-4 py-3 border-b border-white/10">PARTICIPANTS FEEDBACK/ PRESENTATION OF CERTIFICATES & CLOSING CEREMONY</td>
                         <td className="px-4 py-3 border-b border-white/10">GROUP PARTICIPANTS/ DR. McCONNER & MR. MCKINNEY</td>
                       </tr>
