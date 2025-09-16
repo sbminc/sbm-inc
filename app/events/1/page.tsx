@@ -2,29 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useEffect, useState } from "react";
 import YoungMensSummitForm from "@/components/young-mens-summit-form";
 import Navbar from "@/components/navbar";
 
 export default function YoungMensSummitDetails() {
-  const [pptxViewerUrl, setPptxViewerUrl] = useState<string | null>(null);
-
-  useEffect(() => {
-    const isBrowser = typeof window !== 'undefined';
-    const origin = isBrowser ? window.location.origin : '';
-    const hostname = isBrowser ? window.location.hostname : '';
-    const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
-    // Path to the presentation in the public folder
-    const filePath = "/powerpoints/mvulana-summit.pptx";
-    if (origin && !isLocal) {
-      const fileUrl = encodeURIComponent(`${origin}${filePath}`);
-      // Use Google Docs viewer for broader compatibility with PPTX hosting
-      setPptxViewerUrl(`https://docs.google.com/gview?embedded=1&url=${fileUrl}`);
-    } else {
-      setPptxViewerUrl(null);
-    }
-  }, []);
-
   return (
     <>
       <Navbar />
@@ -221,7 +202,8 @@ export default function YoungMensSummitDetails() {
               </Link>
             </div>
             
-            {/* Presentation Download */}
+            {/* Presentation Download */
+            }
             <div className="mt-10 text-center">
               <a
                 href="/powerpoints/mvulana-summit.pptx"
@@ -231,26 +213,34 @@ export default function YoungMensSummitDetails() {
               >
                 View/Download Presentation (PPTX)
               </a>
-              <p className="mt-3 text-white/70 text-sm">This will open or download the PowerPoint file.</p>
+              <div className="mt-4">
+                <a
+                  href="/powerpoints/mvulana-summit.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-white/10 text-white px-6 py-3 rounded-full font-semibold shadow hover:bg-white/20 transition"
+                >
+                  View/Download PDF Version
+                </a>
+              </div>
+              <p className="mt-3 text-white/70 text-sm">Use the PPTX for editing; PDF is best for viewing.</p>
             </div>
 
-            {/* Embedded Presentation Viewer (only in production; viewers cannot access localhost) */}
-            {pptxViewerUrl && (
-              <div className="mt-8 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+            {/* Embedded PDF Viewer */}
+            <div className="mt-8 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+              <object
+                data="/powerpoints/mvulana-summit.pdf#view=FitH"
+                type="application/pdf"
+                className="w-full"
+                style={{ height: 800 }}
+              >
                 <iframe
-                  title="Mvulana Summit Presentation"
-                  src={pptxViewerUrl}
+                  src="/powerpoints/mvulana-summit.pdf#view=FitH"
                   className="w-full"
-                  style={{ height: 720 }}
-                  allowFullScreen
+                  style={{ height: 800 }}
                 />
-              </div>
-            )}
-            {!pptxViewerUrl && (
-              <div className="mt-6 text-center text-white/70 text-sm">
-                Embedded viewer is available on the live site. On localhost, please use the download button above.
-              </div>
-            )}
+              </object>
+            </div>
 
             <div className="mt-12 text-center text-white/60 text-sm drop-shadow-md">
               Join us for this transformative experience!
