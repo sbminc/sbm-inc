@@ -18,7 +18,8 @@ export default function YoungMensSummitDetails() {
     const filePath = "/powerpoints/mvulana-summit.pptx";
     if (origin && !isLocal) {
       const fileUrl = encodeURIComponent(`${origin}${filePath}`);
-      setPptxViewerUrl(`https://view.officeapps.live.com/op/embed.aspx?src=${fileUrl}`);
+      // Use Google Docs viewer for broader compatibility with PPTX hosting
+      setPptxViewerUrl(`https://docs.google.com/gview?embedded=1&url=${fileUrl}`);
     } else {
       setPptxViewerUrl(null);
     }
@@ -233,7 +234,7 @@ export default function YoungMensSummitDetails() {
               <p className="mt-3 text-white/70 text-sm">This will open or download the PowerPoint file.</p>
             </div>
 
-            {/* Embedded Presentation Viewer (only in production; Office viewer cannot access localhost) */}
+            {/* Embedded Presentation Viewer (only in production; viewers cannot access localhost) */}
             {pptxViewerUrl && (
               <div className="mt-8 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
                 <iframe
