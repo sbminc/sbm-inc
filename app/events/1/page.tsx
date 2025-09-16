@@ -2,10 +2,28 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 import YoungMensSummitForm from "@/components/young-mens-summit-form";
 import Navbar from "@/components/navbar";
 
 export default function YoungMensSummitDetails() {
+  const [pptxViewerUrl, setPptxViewerUrl] = useState<string | null>(null);
+
+  useEffect(() => {
+    const isBrowser = typeof window !== 'undefined';
+    const origin = isBrowser ? window.location.origin : '';
+    const hostname = isBrowser ? window.location.hostname : '';
+    const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
+    // UPDATE THIS PATH IF THE FILENAME CHANGED
+    const filePath = "/powerpoints/Mvulana%20Young%20Men%E2%80%99s%20Summit.pptx";
+    if (origin && !isLocal) {
+      const fileUrl = encodeURIComponent(`${origin}${filePath}`);
+      setPptxViewerUrl(`https://view.officeapps.live.com/op/embed.aspx?src=${fileUrl}`);
+    } else {
+      setPptxViewerUrl(null);
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -202,6 +220,37 @@ export default function YoungMensSummitDetails() {
               </Link>
             </div>
             
+            {/* Presentation Download */}
+            <div className="mt-10 text-center">
+              <a
+                href="/powerpoints/Mvulana%20Young%20Men%E2%80%99s%20Summit.pptx"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-gradient-to-r from-gold to-orange text-deep-blue px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:from-orange hover:to-gold transition-all duration-300 transform hover:scale-105"
+              >
+                View/Download Presentation (PPTX)
+              </a>
+              <p className="mt-3 text-white/70 text-sm">This will open or download the PowerPoint file.</p>
+            </div>
+
+            {/* Embedded Presentation Viewer (only in production; Office viewer cannot access localhost) */}
+            {pptxViewerUrl && (
+              <div className="mt-8 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
+                <iframe
+                  title="Mvulana Summit Presentation"
+                  src={pptxViewerUrl}
+                  className="w-full"
+                  style={{ height: 720 }}
+                  allowFullScreen
+                />
+              </div>
+            )}
+            {!pptxViewerUrl && (
+              <div className="mt-6 text-center text-white/70 text-sm">
+                Embedded viewer is available on the live site. On localhost, please use the download button above.
+              </div>
+            )}
+
             <div className="mt-12 text-center text-white/60 text-sm drop-shadow-md">
               Join us for this transformative experience!
             </div>
