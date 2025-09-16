@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import YoungMensSummitForm from "@/components/young-mens-summit-form";
 import Navbar from "@/components/navbar";
+import PdfSlideshow from "@/components/pdf-slideshow";
 
 export default function YoungMensSummitDetails() {
   return (
@@ -45,6 +46,7 @@ export default function YoungMensSummitDetails() {
         {/* Content Overlay */}
         <div className="relative z-10 py-12 pt-32">
           <div className="container mx-auto px-4 md:px-8 max-w-6xl">
+            {/* PDF Slideshow moved below download buttons */}
             {/* Event Title and Details */}
             <div className="text-center mb-12">
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 bg-gradient-to-r from-gold via-orange to-burgundy bg-clip-text text-transparent drop-shadow-lg">
@@ -226,21 +228,8 @@ export default function YoungMensSummitDetails() {
               <p className="mt-3 text-white/70 text-sm">Use the PPTX for editing; PDF is best for viewing.</p>
             </div>
 
-            {/* Embedded PDF Viewer */}
-            <div className="mt-8 rounded-xl overflow-hidden border border-white/10 shadow-2xl">
-              <object
-                data="/powerpoints/mvulana-summit.pdf#view=FitH"
-                type="application/pdf"
-                className="w-full"
-                style={{ height: 800 }}
-              >
-                <iframe
-                  src="/powerpoints/mvulana-summit.pdf#view=FitH"
-                  className="w-full"
-                  style={{ height: 800 }}
-                />
-              </object>
-            </div>
+            {/* PDF Slideshow */}
+            <PdfSlideshow src="/powerpoints/mvulana-summit.pdf" totalPages={48} intervalMs={6000} heightPx={560} maxWidthPx={1200} />
 
             <div className="mt-12 text-center text-white/60 text-sm drop-shadow-md">
               Join us for this transformative experience!
