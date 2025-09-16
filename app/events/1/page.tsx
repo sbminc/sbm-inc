@@ -228,8 +228,7 @@ export default function YoungMensSummitDetails() {
               <p className="mt-3 text-white/70 text-sm">Use the PPTX for editing; PDF is best for viewing.</p>
             </div>
 
-            {/* PDF Slideshow */}
-            <PdfSlideshow src="/powerpoints/mvulana-summit.pdf" totalPages={48} intervalMs={6000} heightPx={560} maxWidthPx={1200} />
+            {/* PDF slideshow moved to Past Events section */}
 
             <div className="mt-12 text-center text-white/60 text-sm drop-shadow-md">
               Join us for this transformative experience!

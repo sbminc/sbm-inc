@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useMemo, useRef, useState } from "react"
+import { useEffect, useState } from "react"
+import Image from "next/image"
 
 type PdfSlideshowProps = {
   src: string
@@ -12,58 +13,38 @@ type PdfSlideshowProps = {
 
 export default function PdfSlideshow({ src, totalPages, intervalMs = 6000, heightPx = 560, maxWidthPx = 1200 }: PdfSlideshowProps) {
   const [currentPage, setCurrentPage] = useState(1)
-  const [isLoaded, setIsLoaded] = useState(false)
-  const timerRef = useRef<NodeJS.Timeout | null>(null)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
-  // Only advance when the iframe has loaded
+  // Simple, reliable timer-based advancement
   useEffect(() => {
-    const startTimer = () => {
-      if (timerRef.current) clearInterval(timerRef.current)
-      timerRef.current = setInterval(() => {
-        setCurrentPage((prev) => {
-          const next = (prev % totalPages) + 1
-          setIsLoaded(false) // Reset loaded state for new page
-          return next
-        })
-      }, intervalMs)
-    }
+    const id = setInterval(() => {
+      setIsTransitioning(true)
+      // Brief transition state to prevent jarring changes
+      setTimeout(() => {
+        setCurrentPage((prev) => (prev % totalPages) + 1)
+        setIsTransitioning(false)
+      }, 150)
+    }, intervalMs)
+    return () => clearInterval(id)
+  }, [totalPages, intervalMs])
 
-    if (isLoaded) {
-      startTimer()
-    }
-
-    return () => {
-      if (timerRef.current) clearInterval(timerRef.current)
-    }
-  }, [isLoaded, totalPages, intervalMs])
-
-  const viewerSrc = useMemo(() => {
-    const params = new URLSearchParams()
-    params.set("page", String(currentPage))
-    // Scale down and align within frame
-    params.set("zoom", "85")
-    params.set("view", "Fit")
-    params.set("toolbar", "0")
-    params.set("navpanes", "0")
-    params.set("scrollbar", "0")
-    return `${src}#${params.toString()}`
-  }, [src, currentPage])
+  // Use Google Docs viewer for more reliable PDF rendering
+  const viewerSrc = `https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(window.location.origin + src)}&page=${currentPage}`
 
   return (
     <div
       className="relative mt-8 rounded-xl overflow-hidden shadow-xl bg-white"
       style={{ height: heightPx, maxWidth: maxWidthPx, margin: '0 auto' }}
     >
-      {/* Single iframe with load-based transitions */}
+      {/* Google Docs viewer for reliable PDF rendering */}
       <iframe
         key={`page-${currentPage}`}
         src={viewerSrc}
         title="PDF Slideshow"
-        className={`w-full h-full transition-opacity duration-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+        className={`w-full h-full transition-opacity duration-300 ${isTransitioning ? 'opacity-70' : 'opacity-100'}`}
         style={{ border: 0, pointerEvents: 'none', transform: 'translate(8px, -8px)' }}
         aria-label={`Slide ${currentPage} of ${totalPages}`}
         scrolling="no"
-        onLoad={() => setIsLoaded(true)}
       />
       {/* Even inner frame using box-shadow to create uniform border */}
       <div className="pointer-events-none absolute inset-0 rounded-xl" style={{ boxShadow: 'inset 0 0 0 8px #ffffff' }} />

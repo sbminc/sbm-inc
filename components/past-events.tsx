@@ -114,6 +114,10 @@ const presentations = [
   {
     title: "Msichana Sponsor Levels",
     file: "/powerpoints/Msichana Sponsor Levels.docx"
+  },
+  {
+    title: "Mvulana Young Men's Summit Presentation",
+    file: "/powerpoints/mvulana-summit.pdf"
   }
 ];
 
@@ -130,10 +134,38 @@ export default function PastEvents() {
   const prevPresentation = () => setCurrentPresentation((currentPresentation - 1 + presentations.length) % presentations.length);
   const nextPresentation = () => setCurrentPresentation((currentPresentation + 1) % presentations.length);
 
+  const [currentMvulanaSlide, setCurrentMvulanaSlide] = useState(0);
+  const prevMvulanaSlide = () => setCurrentMvulanaSlide((currentMvulanaSlide - 1 + 48) % 48);
+  const nextMvulanaSlide = () => setCurrentMvulanaSlide((currentMvulanaSlide + 1) % 48);
+
   return (
     <section className="mb-16">
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="text-3xl md:text-4xl font-bold mb-6 text-deep-blue">Past Events</h2>
+        
+        {/* Mvulana Young Men's Summit Presentation */}
+        <div className="mb-12">
+          <h3 className="text-2xl font-bold mb-4">Mvulana Young Men's Summit – July 21, 2025</h3>
+          <div className="relative max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg bg-white mb-8">
+            <button onClick={prevMvulanaSlide} className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-gold text-burgundy rounded-full p-2 shadow transition-colors" aria-label="Previous slide">
+              &#8592;
+            </button>
+            <div className="w-full h-[400px] flex items-center justify-center bg-gray-100">
+              <iframe
+                src={`https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(window.location.origin + '/powerpoints/mvulana-summit.pdf')}&page=${currentMvulanaSlide + 1}`}
+                className="w-full h-full border-0"
+                title="Mvulana Summit Presentation"
+              />
+            </div>
+            <button onClick={nextMvulanaSlide} className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-gold text-burgundy rounded-full p-2 shadow transition-colors" aria-label="Next slide">
+              &#8594;
+            </button>
+          </div>
+          <div className="text-center">
+            <span className="text-gray-600 font-medium">Slide {currentMvulanaSlide + 1} of 48</span>
+          </div>
+        </div>
+
         <div className="mb-8">
           <h3 className="text-2xl font-bold mb-4">Msichana Young Women's Summit – November 16, 2024</h3>
           <div className="relative max-w-3xl mx-auto rounded-xl overflow-hidden shadow-lg bg-gray-100 mb-12">
