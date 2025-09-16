@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Image from "next/image"
 
 const images = [
@@ -135,8 +135,15 @@ export default function PastEvents() {
   const nextPresentation = () => setCurrentPresentation((currentPresentation + 1) % presentations.length);
 
   const [currentMvulanaSlide, setCurrentMvulanaSlide] = useState(0);
+  const [baseUrl, setBaseUrl] = useState('https://sbm-inc.vercel.app');
   const prevMvulanaSlide = () => setCurrentMvulanaSlide((currentMvulanaSlide - 1 + 48) % 48);
   const nextMvulanaSlide = () => setCurrentMvulanaSlide((currentMvulanaSlide + 1) % 48);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setBaseUrl(window.location.origin);
+    }
+  }, []);
 
   return (
     <section className="mb-16">
@@ -152,7 +159,7 @@ export default function PastEvents() {
             </button>
             <div className="w-full h-[400px] flex items-center justify-center bg-gray-100">
               <iframe
-                src={`https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(window.location.origin + '/powerpoints/mvulana-summit.pdf')}&page=${currentMvulanaSlide + 1}`}
+                src={`https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(`${baseUrl}/powerpoints/mvulana-summit.pdf`)}&page=${currentMvulanaSlide + 1}`}
                 className="w-full h-full border-0"
                 title="Mvulana Summit Presentation"
               />
