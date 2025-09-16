@@ -157,13 +157,23 @@ export default function PastEvents() {
             <button onClick={prevMvulanaSlide} className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-gold text-burgundy rounded-full p-2 shadow transition-colors" aria-label="Previous slide">
               &#8592;
             </button>
-            <div className="w-full h-[400px] flex items-center justify-center bg-gray-100">
+            <div className="w-full h-[400px] flex items-center justify-center bg-gray-100 overflow-hidden relative">
               <iframe
                 src={`${baseUrl}/powerpoints/mvulana-summit.pdf#page=${currentMvulanaSlide + 1}&view=FitH&toolbar=0&navpanes=0&scrollbar=0&zoom=85`}
                 className="w-full h-full border-0"
                 title="Mvulana Summit Presentation"
                 key={currentMvulanaSlide}
+                style={{ 
+                  transform: 'translateY(-40px)',
+                  height: '120%',
+                  width: '100%',
+                  pointerEvents: 'none'
+                }}
+                scrolling="no"
               />
+              {/* Masks for symmetry */}
+              <div className="absolute top-0 left-0 w-6 h-full bg-white pointer-events-none"></div>
+              <div className="absolute top-0 right-0 w-6 h-full bg-white pointer-events-none"></div>
             </div>
             <button onClick={nextMvulanaSlide} className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-gold text-burgundy rounded-full p-2 shadow transition-colors" aria-label="Next slide">
               &#8594;
