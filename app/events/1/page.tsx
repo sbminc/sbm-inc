@@ -14,8 +14,8 @@ export default function YoungMensSummitDetails() {
     const origin = isBrowser ? window.location.origin : '';
     const hostname = isBrowser ? window.location.hostname : '';
     const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1';
-    // UPDATE THIS PATH IF THE FILENAME CHANGED
-    const filePath = "/powerpoints/Mvulana%20Young%20Men%E2%80%99s%20Summit.pptx";
+    // Path to the presentation in the public folder
+    const filePath = "/powerpoints/mvulana-summit.pptx";
     if (origin && !isLocal) {
       const fileUrl = encodeURIComponent(`${origin}${filePath}`);
       setPptxViewerUrl(`https://view.officeapps.live.com/op/embed.aspx?src=${fileUrl}`);
@@ -223,7 +223,7 @@ export default function YoungMensSummitDetails() {
             {/* Presentation Download */}
             <div className="mt-10 text-center">
               <a
-                href="/powerpoints/Mvulana%20Young%20Men%E2%80%99s%20Summit.pptx"
+                href="/powerpoints/mvulana-summit.pptx"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-gradient-to-r from-gold to-orange text-deep-blue px-8 py-4 rounded-full font-bold text-lg shadow-lg hover:from-orange hover:to-gold transition-all duration-300 transform hover:scale-105"
