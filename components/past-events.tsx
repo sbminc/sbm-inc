@@ -159,9 +159,10 @@ export default function PastEvents() {
             </button>
             <div className="w-full h-[400px] flex items-center justify-center bg-gray-100">
               <iframe
-                src={`https://docs.google.com/gview?embedded=true&url=${encodeURIComponent(`${baseUrl}/powerpoints/mvulana-summit.pdf`)}&page=${currentMvulanaSlide + 1}`}
+                src={`${baseUrl}/powerpoints/mvulana-summit.pdf#page=${currentMvulanaSlide + 1}&view=FitH&toolbar=0&navpanes=0&scrollbar=0&zoom=85`}
                 className="w-full h-full border-0"
                 title="Mvulana Summit Presentation"
+                key={currentMvulanaSlide}
               />
             </div>
             <button onClick={nextMvulanaSlide} className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/70 hover:bg-gold text-burgundy rounded-full p-2 shadow transition-colors" aria-label="Next slide">
