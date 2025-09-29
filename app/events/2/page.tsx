@@ -80,10 +80,10 @@ export default function YoungWomensSummitDetails() {
 
             <div className="mt-12 text-center text-white/60 text-sm drop-shadow-md">
               We look forward to seeing you there!
-            </div>
-          </div>
         </div>
-      </main>
+        </div>
+      </div>
+    </main>
     </>
   );
-}
+} 

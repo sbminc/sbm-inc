@@ -84,8 +84,8 @@ export default function EventsList() {
       time: "Day 1: 10:00 AM – 3:00 PM • Day 2: 1:00 PM – 4:00 PM",
       location: "Day 1: Yvonne Scarlett Golden Center • Day 2: Bethune–Cookman University | Civic Engagement Center, Daytona Beach",
       description:
-        "Join us for an evening of celebration, inspiration, and fundraising to support our programs for the coming year.",
-      category: "fundraiser",
+        "A two-day workshop experience designed to empower young women through leadership, confidence, wellness, and community connection.",
+      category: "workshop",
       image: "/Msichana-Logo-2.png",
     },
     {

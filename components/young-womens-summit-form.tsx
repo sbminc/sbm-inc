@@ -51,16 +51,22 @@ export default function YoungWomensSummitForm() {
         </div>
       </div>
 
-      <div className="mb-4">
-        <label className="block font-medium mb-1 text-gray-700">Participant's Shirt Size</label>
-        <select name="shirt_size" className="w-full border rounded px-4 py-2">
-          <option value="">Select size</option>
-          <option value="S">S</option>
-          <option value="M">M</option>
-          <option value="L">L</option>
-          <option value="XL">XL</option>
-          <option value="XXL">XXL</option>
-        </select>
+      <div className="mb-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label className="block font-medium mb-1 text-gray-700">Participant's Age</label>
+          <input name="age" type="number" min="1" max="25" className="w-full border rounded px-4 py-2" />
+        </div>
+        <div>
+          <label className="block font-medium mb-1 text-gray-700">Participant's Shirt Size</label>
+          <select name="shirt_size" className="w-full border rounded px-4 py-2">
+            <option value="">Select size</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+          </select>
+        </div>
       </div>
 
       <div className="mb-6">

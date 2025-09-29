@@ -46,7 +46,7 @@ export default function LeadersList() {
     "Courtney Davidson",
     "Sharon Brown",
     "Connie Luckett",
-    "Dealie Luckett-Wade",
+    "Dealie Luckett",
     "Waynetha Neal Ferguson",
     "Venitra Dukes"
   ];
