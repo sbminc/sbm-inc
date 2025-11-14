@@ -147,27 +147,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/symbols" className="text-white/80 hover:text-gold transition-colors flex items-center">
-                  <span className="w-1.5 h-1.5 bg-gold rounded-full mr-2"></span>
-                  Adinkra Symbols
-                </Link>
-              </li>
-              <li>
                 <Link href="/donate" className="text-white/80 hover:text-gold transition-colors flex items-center">
                   <span className="w-1.5 h-1.5 bg-gold rounded-full mr-2"></span>
                   Donate
-                </Link>
-              </li>
-              <li>
-                <Link href="/black-history-heroes" className="text-white/80 hover:text-gold transition-colors flex items-center">
-                  <span className="w-1.5 h-1.5 bg-gold rounded-full mr-2"></span>
-                  Black History Heroes
-                </Link>
-              </li>
-              <li>
-                <Link href="/SBM-Mvulana-Slides-Simple.html" className="text-white/80 hover:text-gold transition-colors flex items-center">
-                  <span className="w-1.5 h-1.5 bg-gold rounded-full mr-2"></span>
-                  Summit Slideshow
                 </Link>
               </li>
             </ul>
