@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Navbar from "@/components/navbar";
 import MsichanaYearbook from "@/components/msichana-yearbook";
 import { participants } from "@/lib/msichana-participants-data";
 
@@ -10,22 +9,17 @@ export default function MsichanaPresentation() {
   const hasRealData = participants.length > 2 || !participants[0]?.name.includes("Sample");
 
   if (hasRealData) {
-    // Show the yearbook layout when we have real data
-    return (
-      <>
-        <Navbar />
-        <main className="min-h-screen bg-gradient-to-b from-deep-blue via-midnight-blue to-burgundy">
-          <MsichanaYearbook />
-        </main>
-      </>
-    );
+  // Show the yearbook layout when we have real data
+  return (
+    <main className="min-h-screen bg-gradient-to-b from-deep-blue via-midnight-blue to-burgundy">
+      <MsichanaYearbook />
+    </main>
+  );
   }
 
   // Show placeholder layout when we don't have real data yet
   return (
-    <>
-      <Navbar />
-      <main className="min-h-screen relative overflow-hidden">
+    <main className="min-h-screen relative overflow-hidden">
         {/* Background Logos - Fixed Wallpaper Style */}
         <div className="fixed inset-0 bg-gradient-to-br from-deep-blue via-burgundy to-midnight-blue">
           {/* SBM Logo Background - Left Side */}
@@ -165,6 +159,5 @@ export default function MsichanaPresentation() {
           </div>
         </div>
       </main>
-    </>
   );
 }

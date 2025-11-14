@@ -3,7 +3,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Star, Heart, Award, Target, Quote } from "lucide-react"
 import { getParticipantById, getAllParticipants } from "@/lib/msichana-participants-data"
-import Navbar from "@/components/navbar"
 
 interface PageProps {
   params: {
@@ -28,9 +27,7 @@ export default function FeaturedWomanPage({ params }: PageProps) {
   }
 
   return (
-    <>
-      <Navbar />
-      <div className="min-h-screen bg-gradient-to-b from-deep-blue via-midnight-blue to-burgundy py-20 px-4">
+    <div className="min-h-screen bg-gradient-to-b from-deep-blue via-midnight-blue to-burgundy py-20 px-4">
         {/* Back Button */}
         <div className="max-w-6xl mx-auto mb-8">
           <Link 
@@ -167,6 +164,5 @@ export default function FeaturedWomanPage({ params }: PageProps) {
           </div>
         </div>
       </div>
-    </>
   )
 }
