@@ -2,13 +2,22 @@ import { notFound } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, Star, Heart, Award, Target, Quote } from "lucide-react"
-import { getParticipantById } from "@/lib/msichana-participants-data"
+import { getParticipantById, getAllParticipants } from "@/lib/msichana-participants-data"
 import Navbar from "@/components/navbar"
 
 interface PageProps {
   params: {
     id: string
   }
+}
+
+// Generate static params for all participants
+export async function generateStaticParams() {
+  const participants = getAllParticipants()
+  
+  return participants.map((participant) => ({
+    id: participant.id.toString(),
+  }))
 }
 
 export default function FeaturedWomanPage({ params }: PageProps) {
