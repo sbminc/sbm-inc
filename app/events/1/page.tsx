@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import YoungMensSummitForm from "@/components/young-mens-summit-form";
 import Navbar from "@/components/navbar";
-import PdfSlideshow from "@/components/pdf-slideshow";
 
 export default function YoungMensSummitDetails() {
   return (
