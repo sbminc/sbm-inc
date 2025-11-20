@@ -1,4 +1,4 @@
-# SBM (Sowing Black Minds) Website
+# SBM (Sacrificing Believing Manifesting) Website
 
 A modern, responsive website for the Sowing Black Minds organization, built with Next.js and featuring event management, program showcases, and interactive presentations.
 
