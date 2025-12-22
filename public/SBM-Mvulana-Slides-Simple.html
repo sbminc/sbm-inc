@@ -1,0 +1,1247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SBM & Mvulana Presentation Template - Simple</title>
+    <style>
+        /* SBM Brand Colors */
+        :root {
+            --deep-blue: #1a2a47;
+            --midnight-blue: #0f172a;
+            --burgundy: #800020;
+            --gold: #e9b949;
+            --orange: #e67e22;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--burgundy) 50%, var(--midnight-blue) 100%);
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Background Logos */
+        .background-logos {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .logo-left {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-right {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-left img,
+        .logo-right img {
+            max-width: 80%;
+            max-height: 80%;
+            object-fit: contain;
+            opacity: 0.3;
+        }
+
+        /* Single Logo Display */
+        .single-logo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .single-logo img {
+            max-width: 60%;
+            max-height: 60%;
+            object-fit: contain;
+            opacity: 0.4;
+        }
+
+        /* Make Bethune-Cookman logo specifically larger */
+        #bethune-logo img {
+            max-width: 70%;
+            max-height: 70%;
+        }
+
+        /* Reposition logo slide elements to avoid overlap */
+        .logo-slide .slide-title {
+            margin-bottom: 0.3rem;
+            font-size: 2rem;
+            margin-top: 1rem;
+        }
+
+        .logo-slide .slide-subtitle {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Move description box down and fix navigation layout */
+        .logo-slide .slide-content {
+            margin-top: 1rem;
+        }
+
+        /* Adjust single logo positioning for better fit */
+        .single-logo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .single-logo img {
+            max-width: 60%;
+            max-height: 60%;
+            object-fit: contain;
+            opacity: 0.4;
+        }
+
+        /* Make navigation buttons smaller to fit in one row */
+        .slide-nav {
+            gap: 0.05rem;
+            flex-wrap: nowrap;
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 5px 8px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            width: auto;
+            max-width: 95vw;
+        }
+
+        .nav-btn {
+            padding: 0.1rem 0.15rem;
+            font-size: 0.6rem;
+            min-width: 1.4rem;
+            max-width: 1.4rem;
+            flex-shrink: 0;
+            height: 1.4rem;
+            line-height: 1;
+        }
+
+        /* Gradient Overlay */
+        .gradient-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                rgba(26, 42, 71, 0.4) 0%, 
+                transparent 50%, 
+                rgba(128, 0, 32, 0.4) 100%);
+            z-index: 2;
+        }
+
+        /* Content */
+        .content {
+            position: relative;
+            z-index: 3;
+            padding: 40px;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow-y: auto;
+            max-height: 100vh;
+            margin-bottom: 4.5rem;
+        }
+
+        /* Adjust content to not cover logos */
+        .slide-content {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-radius: 15px;
+            border: 1px solid rgba(233, 185, 73, 0.3);
+            color: var(--gold);
+            margin: 10px 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            /* Ensure content fits without scrolling */
+            max-height: 35vh;
+            overflow: hidden;
+        }
+
+
+
+        /* Special positioning for slide 1 to avoid logo overlap */
+        #slide1 .slide-title {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        #slide1 .slide-subtitle {
+            position: relative;
+            z-index: 10;
+            margin-bottom: 2rem;
+        }
+
+        #slide1 .slide-content {
+            position: relative;
+            z-index: 10;
+            /* Reduce height for slide 1 to avoid background logo overlap */
+            max-height: 40vh;
+        }
+
+        /* Optimize bio slides for single page view */
+        .slide:not(.logo-slide) .slide-content {
+            max-height: 80vh;
+            padding: 1rem;
+            font-size: 0.85rem;
+            line-height: 1.3;
+            overflow-y: auto;
+        }
+
+        /* Compact bio text layout */
+        .slide:not(.logo-slide) .slide-content p {
+            margin-bottom: 0.4rem;
+            text-align: left;
+        }
+
+        .slide:not(.logo-slide) .slide-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Reduce image size in bio slides */
+        .slide:not(.logo-slide) .slide-content img {
+            width: 100px !important;
+            height: 100px !important;
+            margin-bottom: 0.3rem !important;
+        }
+
+        /* Reduce title sizes in bio slides */
+        .slide:not(.logo-slide) .slide-content h2 {
+            font-size: 1.3rem !important;
+            margin-bottom: 0.2rem !important;
+        }
+
+        .slide:not(.logo-slide) .slide-content p[style*="color: var(--orange)"] {
+            font-size: 0.9rem !important;
+            margin-bottom: 0.8rem !important;
+        }
+
+        /* Optimize schedule table for single page view */
+        .slide:not(.logo-slide) .slide-content table {
+            font-size: 0.7rem;
+            line-height: 1.0;
+        }
+
+        .slide:not(.logo-slide) .slide-content th,
+        .slide:not(.logo-slide) .slide-content td {
+            padding: 0.2rem 0.4rem;
+            font-size: 0.7rem;
+        }
+
+        .slide:not(.logo-slide) .slide-content thead th {
+            font-size: 0.8rem;
+            padding: 0.3rem 0.4rem;
+        }
+
+        /* Specific adjustments for slide 6 schedule */
+        #slide6 .slide-content {
+            max-height: 85vh;
+            padding: 1rem;
+        }
+
+        #slide6 .slide-content table {
+            font-size: 0.85rem;
+            line-height: 1.1;
+        }
+
+        #slide6 .slide-content th,
+        #slide6 .slide-content td {
+            padding: 0.35rem 0.5rem;
+            font-size: 0.85rem;
+        }
+
+        /* Special positioning for logo slides to avoid covering logos */
+        .logo-slide .slide-content {
+            position: relative;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(233, 185, 73, 0.3);
+            color: var(--gold);
+            margin-top: 0;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            /* Ensure logo slide content doesn't overlap navigation */
+            max-height: 25vh;
+            overflow-y: auto;
+        }
+
+        /* Logo slide layout - move content below logos */
+        .logo-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .logo-slide .slide-title {
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+            margin-top: 0;
+        }
+
+        .logo-slide .slide-subtitle {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        /* Position logos in the center area */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2rem 0;
+            height: 35vh;
+        }
+
+        /* Move logo lower for slide 2 */
+        #slide2 .logo-container {
+            margin-top: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Specific styling for slide 4 logo */
+        #slide4 .slide-logo {
+            max-width: 120%;
+            max-height: 120%;
+            transform: scale(1.2);
+        }
+
+        /* Move logo lower for slide 4 */
+        #slide4 .logo-container {
+            margin-top: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Move text box lower for slide 4 */
+        #slide4 .slide-content {
+            margin-top: 4rem;
+            max-height: 20vh;
+            overflow: hidden;
+        }
+
+        /* Specific styling for slide 3 logo */
+        #slide3 .slide-logo {
+            max-width: 120%;
+            max-height: 120%;
+            transform: scale(1.2);
+        }
+
+        /* Move logo lower for slide 3 */
+        #slide3 .logo-container {
+            margin-top: 5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Move text box lower for slide 3 */
+        #slide3 .slide-content {
+            margin-top: 4rem;
+            max-height: 20vh;
+            overflow: hidden;
+        }
+
+        /* Move text box lower for slide 5 */
+        #slide5 .slide-content {
+            margin-top: 1rem;
+            max-height: 70vh;
+            padding: 3rem 2.5rem;
+            overflow: hidden;
+            font-size: 2rem;
+        }
+        #slide5 .slide-content ul, #slide5 .slide-content li {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--gold);
+        }
+        #slide5 .slide-content p {
+            font-size: 2rem;
+            color: var(--gold);
+        }
+
+        .slide-logo {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            opacity: 0.9;
+        }
+
+        /* Specific styling for slide 2 logo */
+        #slide2 .slide-logo {
+            max-width: 120%;
+            max-height: 120%;
+            transform: scale(1.2);
+        }
+
+        /* Move text box lower for slide 2 */
+        #slide2 .slide-content {
+            margin-top: 4rem;
+            max-height: 20vh;
+            overflow: hidden;
+        }
+
+        /* Position content below the logo */
+        .logo-slide .slide-content {
+            position: relative;
+            z-index: 10;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 1rem;
+            border-radius: 15px;
+            border: 1px solid rgba(233, 185, 73, 0.3);
+            color: var(--gold);
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            max-height: 20vh;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .logo-slide .slide-content p {
+            text-align: center;
+            margin: 0;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        /* Improve text spacing and readability */
+        .slide-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0.6rem;
+            text-align: center;
+            color: var(--gold);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-top: 1rem;
+        }
+
+        .slide-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            color: var(--gold);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Improve speaker slide content */
+        .speaker-content {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            /* Reduce height to prevent overlap */
+            max-height: 35vh;
+            overflow-y: auto;
+        }
+
+        .speaker-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--gold);
+            margin: 0 auto 0.5rem auto;
+        }
+
+        .speaker-name {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--gold);
+            text-align: center;
+            margin-bottom: 0.2rem;
+        }
+
+        .speaker-title {
+            font-size: 0.9rem;
+            color: var(--orange);
+            text-align: center;
+            margin-bottom: 0.5rem;
+            font-style: italic;
+        }
+
+        .speaker-bio {
+            color: white;
+            line-height: 1.3;
+            text-align: justify;
+            font-size: 0.8rem;
+        }
+
+        /* Schedule Table */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            max-height: 40vh;
+            overflow-y: auto;
+        }
+
+        .schedule-table th,
+        .schedule-table td {
+            padding: 0.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(233, 185, 73, 0.3);
+            font-size: 0.85rem;
+        }
+
+        .schedule-table th {
+            background: rgba(233, 185, 73, 0.2);
+            color: var(--gold);
+            font-weight: bold;
+        }
+
+        .schedule-table tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* Navigation */
+        .slide-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 4;
+            display: flex;
+            gap: 6px;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            overflow-x: auto;
+            max-width: 90vw;
+            padding-bottom: 4px;
+        }
+
+        .nav-btn {
+            background: rgba(233, 185, 73, 0.8);
+            color: var(--deep-blue);
+            border: none;
+            padding: 4px 10px;
+            border-radius: 18px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 0.9rem;
+            min-width: 1.8rem;
+            max-width: 1.8rem;
+            height: 1.8rem;
+            line-height: 1;
+            margin: 2px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background: rgba(233, 185, 73, 1);
+            transform: scale(1.05);
+        }
+
+        .nav-btn.active {
+            background: rgba(233, 185, 73, 1);
+            box-shadow: 0 0 10px rgba(233, 185, 73, 0.5);
+        }
+
+        /* Slide Transitions */
+        .slide {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .slide-title {
+                font-size: 2.5rem;
+            }
+            
+            .slide-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .slide-content {
+                font-size: 1.2rem;
+                padding: 1.5rem;
+            }
+            
+            .content {
+                padding: 20px;
+            }
+
+            .speaker-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .schedule-table {
+                font-size: 0.8rem;
+            }
+        }
+
+        /* Error handling for images */
+        .speaker-image {
+            background: var(--gold);
+            color: var(--deep-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        /* Improve navigation buttons */
+        .slide-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 100;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 8px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-button {
+            width: 35px;
+            height: 35px;
+            border: 2px solid var(--gold);
+            background: transparent;
+            color: var(--gold);
+            border-radius: 50%;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        .nav-button:hover {
+            background: var(--gold);
+            color: var(--midnight-blue);
+        }
+
+        .nav-button.active {
+            background: var(--gold);
+            color: var(--midnight-blue);
+        }
+
+        /* Ensure navigation is always visible */
+        .slide {
+            padding-bottom: 70px;
+        }
+
+        /* Improve list styling */
+        .workshop-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .workshop-list li {
+            padding: 0.4rem 0;
+            border-bottom: 1px solid rgba(233, 185, 73, 0.2);
+            color: white;
+            font-size: 0.9rem;
+            line-height: 1.3;
+        }
+
+        .workshop-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Only center and enlarge text, not the whole slide (exclude facilitator and mayor bios) */
+        #slide14 .slide-title, #slide15 .slide-title, #slide16 .slide-title, #slide19 .slide-title, #slide20 .slide-title, #slide21 .slide-title, #slide22 .slide-title, #slide23 .slide-title, #slide24 .slide-title, #slide25 .slide-title, #slide26 .slide-title {
+            font-size: 3rem;
+            text-align: center;
+            margin-top: 20vh;
+        }
+        #slide14 .slide-subtitle, #slide15 .slide-subtitle, #slide16 .slide-subtitle, #slide19 .slide-subtitle, #slide20 .slide-subtitle, #slide21 .slide-subtitle, #slide22 .slide-subtitle, #slide23 .slide-subtitle, #slide24 .slide-subtitle, #slide25 .slide-subtitle, #slide26 .slide-subtitle {
+            font-size: 2rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        #slide25 .slide-title, #slide26 .slide-title {
+            margin-bottom: 2.5rem;
+        }
+        #slide25 .slide-content, #slide26 .slide-content {
+            margin-bottom: 6rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Logos -->
+    <div class="background-logos" id="background-logos">
+        <div class="logo-left">
+            <img src="images/speakers/SBM-Logo-4.png" alt="SBM Logo" onerror="this.style.display='none'">
+        </div>
+        <div class="logo-right">
+            <img src="images/speakers/Mvulana-Logo-1.PNG" alt="Mvulana Logo" onerror="this.style.display='none'">
+        </div>
+    </div>
+    
+    <!-- Single Logo Displays -->
+    <div class="single-logo" id="sbm-logo" style="display: none;">
+        <img src="images/speakers/SBM-Logo-4.png" alt="SBM Logo" onerror="this.style.display='none'">
+    </div>
+    
+    <div class="single-logo" id="mvulana-logo" style="display: none;">
+        <img src="images/speakers/Mvulana-Logo-1.PNG" alt="Mvulana Logo" onerror="this.style.display='none'">
+    </div>
+    
+    <div class="single-logo" id="bethune-logo" style="display: none;">
+        <img src="images/speakers/bethune-cookman-2.png" alt="Bethune-Cookman University Logo" onerror="this.style.display='none'">
+    </div>
+    
+    <!-- Gradient Overlay -->
+    <div class="gradient-overlay"></div>
+
+    <!-- Slide 1: Title Slide -->
+    <div class="content slide active" id="slide1">
+        <h1 class="slide-title">MVULANA Young Men's Summit</h1>
+        <h2 class="slide-subtitle">Stepping Into Manhood</h2>
+        <div class="slide-content">
+            <p>A transformative experience designed to develop leadership skills, confidence, 
+            communication abilities, and mental health awareness.</p>
+            <div style="margin-top: 2rem; font-size: 1.3rem;">
+                <p><strong>Date:</strong> July 21, 2025</p>
+                <p><strong>Time:</strong> 10:00 AM - 4:00 PM</p>
+                <p><strong>Location:</strong> Center for Civic Engagement, Bethune-Cookman University</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 2: SBM Logo -->
+    <div class="content slide logo-slide" id="slide2">
+        <h1 class="slide-title">SBM Inc.</h1>
+        <h2 class="slide-subtitle">Sacrificing, Believing, and Manifesting</h2>
+        <div class="logo-container">
+            <img src="images/speakers/SBM-Logo-4.png" alt="SBM Logo" class="slide-logo">
+        </div>
+        <div class="slide-content">
+            <p>Dedicated to community advancement and sustainable impact.</p>
+        </div>
+    </div>
+
+    <!-- Slide 3: Mvulana Logo -->
+    <div class="content slide logo-slide" id="slide3">
+        <h1 class="slide-title">MVULANA</h1>
+        <h2 class="slide-subtitle">Young Men's Leadership Initiative</h2>
+        <div class="logo-container">
+            <img src="images/speakers/Mvulana-Logo-1.PNG" alt="Mvulana Logo" class="slide-logo">
+        </div>
+        <div class="slide-content">
+            <p>Empowering young men to become leaders in their communities.</p>
+        </div>
+    </div>
+
+    <!-- Slide 4: Bethune-Cookman Logo -->
+    <div class="content slide logo-slide" id="slide4">
+        <h1 class="slide-title">Bethune-Cookman University</h1>
+        <h2 class="slide-subtitle">Center for Civic Engagement</h2>
+        <div class="logo-container">
+            <img src="images/speakers/bethune-cookman-2.png" alt="Bethune-Cookman University Logo" class="slide-logo">
+        </div>
+        <div class="slide-content">
+            <p>Proud host of the MVULANA Young Men's Summit</p>
+        </div>
+    </div>
+
+    <!-- Slide 5: Event Schedule -->
+    <div class="content slide" id="slide5">
+        <h1 class="slide-title">Event Schedule</h1>
+        <div class="slide-content">
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Activity</th>
+                        <th>Presenter</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>10:00-10:15 AM</td>
+                        <td>Welcome/Prayer</td>
+                        <td>Dr. McConner & Mr. McKinney/Bishop Triplett</td>
+                    </tr>
+                    <tr>
+                        <td>10:15-10:30 AM</td>
+                        <td>Ice Breaker</td>
+                        <td>Mr. Jermaine McKinney</td>
+                    </tr>
+                    <tr>
+                        <td>10:30-11:10 AM</td>
+                        <td>Break Out Groups (1&2) Rotation</td>
+                        <td>Alphonso B. Bush Jr. & Dr. Chester L. Wilson, Jr.</td>
+                    </tr>
+                    <tr>
+                        <td>11:10-11:20 AM</td>
+                        <td>Participants Break</td>
+                        <td>Group Participants</td>
+                    </tr>
+                    <tr>
+                        <td>11:30 AM-12:00 PM</td>
+                        <td>Mayor Henry Presentation</td>
+                        <td>Mayor of Daytona Beach Florida</td>
+                    </tr>
+                    <tr>
+                        <td>12:00-12:30 PM</td>
+                        <td>Lunch Break</td>
+                        <td>Committee Members/Omega Psi Phi</td>
+                    </tr>
+                    <tr>
+                        <td>12:00-12:30 PM</td>
+                        <td>Meet Kofi Zulu of AduKicks</td>
+                        <td>Kofi Zulu</td>
+                    </tr>
+                    <tr>
+                        <td>12:30-1:10 PM</td>
+                        <td>Break Out Groups (3&4) Rotation</td>
+                        <td>Group Facilitators</td>
+                    </tr>
+                    <tr>
+                        <td>12:30-1:10 PM</td>
+                        <td>Gabriel Hannans - Parents Seminar: Gentle Parenting</td>
+                        <td>Gabriel Hannans</td>
+                    </tr>
+                    <tr>
+                        <td>1:10-1:40 PM</td>
+                        <td>Power of the Tie Presentation</td>
+                        <td>Mr. Mayner & Mr. Jermaine McKinney</td>
+                    </tr>
+                    <tr>
+                        <td>1:40-2:20 PM</td>
+                        <td>Black History Presentation</td>
+                        <td>Dr. Headley White</td>
+                    </tr>
+                    <tr>
+                        <td>2:20-2:50 PM</td>
+                        <td>Break Out Groups (5&6) Rotation</td>
+                        <td>Group Facilitators</td>
+                    </tr>
+                    <tr>
+                        <td>2:50-4:00 PM</td>
+                        <td>Participants Feedback/Presentation of Certificates & Closing Ceremony</td>
+                        <td>Group Participants/Dr. McConner & Mr. McKinney</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Slide 6: Meet Your Facilitators -->
+    <div class="content slide" id="slide6">
+        <h1 class="slide-title">Meet Your Facilitators</h1>
+        <div class="slide-content">
+            <p>Our group facilitators are dedicated professionals here to guide, inspire, and support you throughout the summit. Get to know the leaders who will be working with you today!</p>
+        </div>
+    </div>
+
+    <!-- Slide 7: Kevin McCrary -->
+    <div class="content slide" id="slide7">
+        <h1 class="slide-title">Group Facilitator</h1>
+        <div class="slide-content">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="images/speakers/kevin-mccrary.jpg" alt="Kevin McCrary" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); margin-bottom: 1rem;">
+                <h2 style="color: var(--gold); font-size: 2rem; margin-bottom: 0.5rem;">Kevin McCrary</h2>
+                <p style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1.5rem; font-style: italic;">Director of Financial Aid Services, Bethune-Cookman University</p>
+            </div>
+            <div style="text-align: left; font-size: 1.1rem; line-height: 1.6;">
+                <p>Kevin McCrary is the Director of Financial Aid Services at Bethune-Cookman University in Daytona Beach, Florida. With nearly seven years of dedicated service to the institution, he has held various roles including Associate Director and Coordinator of Financial Aid Services. Kevin is known for his commitment to student success and financial empowerment in higher education. His leadership and service have earned him recognition from professional organizations such as the National Association of Student Financial Aid Administrators (NASFAA). Through his work, Kevin continues to play a pivotal role in helping students navigate the financial aid process and achieve their academic goals.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 8: Gabriel Hannans -->
+    <div class="content slide" id="slide8">
+        <h1 class="slide-title">Group Facilitator</h1>
+        <div class="slide-content">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="images/speakers/gabriel-h.jpg" alt="Gabriel Hannans" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); margin-bottom: 1rem;">
+                <h2 style="color: var(--gold); font-size: 2rem; margin-bottom: 0.5rem;">Gabriel H.</h2>
+                <p style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1.5rem; font-style: italic;">Parent Coach & Educator, Creator of SHIFT Parenting</p>
+            </div>
+            <div style="text-align: left; font-size: 1.1rem; line-height: 1.6;">
+                <p>Gabriel H. is a nationally recognized parent coach, educator, and the creator of SHIFT Parenting—a practical, science-backed framework that helps overwhelmed caregivers raise emotionally healthy, self-regulated children without relying on punishment or shame.</p>
+                <p>With a background in Exceptional Student Education and years of experience as a registered behavior technician, Gabriel has supported countless neurodivergent children and families struggling with behavior, communication, and connection. His work blends neuroscience, trauma-informed care, and real-life parenting strategies into tools that actually work—even in high-stress households.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Omar Brown -->
+    <div class="content slide" id="slide9">
+        <h1 class="slide-title">Group Facilitator</h1>
+        <div class="slide-content">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="images/speakers/omar-brown.jpg" alt="Omar Brown" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); margin-bottom: 1rem;">
+                <h2 style="color: var(--gold); font-size: 2rem; margin-bottom: 0.5rem;">Omar Brown</h2>
+                <p style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1.5rem; font-style: italic;">Co-owner, Kale Cafe</p>
+            </div>
+            <div style="text-align: left; font-size: 1.1rem; line-height: 1.6;">
+                <p>Omar Brown is the co-owner of Kale Cafe, a beloved vegan restaurant and juice bar located in Daytona Beach, Florida. Alongside his wife Camille, Omar founded Kale Cafe in 2013 with a mission to make fresh, plant-based, Caribbean-inspired meals accessible to their community. Known for its flavorful homemade dishes and cold-pressed juices, Kale Cafe has become a hub for those seeking a healthier lifestyle.</p>
+                <p>Beyond the kitchen, Omar is a dedicated advocate for clean, healthy living. He and his wife are active in the community, frequently volunteering and donating time and resources to local causes. Their commitment to wellness, service, and cultural roots has made Kale Cafe not just a restaurant, but a movement for positive change in Daytona Beach.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 10: Alphonso B. Bush Jr. -->
+    <div class="content slide" id="slide10">
+        <h1 class="slide-title">Group Facilitator</h1>
+        <div class="slide-content">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="images/speakers/alphonso-bush.jpg" alt="Alphonso B. Bush Jr." style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); margin-bottom: 1rem;">
+                <h2 style="color: var(--gold); font-size: 2rem; margin-bottom: 0.5rem;">Alphonso B. Bush Jr.</h2>
+                <p style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1.5rem; font-style: italic;">President & CEO</p>
+            </div>
+            <div style="text-align: left; font-size: 1.1rem; line-height: 1.6;">
+                <p>Alphonso B. Bush Jr., President & CEO</p>
+                <p>Dedicated, experienced, and results-driven professional, Alphonso B. Bush Jr. is the President and CEO of a mission-driven organization focused on community advancement and sustainable impact. With a strong foundation in nonprofit management, business administration, and community development, Mr. Bush holds a Bachelor of Fine Arts in Design and Merchandising with a concentration in Entrepreneurship from I.A.D.T. – Sanford Brown College. He has further enhanced his expertise through specialized certifications from Yale University and the University of Central Florida in Financial Markets, Grant Writing, and Nonprofit Marketing.</p>
+                <p>Mr. Bush has served on several local government boards in Daytona Beach, Florida, including the Midtown Redevelopment Committee, Save Our Neighborhood Committee (as Chairman of the Strategic Planning Committee), and the Affordable Housing Advisory Committee. He has also contributed to nonprofit leadership as a former advisory committee member for the Florida United Methodist Children’s Home.</p>
+                <p>With certifications in emergency management (FEMA), professional ministry, life coaching, and entrepreneurial mindset facilitation, Mr. Bush brings over 7 years of leadership experience. His skills span business operations, marketing, public speaking, strategic planning, and staff development. Known for his professionalism, adaptability, and commitment to service, he continues to drive growth and innovation through effective leadership, community engagement, and advocacy.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 11: Leary J. Wade -->
+    <div class="content slide" id="slide11">
+        <h1 class="slide-title">Group Facilitator</h1>
+        <div class="slide-content">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="images/speakers/leary-wade.png" alt="Leary J. Wade" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); margin-bottom: 1rem;">
+                <h2 style="color: var(--gold); font-size: 2rem; margin-bottom: 0.5rem;">Leary J. Wade</h2>
+                <p style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1.5rem; font-style: italic;">Senior Solution Engineer</p>
+            </div>
+            <div style="text-align: left; font-size: 1.1rem; line-height: 1.6;">
+                <p>Leary J. Wade – Sr.Solution Engineer</p>
+                <p>Leary has over 17 years of sales engineering experience, including experience with RapidScale, Dell Technologies, and Verizon Cloud. His sales engineer experience includes strategically solving technical problems and providing customer focused solutions. His technical background consists of Cloud & Network Security, Compute and Network Systems Administration. He's a graduate of Howard University and is currently pursuing his Masters in Business Administration from the University of North Carolina Wilmington.</p>
+                <p>Leary is married with 3 kids, 2 dogs, and a granddog. He is a lifetime member of Kappa Alpha Psi Fraternity, Inc. and is active in the Durham (NC) Alumnae Chapter. His free time is spent with</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 12: Genesis Robinson -->
+    <div class="content slide" id="slide12">
+        <h1 class="slide-title">Group Facilitator</h1>
+        <div class="slide-content">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <img src="images/speakers/genesis-robinson.avif" alt="Genesis Robinson" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); margin-bottom: 1rem;">
+                <h2 style="color: var(--gold); font-size: 2rem; margin-bottom: 0.5rem;">Genesis Robinson</h2>
+                <p style="color: var(--orange); font-size: 1.2rem; margin-bottom: 1.5rem; font-style: italic;">Executive Director - equal-ground.com</p>
+            </div>
+            <div style="text-align: left; font-size: 1.1rem; line-height: 1.6;">
+                <p>Genesis Robinson is a political strategist and community organizer with over a decade of experience delivering results at the local, state, and federal levels of government. He serves as the Executive Director of Equal Ground Education Fund and Action Fund, Florida’s preeminent Black-led voting rights organization.</p>
+                <p>He is an alumnus of Florida Agricultural and Mechanical University (FAMU) where he studied Political Science and Public Administration. He began his professional career in the United States House of Representatives, where he served as a Legislative Assistant during the 113th and 114th Congress. Since then, he has held various positions throughout the state of Florida.</p>
+                <p>In 2018, while working in the Florida Legislature, Genesis assisted in the successful passage of legislation to select Dr. Mary McLeod Bethune as one of two people to represent the state of Florida in the National Statuary Hall Collection in the United States Capitol- a distinct honor which made her the first African American to represent any state in the country.</p>
+                <p>In 2021, Genesis joined Equal Ground where he managed and expanded their operation in Volusia County. His experience and talents were quickly noticed and he excelled in the position. Less than one year later, the organization created the position of Political Director and tapped Genesis to lead the division. In this role, he was responsible for developing and maintaining relationships with elected officials, tracking legislation, and creating ways to educate Black Floridians about the legislative process. In addition to holding various positions in government and with Equal Ground, Genesis has managed and consulted on several local and state campaigns. He is married to a Volusia County educator and they reside in Daytona Beach with their two children.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Slide 13: Dr. Chester L. Wilson, Jr. -->
+    <div class="content slide" id="slide13">
+        <h1 class="slide-title">Group Facilitator</h1>
+        <div class="slide-content">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <p style="color: var(--orange); font-size: 1.2rem; margin-bottom: 0.7rem; font-style: italic;">Educator, Entrepreneur, Motivational Speaker, Mediator, Trainer</p>
+                <img src="images/speakers/chester-wilson.jpg" alt="Dr. Chester L. Wilson, Jr." style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); margin-bottom: 1rem;">
+                <h2 style="color: var(--gold); font-size: 2rem; margin-bottom: 0.5rem;">Dr. Chester L. Wilson, Jr.</h2>
+            </div>
+            <div style="text-align: left; font-size: 1.1rem; line-height: 1.6;">
+                <p>Chester Wilson, Ed.D, is an educator, entrepreneur, motivational speaker, mediator, and trainer. Dr. Wilson’s professional pursuits includes serving as the CEO of the CW Consulting Firm and Outreach Community Care Network. Dr. Wilson’s two decades of experience is in behavioral healthcare, higher education, and consulting.</p>
+                <p>Dr. Wilson’s educational achievements include a Doctor of Education degree in Organizational Leadership and Human Services Administration, and a Master’s in Business Administration degree with a concentration in Criminal Justice.</p>
+                <p>Dr. Wilson possesses a plethora of professional certifications, which includes being certified in Addictions, Mental Health, HIV, CPR Instructor Trainer, Risk Management, Diversity and Inclusion, Trauma Informed Care, Private Security, Private Investigation, Circuit Civil, County, and Family Mediation.</p>
+                <p>Dr. Wilson’s volunteerism activities include serving as a board member, church administrator, and mentor. He is a member of Alpha Phi Alpha Fraternity, Inc.</p>
+                <p>Dr. Wilson has been highlighted for freely sharing his talents and gifts with others. He has acquired a wealth of information and serves as a community resource. He has received a bevy of community awards and accolades for his service, dedication, and volunteerism.</p>
+                <p>Dr. Wilson’s life’s goal and mission is to utilize his acquired skills to assist individuals, families, and communities in need. It is also his desire as a life learner to acquire skills that will afford him the opportunity to assist others in developing professionally and growing personally.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 14: Welcome/Prayer -->
+    <div class="content slide" id="slide14">
+        <h1 class="slide-title">Welcome/Prayer</h1>
+        <div style="text-align: center; margin: 1.5rem 0;">
+            <img src="images/speakers/pray.jpg" alt="Prayer" style="max-width: 180px; width: 100%; height: auto; display: inline-block;" />
+        </div>
+        <h2 class="slide-subtitle">Dr. McConner & Mr. McKinney/Bishop Triplett</h2>
+    </div>
+
+    <!-- Slide 15: Ice Breaker -->
+    <div class="content slide" id="slide15">
+        <h1 class="slide-title">Ice Breaker</h1>
+        <div style="text-align: center; margin: 1.5rem 0;">
+            <img src="images/speakers/ice.jpg" alt="Ice Breaker" style="max-width: 180px; width: 100%; height: auto; display: inline-block;" />
+        </div>
+        <h2 class="slide-subtitle">Mr. Jermaine McKinney</h2>
+    </div>
+
+    <!-- Slide 16: Break Out Groups (1&2) Rotation -->
+    <div class="content slide" id="slide16">
+        <h1 class="slide-title">Break Out Groups (1&2) Rotation</h1>
+        <h2 class="slide-subtitle">Alphonso B. Bush Jr. & Dr. Chester L. Wilson, Jr.</h2>
+    </div>
+
+    <!-- Slide 17: Participants Break -->
+    <div class="content slide" id="slide17">
+        <h1 class="slide-title">Participants Break</h1>
+        <h2 class="slide-subtitle">Group Participants</h2>
+    </div>
+
+    <!-- Slide 18: Making Successful Decisions (Mayor) -->
+    <div class="content slide" id="slide18">
+        <h1 class="slide-title">Making Successful Decisions</h1>
+        <h2 class="slide-subtitle" style="text-align: center;">Mayor of Daytona Beach</h2>
+        <div class="slide-content">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <p style="color: var(--orange); font-size: 1.2rem; margin-bottom: 0.7rem; font-style: italic;">Mayor of Daytona Beach</p>
+                <img src="images/speakers/derrick-henry.jpg" alt="Derrick Henry" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 4px solid var(--gold); margin-bottom: 1rem;">
+                <h2 style="color: var(--gold); font-size: 2rem; margin-bottom: 0.5rem;">Derrick L. Henry</h2>
+                <p style="color: var(--gold); font-size: 1.1rem; margin-bottom: 1.5rem; font-weight: bold;">The Honorable Derrick L. Henry</p>
+            </div>
+            <div style="text-align: left; font-size: 1.1rem; line-height: 1.6;">
+                <p>Derrick L. Henry, a Daytona Beach native, is serving his fourth term as mayor of the City of Daytona Beach, after running unopposed in 2024. He is the city's 21st mayor since 1926, when the towns of Seabreeze, Daytona and Daytona Beach merged into one city. Mayor Henry is our community's second African American mayor. Mayor Henry's campaign platform was "Together we can do more," and his priorities are improving the quality of life for all residents, making the city friendlier to businesses, mentoring youth, upgrading the city's aged infrastructure, addressing homelessness and creating more affordable housing options.</p>
+                <p>Overall, under the direction of Mayor Henry's leadership, the city has enjoyed many positives since he first took office in 2012. The unemployment rate is down, property values have increased, many private investors have built transformative projects, minority hiring is up in City Hall and crime is down throughout the city. Furthermore, the population is surging, and commercial development is thriving as the city has been one of the nation's leading areas for job creation. Prior to serving as the city's top elected official, Mayor Henry was a teacher, assistant principal and high school basketball coach at Mainland High School, where he was recognized as Volusia County's Social Studies "Teacher of the Year" in 1998-1999. He also served as the city's Zone 5 commissioner from 2009 to 2011. In addition to fulfilling his duties as mayor, he remains a certified educator. He is the executive director for Step-by-Step Expressions, Inc., which offers exciting and innovative training sessions and engaging curriculum materials for teachers and students across the nation. A passionate motivational speaker, he has dedicated his life to empowering others and greatly enjoys presenting on a variety of life skills topics. He serves as an assistant principal for the Volusia County school system and proclaims "working with and on behalf of children as his greatest professional joy." He is married to Dr. Stephanie Henry, an international education consultant and creator of learning programs. Mayor Henry has two sons, Michael and Derrick Jr. and a beautiful daughter named Paisley.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 19: Lunch Break -->
+    <div class="content slide" id="slide19">
+        <h1 class="slide-title">Lunch Break</h1>
+        <h2 class="slide-subtitle">Committee Members/Omega Psi Phi</h2>
+    </div>
+
+    <!-- Slide 20: Meet Kofi Zulu of AduKicks -->
+    <div class="content slide" id="slide20">
+        <h1 class="slide-title">Meet Kofi Zulu of AduKicks</h1>
+        <div style="text-align: center; margin: 1.5rem 0;">
+            <img src="images/speakers/ADUKICKS-03_1736737319.webp" alt="AduKicks" style="max-width: 180px; width: 100%; height: auto; display: inline-block;" />
+        </div>
+        <h2 class="slide-subtitle">Kofi Zulu</h2>
+    </div>
+
+    <!-- Slide 21: Break Out Groups (3&4) Rotation -->
+    <div class="content slide" id="slide21">
+        <h1 class="slide-title">Break Out Groups (3&4) Rotation</h1>
+        <h2 class="slide-subtitle">Group Facilitators</h2>
+    </div>
+
+    <!-- Slide 22: Gabriel Hannans - Parents Seminar: Gentle Parenting -->
+    <div class="content slide" id="slide22">
+        <h1 class="slide-title">Gabriel Hannans - Parents Seminar: Gentle Parenting</h1>
+        <div style="text-align: center; margin: 1.5rem 0;">
+            <img src="images/speakers/blackparents123.png" alt="Gentle Parenting" style="max-width: 180px; width: 100%; height: auto; display: inline-block;" />
+        </div>
+        <h2 class="slide-subtitle">Gabriel Hannans</h2>
+    </div>
+
+    <!-- Slide 23: Power of the Tie Presentation -->
+    <div class="content slide" id="slide23">
+        <h1 class="slide-title">Power of the Tie Presentation</h1>
+        <div style="text-align: center; margin: 1.5rem 0;">
+            <img src="images/speakers/necktie-neckties-tie-ties-04.jpg" alt="Power of the Tie" style="max-width: 180px; width: 100%; height: auto; display: inline-block;" />
+        </div>
+        <h2 class="slide-subtitle">Mr. Mayner & Mr. Jermaine McKinney</h2>
+    </div>
+
+    <!-- Slide 24: Black History Presentation -->
+    <div class="content slide" id="slide24">
+        <h1 class="slide-title">Black History Presentation</h1>
+        <div style="text-align: center; margin: 1.5rem 0;">
+            <img src="images/speakers/sankofa.png" alt="Sankofa Symbol" style="max-width: 180px; width: 100%; height: auto; display: inline-block;" />
+        </div>
+        <h2 class="slide-subtitle">Dr. Headley White</h2>
+    </div>
+
+    <!-- Slide 25: Participants Feedback/Presentation of Certificates & Closing Ceremony -->
+    <div class="content slide" id="slide25">
+        <h1 class="slide-title">Participants Feedback/Presentation of Certificates & Closing Ceremony</h1>
+        <h2 class="slide-subtitle">Group Participants/Dr. McConner & Mr. McKinney</h2>
+    </div>
+
+    <!-- Slide 26: Thank You -->
+    <div class="content slide" id="slide26">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+            <img src="images/speakers/SBM-Logo-4.png" alt="SBM Logo" style="max-width: 180px; opacity: 0.7; margin-bottom: 2rem;" />
+            <h1 class="slide-title" style="margin-bottom: 1rem;">Thank You</h1>
+            <div class="slide-content" style="text-align: center; max-width: 600px;">
+                <p style="font-size: 1.3rem; color: var(--gold);">Thank you for attending the MVULANA Young Men's Summit</p>
+                <p style="font-size: 1.1rem; color: var(--orange); margin-top: 1rem;">Empowering the Next Generation</p>
+                <p style="margin-top: 2rem;"><a href="https://www.sbminc.org" style="color: var(--gold); text-decoration: underline; font-size: 1.1rem;">www.sbminc.org</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 27: Community Partners and Sponsors -->
+    <div class="content slide" id="slide27">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%;">
+            <img src="images/speakers/SBM-Logo-4.png" alt="SBM Logo" style="max-width: 120px; opacity: 0.7; margin-bottom: 1.5rem;" />
+            <h1 class="slide-title" style="margin-bottom: 1rem;">Community Partners and Sponsors</h1>
+            <div class="slide-content" style="text-align: center; max-width: 600px;">
+                <ul style="list-style: none; padding: 0; color: var(--gold); font-size: 1.1rem;">
+                    <li style="margin-bottom: 0.7rem;">City of Daytona Beach</li>
+                    <li style="margin-bottom: 0.7rem;">Commissioner Ken Strickland</li>
+                    <li style="margin-bottom: 0.7rem;">City of Daytona Beach, Mayor Derrick Henry</li>
+                    <li style="margin-bottom: 0.7rem;">Mr. Rufus Johnson</li>
+                    <li style="margin-bottom: 0.7rem;">Zachardee Holdings</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <div class="slide-nav">
+        <button class="nav-btn active" onclick="showSlide(1)">1</button>
+        <button class="nav-btn" onclick="showSlide(2)">2</button>
+        <button class="nav-btn" onclick="showSlide(3)">3</button>
+        <button class="nav-btn" onclick="showSlide(4)">4</button>
+        <button class="nav-btn" onclick="showSlide(5)">5</button>
+        <button class="nav-btn" onclick="showSlide(6)">6</button>
+        <button class="nav-btn" onclick="showSlide(7)">7</button>
+        <button class="nav-btn" onclick="showSlide(8)">8</button>
+        <button class="nav-btn" onclick="showSlide(9)">9</button>
+        <button class="nav-btn" onclick="showSlide(10)">10</button>
+        <button class="nav-btn" onclick="showSlide(11)">11</button>
+        <button class="nav-btn" onclick="showSlide(12)">12</button>
+        <button class="nav-btn" onclick="showSlide(13)">13</button>
+        <button class="nav-btn" onclick="showSlide(14)">14</button>
+        <button class="nav-btn" onclick="showSlide(15)">15</button>
+        <button class="nav-btn" onclick="showSlide(16)">16</button>
+        <button class="nav-btn" onclick="showSlide(17)">17</button>
+        <button class="nav-btn" onclick="showSlide(18)">18</button>
+        <button class="nav-btn" onclick="showSlide(19)">19</button>
+        <button class="nav-btn" onclick="showSlide(20)">20</button>
+        <button class="nav-btn" onclick="showSlide(21)">21</button>
+        <button class="nav-btn" onclick="showSlide(22)">22</button>
+        <button class="nav-btn" onclick="showSlide(23)">23</button>
+        <button class="nav-btn" onclick="showSlide(24)">24</button>
+        <button class="nav-btn" onclick="showSlide(25)">25</button>
+        <button class="nav-btn" onclick="showSlide(26)">26</button>
+        <button class="nav-btn" onclick="showSlide(27)">27</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 27;
+
+        function showSlide(slideNumber) {
+            // Hide all slides
+            const slides = document.querySelectorAll('.slide');
+            slides.forEach(slide => slide.classList.remove('active'));
+            
+            // Hide all logo displays
+            document.getElementById('background-logos').style.display = 'none';
+            document.getElementById('sbm-logo').style.display = 'none';
+            document.getElementById('mvulana-logo').style.display = 'none';
+            document.getElementById('bethune-logo').style.display = 'none';
+            
+            // Show selected slide
+            document.getElementById(`slide${slideNumber}`).classList.add('active');
+            
+            // Show background logos for non-logo slides
+            if (slideNumber >= 2 && slideNumber <= 4) {
+                // Logo slides now have inline logos, so no background logos needed
+            } else {
+                document.getElementById('background-logos').style.display = 'block';
+            }
+
+            // Update navigation buttons
+            const navButtons = document.querySelectorAll('.nav-btn');
+            navButtons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            currentSlide = slideNumber;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                let nextSlide = currentSlide + 1;
+                while (nextSlide <= totalSlides && !document.getElementById(`slide${nextSlide}`)) {
+                    nextSlide++;
+                }
+                if (nextSlide <= totalSlides && document.getElementById(`slide${nextSlide}`)) {
+                    showSlide(nextSlide);
+                    document.querySelector(`[onclick="showSlide(${nextSlide})"]`).classList.add('active');
+                }
+            } else if (e.key === 'ArrowLeft') {
+                e.preventDefault();
+                let prevSlide = currentSlide - 1;
+                while (prevSlide >= 1 && !document.getElementById(`slide${prevSlide}`)) {
+                    prevSlide--;
+                }
+                if (prevSlide >= 1 && document.getElementById(`slide${prevSlide}`)) {
+                    showSlide(prevSlide);
+                    document.querySelector(`[onclick="showSlide(${prevSlide})"]`).classList.add('active');
+                }
+            }
+        });
+
+        // Initialize first slide
+        showSlide(1);
+    </script>
+</body>
+</html> 
