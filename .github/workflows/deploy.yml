@@ -35,9 +35,12 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           npm install -g wrangler
+          # Try to create project if it doesn't exist, then deploy
+          wrangler pages project create sbm-inc --production-branch=main || true
           # Deploy the site - wrangler.toml will be used for configuration
           wrangler pages deploy out \
             --project-name=sbm-inc \
             --branch=${{ github.ref_name }} \
             --commit-hash=${{ github.sha }} \
-            --commit-message="${{ github.event.head_commit.message }}" 
+            --commit-message="${{ github.event.head_commit.message }}" \
+            --commit-dirty=true 
