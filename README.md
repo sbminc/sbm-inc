@@ -143,4 +143,4 @@ For questions about the codebase or deployment, refer to:
 ---
 
 **Last Updated**: November 2025
-**Version**: 1.0.0
+**Version**: 1.0.0.
