@@ -29,14 +29,27 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify Cloudflare credentials
+        run: |
+          if [ -z "${{ secrets.CLOUDFLARE_API_TOKEN }}" ]; then
+            echo "❌ CLOUDFLARE_API_TOKEN secret is not set in GitHub repository settings"
+            exit 1
+          fi
+          if [ -z "${{ secrets.CLOUDFLARE_ACCOUNT_ID }}" ]; then
+            echo "❌ CLOUDFLARE_ACCOUNT_ID secret is not set in GitHub repository settings"
+            exit 1
+          fi
+          echo "✅ Cloudflare credentials are configured"
+
       - name: Deploy to Cloudflare Pages
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           npm install -g wrangler
-          # Try to create project if it doesn't exist, then deploy
-          wrangler pages project create sbm-inc --production-branch=main || true
+          # Verify authentication
+          echo "Verifying Cloudflare authentication..."
+          wrangler whoami || (echo "❌ Authentication failed. Check your CLOUDFLARE_API_TOKEN" && exit 1)
           # Deploy the site - wrangler.toml will be used for configuration
           wrangler pages deploy out \
             --project-name=sbm-inc \
