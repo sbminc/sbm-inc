@@ -35,10 +35,9 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           npm install -g wrangler
-          # Deploy the site with specific branch and commit info
+          # Deploy the site - wrangler.toml will be used for configuration
           wrangler pages deploy out \
             --project-name=sbm-inc \
             --branch=${{ github.ref_name }} \
             --commit-hash=${{ github.sha }} \
-            --commit-message="${{ github.event.head_commit.message }}" \
-            --commit-dirty=true 
+            --commit-message="${{ github.event.head_commit.message }}" 
