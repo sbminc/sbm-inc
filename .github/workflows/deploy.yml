@@ -45,10 +45,10 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          # Production Pages project on the owner's Cloudflare account.
-          # Do NOT change this without confirming the Custom Domains target in the dashboard.
-          # Do NOT auto-create projects — that previously created a duplicate (sbm-inc-ega vs live domain).
-          PAGES_PROJECT_NAME: sbm-inc-ega
+          # Exact Pages project NAME in Cloudflare (not the *.pages.dev subdomain).
+          # This account's project is named "sbm-inc" and serves sbm-inc-ega.pages.dev.
+          # Do NOT auto-create projects.
+          PAGES_PROJECT_NAME: sbm-inc
         run: |
           npm install -g wrangler
 
@@ -59,7 +59,9 @@ jobs:
           PROJECT_LIST=$(wrangler pages project list)
           echo "$PROJECT_LIST"
 
-          if ! echo "$PROJECT_LIST" | grep -F "${PAGES_PROJECT_NAME}"; then
+          # Match the project NAME column only (e.g. "│ sbm-inc      │"),
+          # not domain text like "sbm-inc-ega.pages.dev".
+          if ! echo "$PROJECT_LIST" | grep -qE "│ ${PAGES_PROJECT_NAME}[[:space:]]+│"; then
             echo "❌ Expected Pages project '${PAGES_PROJECT_NAME}' was not found in this Cloudflare account."
             echo "Refusing to deploy so we do not create a new/wrong project."
             echo "Confirm the exact project name under Workers & Pages, then update PAGES_PROJECT_NAME in deploy.yml."
