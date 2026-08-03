@@ -56,7 +56,7 @@ export default function YoungMensSummitDetails() {
                 <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-xl">
                   <div className="text-gold text-2xl mb-2">📅</div>
                   <div className="text-white font-semibold text-lg">Date</div>
-                  <div className="text-white/90">July 21, 2025</div>
+                  <div className="text-white/90">November 14, 2026</div>
                 </div>
                 
                 <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-xl">

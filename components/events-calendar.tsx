@@ -25,8 +25,7 @@ export default function EventsCalendar() {
 
   // Event dates for real events
   const eventMap: { [key: string]: string } = {
-    "2025-07-21": "/events/1",
-    "2025-11-15": "/events/2",
+    "2026-11-14": "/events",
   };
   const eventDates = Object.keys(eventMap).map(dateStr => {
     const [year, month, day] = dateStr.split("-").map(Number);

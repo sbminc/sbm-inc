@@ -69,7 +69,7 @@ export default function EventsList() {
     {
       id: 1,
       title: "MVULANA Young Men's Summit",
-      date: "July 21, 2025",
+      date: "November 14, 2026",
       time: "10:00 AM - 6:00 PM",
       location: "Bethune–Cookman University | Civic Engagement Center, Daytona Beach",
       description:
@@ -80,11 +80,11 @@ export default function EventsList() {
     {
       id: 2,
       title: "MSICHANA Young Women's Summit",
-      date: "Nov. 15–16, 2025",
-      time: "Day 1: 10:00 AM – 3:00 PM • Day 2: 1:00 PM – 4:00 PM",
-      location: "Day 1: Yvonne Scarlett Golden Center • Day 2: Bethune–Cookman University | Civic Engagement Center, Daytona Beach",
+      date: "November 14, 2026",
+      time: "10:00 AM – 4:00 PM",
+      location: "Daytona Beach (Yvonne Scarlett Golden Center & Bethune–Cookman University)",
       description:
-        "A two-day workshop experience designed to empower young women through leadership, confidence, wellness, and community connection.",
+        "A workshop experience designed to empower young women through leadership, confidence, wellness, and community connection.",
       category: "workshop",
       image: "/Msichana-Logo-2.png",
     },
@@ -97,7 +97,7 @@ export default function EventsList() {
       description:
         "A day dedicated to giving back to our community through various service projects throughout Volusia County.",
       category: "community",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/SBM-Logo-4.png",
     },
     {
       id: 4,
@@ -108,7 +108,7 @@ export default function EventsList() {
       description:
         "Learn about college applications, scholarships, financial aid, and how to prepare for higher education.",
       category: "workshop",
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/SBM-Logo-4.png",
     },
   ]
 

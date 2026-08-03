@@ -51,25 +51,28 @@ export default function YoungWomensSummitDetails() {
               </h1>
               <div className="max-w-3xl mx-auto">
                 <p className="text-white/95 text-lg leading-relaxed drop-shadow-md">
-                  A two-day experience designed to empower young women through leadership, confidence,
+                  An empowering experience designed to strengthen young women through leadership, confidence,
                   wellness, and community connection.
                 </p>
               </div>
             </div>
 
-            {/* Two-Day Details */}
-            <div className="grid md:grid-cols-2 gap-6 mb-10">
+            {/* Event Details */}
+            <div className="grid md:grid-cols-3 gap-6 mb-10">
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-xl">
-                <div className="text-gold text-2xl mb-2">📅 Day 1</div>
-                <div className="text-white font-semibold text-lg">Saturday, Nov. 15</div>
-                <div className="text-white/90 mt-2">Time: 10:00 AM - 3:00 PM</div>
-                <div className="text-white/90 mt-2">Location: Yvonne Scarlett Golden Center</div>
+                <div className="text-gold text-2xl mb-2">📅</div>
+                <div className="text-white font-semibold text-lg">Date</div>
+                <div className="text-white/90">Saturday, November 14, 2026</div>
               </div>
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-xl">
-                <div className="text-gold text-2xl mb-2">📅 Day 2</div>
-                <div className="text-white font-semibold text-lg">Sunday, Nov. 16</div>
-                <div className="text-white/90 mt-2">Time: 1:00 PM - 4:00 PM</div>
-                <div className="text-white/90 mt-2">Location: Bethune–Cookman University | Civic Engagement Center</div>
+                <div className="text-gold text-2xl mb-2">⏰</div>
+                <div className="text-white font-semibold text-lg">Time</div>
+                <div className="text-white/90">10:00 AM – 4:00 PM</div>
+              </div>
+              <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-xl">
+                <div className="text-gold text-2xl mb-2">📍</div>
+                <div className="text-white font-semibold text-lg">Location</div>
+                <div className="text-white/90">Yvonne Scarlett Golden Center & Bethune–Cookman University | Civic Engagement Center, Daytona Beach</div>
               </div>
             </div>
 
