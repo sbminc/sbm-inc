@@ -7,7 +7,7 @@ export default function YoungMensSummitForm() {
 
   return (
     <form
-      action="https://formspree.io/f/xnnvnrrl"
+      action="https://formspree.io/f/xzeppqln"
       method="POST"
       className="bg-white rounded-xl shadow-lg p-8 mb-8 border border-gold/30"
       style={{ maxWidth: 600, margin: "0 auto" }}
@@ -90,4 +90,4 @@ export default function YoungMensSummitForm() {
       {error && <div className="text-red-600 mt-2">{error}</div>}
     </form>
   );
-} 
+}

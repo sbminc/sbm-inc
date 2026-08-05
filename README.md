@@ -82,7 +82,8 @@ sbm-clean/
 
 ### Form Endpoints
 - **Mvulana Summit**: Uses Google Forms backup
-- **Msichana Summit**: Formspree endpoint `https://formspree.io/f/mdkljjgj`
+- **Mvulana Summit**: Formspree endpoint `https://formspree.io/f/xzeppqln`
+- **Msichana Summit**: Formspree endpoint `https://formspree.io/f/xeajjwyj`
 
 ## 🎨 Styling
 

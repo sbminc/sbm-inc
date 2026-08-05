@@ -8,7 +8,7 @@ export default function YoungWomensSummitForm() {
 
   return (
     <form
-      action="https://formspree.io/f/mdkljjgj"
+      action="https://formspree.io/f/xeajjwyj"
       method="POST"
       className="bg-white rounded-xl shadow-lg p-8 mb-8 border border-gold/30"
       style={{ maxWidth: 600, margin: "0 auto" }}
