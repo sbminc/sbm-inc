@@ -18,7 +18,7 @@ export default function DonatePage() {
               <h3 className="font-semibold text-lg mb-2">Monetary Donations</h3>
               <p className="text-gray-700 mb-2">Your financial support helps us continue our mission of empowering BIPOC Youth in Volusia County.</p>
               <a
-                href="https://www.zeffy.com/en-US/donation-form/51e9784d-b5e6-4ac0-9c70-33d3d1f9ece4"
+                href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-6192"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-gradient-to-r from-gold to-burgundy text-white px-6 py-3 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-burgundy/20 shine-effect mb-2"
@@ -60,7 +60,7 @@ export default function DonatePage() {
                   </ul>
                 </div>
                 <a
-                  href="https://www.zeffy.com/en-US/donation-form/51e9784d-b5e6-4ac0-9c70-33d3d1f9ece4"
+                  href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-6192"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-gradient-to-r from-gold to-burgundy text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-burgundy/20 shine-effect mt-2 text-center"
@@ -78,7 +78,7 @@ export default function DonatePage() {
                   </ul>
                 </div>
                 <a
-                  href="https://www.zeffy.com/en-US/donation-form/51e9784d-b5e6-4ac0-9c70-33d3d1f9ece4"
+                  href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-6192"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-gradient-to-r from-gold to-burgundy text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-burgundy/20 shine-effect mt-2 text-center"
@@ -96,7 +96,7 @@ export default function DonatePage() {
                   </ul>
                 </div>
                 <a
-                  href="https://www.zeffy.com/en-US/donation-form/51e9784d-b5e6-4ac0-9c70-33d3d1f9ece4"
+                  href="https://www.zeffy.com/en-US/donation-form/donate-to-change-lives-6192"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block bg-gradient-to-r from-gold to-burgundy text-white px-6 py-2 rounded-full font-medium transition-all duration-300 hover:shadow-lg hover:shadow-burgundy/20 shine-effect mt-2 text-center"
