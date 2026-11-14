@@ -76,6 +76,8 @@ export default function EventsList() {
         "A series of interactive workshops focused on developing leadership skills, confidence, communication abilities, and mental health awareness.",
       category: "workshop",
       image: "/Logos/mvulana-logo-1.png",
+      link: "/events/1",
+      cta: "Register & View Details",
     },
     {
       id: 2,
@@ -87,6 +89,21 @@ export default function EventsList() {
         "A workshop experience designed to empower young women through leadership, confidence, wellness, and community connection.",
       category: "workshop",
       image: "/Msichana-Logo-2.png",
+      link: "/events/2",
+      cta: "Register & View Details",
+    },
+    {
+      id: 5,
+      title: "2026 Msichana Girls & Mvulana Boys Conference",
+      date: "November 14, 2026",
+      time: "9:45 AM - 4:30 PM",
+      location: "Campbell Middle School, 625 S. Keech Street, Daytona Beach, FL 32114",
+      description:
+        "View the full run of show and workshop rotations. Attendees can also complete the interactive conference evaluation after the event.",
+      category: "workshop",
+      image: "/events/2026-conference/run-of-show-preview.png",
+      link: "/events/2026-conference",
+      cta: "Schedule & Attendee Feedback",
     },
     {
       id: 3,
@@ -168,7 +185,7 @@ export default function EventsList() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           {filteredEvents.map((event) => (
-            (event.id === 1 || event.id === 2) ? (
+            event.link ? (
               <div
                 key={event.id}
                 className="group bg-white rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gold"
@@ -202,12 +219,12 @@ export default function EventsList() {
                   </div>
                   <p className="text-gray-600 mb-6">{event.description}</p>
                   <Link
-                    href={`/events/${event.id}`}
+                    href={event.link}
                     className="inline-flex items-center text-burgundy hover:text-burgundy-light font-medium group-hover:underline"
                     aria-label={`View details for ${event.title}`}
                     style={{ zIndex: 10, position: 'relative' }}
                   >
-                    Event Details
+                    {event.cta}
                     <svg
                       className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
                       fill="none"
