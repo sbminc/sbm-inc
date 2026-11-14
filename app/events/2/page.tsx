@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Navbar from "@/components/navbar";
 import YoungWomensSummitForm from "@/components/young-womens-summit-form";
+import ConferenceEventResources from "@/components/conference-event-resources";
 
 export default function YoungWomensSummitDetails() {
   return (
@@ -75,6 +76,8 @@ export default function YoungWomensSummitDetails() {
                 <div className="text-white/90">Campbell Middle School<br/>625 S. Keech Street<br/>Daytona Beach, FL 32114</div>
               </div>
             </div>
+
+            <ConferenceEventResources audience="Msichana attendees" />
 
             {/* Registration Form */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-2xl">

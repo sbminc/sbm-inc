@@ -93,19 +93,6 @@ export default function EventsList() {
       cta: "Register & View Details",
     },
     {
-      id: 5,
-      title: "2026 Msichana Girls & Mvulana Boys Conference",
-      date: "November 14, 2026",
-      time: "9:45 AM - 4:30 PM",
-      location: "Campbell Middle School, 625 S. Keech Street, Daytona Beach, FL 32114",
-      description:
-        "View the full run of show and workshop rotations. Attendees can also complete the interactive conference evaluation after the event.",
-      category: "workshop",
-      image: "/events/2026-conference/run-of-show-preview.png",
-      link: "/events/2026-conference",
-      cta: "Schedule & Attendee Feedback",
-    },
-    {
       id: 3,
       title: "Community Service Day",
       date: "TBD",

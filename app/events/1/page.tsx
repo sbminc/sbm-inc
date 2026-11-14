@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import YoungMensSummitForm from "@/components/young-mens-summit-form";
 import Navbar from "@/components/navbar";
+import ConferenceEventResources from "@/components/conference-event-resources";
 
 export default function YoungMensSummitDetails() {
   return (
@@ -81,107 +82,7 @@ export default function YoungMensSummitDetails() {
               </div>
             </div>
 
-            {/* Event Schedule */}
-            <div className="mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-center text-white mb-8 bg-gradient-to-r from-gold to-orange bg-clip-text text-transparent drop-shadow-lg">
-                Event Schedule
-              </h2>
-              
-              <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 shadow-2xl overflow-hidden">
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm md:text-base">
-                    <thead>
-                      <tr className="bg-gold/20 text-burgundy">
-                        <th className="px-4 py-3 border-b border-gold/40 font-bold text-left">START TIME</th>
-                        <th className="px-4 py-3 border-b border-gold/40 font-bold text-left">FINISH TIME</th>
-                        <th className="px-4 py-3 border-b border-gold/40 font-bold text-left">TOPIC</th>
-                        <th className="px-4 py-3 border-b border-gold/40 font-bold text-left">PRESENTER/FACILITATOR(S)</th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-white">
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">10:00</td>
-                        <td className="px-4 py-3 border-b border-white/10">10:15 AM</td>
-                        <td className="px-4 py-3 border-b border-white/10">WELCOME/ PRAYER</td>
-                        <td className="px-4 py-3 border-b border-white/10">DR. McCONNER & MR. MCKINNEY/ BISHOP TRIPLETT</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">10:15</td>
-                        <td className="px-4 py-3 border-b border-white/10">10:30 AM</td>
-                        <td className="px-4 py-3 border-b border-white/10">ICE BREAKER</td>
-                        <td className="px-4 py-3 border-b border-white/10">MR. JERMAINE MCKINNEY</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">10:30 AM</td>
-                        <td className="px-4 py-3 border-b border-white/10">11:10 AM</td>
-                        <td className="px-4 py-3 border-b border-white/10">BREAK OUT GROUPS (1&2) ROTATION</td>
-                        <td className="px-4 py-3 border-b border-white/10">GROUP FACILITATORS</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">11:10 AM</td>
-                        <td className="px-4 py-3 border-b border-white/10">11:20 AM</td>
-                        <td className="px-4 py-3 border-b border-white/10">PARTICIPANTS BREAK</td>
-                        <td className="px-4 py-3 border-b border-white/10">GROUP PARTICIPANTS</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">11:30 AM</td>
-                        <td className="px-4 py-3 border-b border-white/10">12:00 AM</td>
-                        <td className="px-4 py-3 border-b border-white/10">MAYOR HENRY PRESENTATION</td>
-                        <td className="px-4 py-3 border-b border-white/10">MAYOR OF DAYTONA BEACH FLORIDA THE HONORABLE DERRICK L. HENRY</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">12:00 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">12:30 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">LUNCH BREAK</td>
-                        <td className="px-4 py-3 border-b border-white/10">COMMITTEE MEMBERS/ OMEGA PSI PHI</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">12:00 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">12:30 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">MEET KOFI ZULU OF ADUKICKS</td>
-                        <td className="px-4 py-3 border-b border-white/10">KOFI ZULU</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">12:30 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">1:10 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">BREAK OUT GROUPS (3 & 4) ROTATION</td>
-                        <td className="px-4 py-3 border-b border-white/10">GROUP FACILITATORS</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">12:30 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">1:10 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">GABRIEL HANNANS - PARENTS SEMINAR: GENTLE PARENTING</td>
-                        <td className="px-4 py-3 border-b border-white/10">GABRIEL HANNANS</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">1:10 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">1:40 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">POWER OF THE TIE PRESENTATION</td>
-                        <td className="px-4 py-3 border-b border-white/10">MR. MAYNER & MR. JERMAINE MCKINNEY</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">1:40 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">2:20 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">BLACK HISTORY PRESENTATION</td>
-                        <td className="px-4 py-3 border-b border-white/10">DR. HEADLEY WHITE</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">1:40 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">2:20 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">BREAK OUT GROUPS (5 & 6) ROTATION</td>
-                        <td className="px-4 py-3 border-b border-white/10">GROUP FACILITATORS</td>
-                      </tr>
-                      <tr className="hover:bg-white/5 transition-colors">
-                        <td className="px-4 py-3 border-b border-white/10">2:20 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">2:50 PM</td>
-                        <td className="px-4 py-3 border-b border-white/10">PARTICIPANTS FEEDBACK/ PRESENTATION OF CERTIFICATES & CLOSING CEREMONY</td>
-                        <td className="px-4 py-3 border-b border-white/10">GROUP PARTICIPANTS/ DR. McCONNER & MR. MCKINNEY</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
+            <ConferenceEventResources audience="Mvulana attendees" />
 
             {/* Registration Form - More Transparent */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 shadow-2xl">
