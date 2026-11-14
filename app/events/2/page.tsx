@@ -72,7 +72,7 @@ export default function YoungWomensSummitDetails() {
               <div className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-xl">
                 <div className="text-gold text-2xl mb-2">📍</div>
                 <div className="text-white font-semibold text-lg">Location</div>
-                <div className="text-white/90">Yvonne Scarlett Golden Center & Bethune–Cookman University | Civic Engagement Center, Daytona Beach</div>
+                <div className="text-white/90">Campbell Middle School<br/>625 S. Keech Street<br/>Daytona Beach, FL 32114</div>
               </div>
             </div>
 

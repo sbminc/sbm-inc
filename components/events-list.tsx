@@ -71,7 +71,7 @@ export default function EventsList() {
       title: "MVULANA Young Men's Summit",
       date: "November 14, 2026",
       time: "10:00 AM - 6:00 PM",
-      location: "Bethune–Cookman University | Civic Engagement Center, Daytona Beach",
+      location: "Campbell Middle School, 625 S. Keech Street, Daytona Beach, FL 32114",
       description:
         "A series of interactive workshops focused on developing leadership skills, confidence, communication abilities, and mental health awareness.",
       category: "workshop",
@@ -82,7 +82,7 @@ export default function EventsList() {
       title: "MSICHANA Young Women's Summit",
       date: "November 14, 2026",
       time: "10:00 AM – 4:00 PM",
-      location: "Daytona Beach (Yvonne Scarlett Golden Center & Bethune–Cookman University)",
+      location: "Campbell Middle School, 625 S. Keech Street, Daytona Beach, FL 32114",
       description:
         "A workshop experience designed to empower young women through leadership, confidence, wellness, and community connection.",
       category: "workshop",
